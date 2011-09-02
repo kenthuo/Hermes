@@ -1,0 +1,34 @@
+ServiceType:
+  type: entity
+  table: service_type
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+  oneToOne:
+    department:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

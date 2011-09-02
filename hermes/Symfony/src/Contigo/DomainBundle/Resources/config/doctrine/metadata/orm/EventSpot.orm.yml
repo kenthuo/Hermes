@@ -1,0 +1,78 @@
+EventSpot:
+  type: entity
+  table: event_spot
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    locateId:
+      type: bigint
+      nullable: false
+      column: locate_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+    msgId:
+      type: bigint
+      nullable: true
+      column: msg_id
+    msgMode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: msg_mode
+    esn:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    messageType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: message_type
+    messageDetail:
+      type: text
+      nullable: true
+      column: message_detail
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    nearestTown:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: nearest_town
+    nearestTownDistance:
+      type: bigint
+      nullable: true
+      column: nearest_town_distance
+    routerMsgSeq:
+      type: bigint
+      nullable: true
+      column: router_msg_seq
+  lifecycleCallbacks: {  }

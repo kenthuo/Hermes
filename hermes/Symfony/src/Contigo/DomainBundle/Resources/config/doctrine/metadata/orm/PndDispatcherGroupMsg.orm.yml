@@ -1,0 +1,37 @@
+PndDispatcherGroupMsg:
+  type: entity
+  table: pnd_dispatcher_group_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    message:
+      type: text
+      nullable: false
+    responseType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: response_type
+    sentTs:
+      type: bigint
+      nullable: false
+      column: sent_ts
+    sentBy:
+      type: bigint
+      nullable: false
+      column: sent_by
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    statusTs:
+      type: bigint
+      nullable: true
+      column: status_ts
+  lifecycleCallbacks: {  }

@@ -1,0 +1,70 @@
+EventIvrLoginLogout:
+  type: entity
+  table: event_ivr_login_logout
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    adminNote:
+      type: text
+      nullable: true
+      column: admin_note
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    adminName:
+      type: text
+      nullable: true
+      column: admin_name
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    eventTimestamp:
+      type: bigint
+      nullable: false
+      column: event_timestamp
+    voiceNoteId:
+      type: bigint
+      nullable: true
+      column: voice_note_id
+    shiftId:
+      type: bigint
+      nullable: true
+      column: shift_id
+    checkInInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: check_in_interval
+    type:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

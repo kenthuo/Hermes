@@ -1,0 +1,36 @@
+AccountNote:
+  type: entity
+  table: account_note
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    note:
+      type: text
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  oneToOne:
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

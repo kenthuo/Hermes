@@ -1,0 +1,70 @@
+PndJobAudit:
+  type: entity
+  table: pnd_job_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    msgType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: msg_type
+    msgFlow:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: msg_flow
+    message:
+      type: text
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: false
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    accessListId:
+      type: bigint
+      nullable: false
+      column: access_list_id
+    guardianId:
+      type: bigint
+      nullable: true
+      column: guardian_id
+    pndDriverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: true
+      column: pnd_driver_id
+  lifecycleCallbacks: {  }

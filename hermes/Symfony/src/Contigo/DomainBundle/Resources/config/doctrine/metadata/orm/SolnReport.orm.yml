@@ -1,0 +1,38 @@
+SolnReport:
+  type: entity
+  table: soln_report
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    solution:
+      targetEntity: Solution
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        solution_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    report:
+      targetEntity: Reports
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        report_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

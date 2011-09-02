@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="MdtModel" table="mdt_model">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="model" type="string" column="model" length="50"/>
+    <field name="name" type="string" column="name" length="50"/>
+    <field name="description" type="text" column="description"/>
+    <field name="color" type="string" column="color" length="30"/>
+    <field name="height" type="float" column="height"/>
+    <field name="width" type="float" column="width"/>
+    <field name="depth" type="float" column="depth"/>
+    <field name="weight" type="float" column="weight"/>
+    <field name="imageData" type="bytea" column="image_data"/>
+    <field name="imageFiletype" type="string" column="image_filetype" length="50"/>
+    <field name="createdTs" type="bigint" column="created_ts"/>
+    <field name="deletedTs" type="bigint" column="deleted_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

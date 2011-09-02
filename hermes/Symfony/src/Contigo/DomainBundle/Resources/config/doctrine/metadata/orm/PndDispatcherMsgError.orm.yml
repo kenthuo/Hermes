@@ -1,0 +1,42 @@
+PndDispatcherMsgError:
+  type: entity
+  table: pnd_dispatcher_msg_error
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    pndDispatcherMsgId:
+      type: bigint
+      nullable: false
+      column: pnd_dispatcher_msg_id
+    errorCode:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: error_code
+    errorMsg:
+      type: text
+      nullable: true
+      column: error_msg
+    rcvdTs:
+      type: bigint
+      nullable: true
+      column: rcvd_ts
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    pndStopAuditId:
+      type: bigint
+      nullable: false
+      column: pnd_stop_audit_id
+  lifecycleCallbacks: {  }

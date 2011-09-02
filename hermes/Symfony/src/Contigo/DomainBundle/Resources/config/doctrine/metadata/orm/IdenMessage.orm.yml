@@ -1,0 +1,36 @@
+IdenMessage:
+  type: entity
+  table: iden_message
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    ip:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    message:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+    isSending:
+      type: boolean
+      nullable: true
+      column: is_sending
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

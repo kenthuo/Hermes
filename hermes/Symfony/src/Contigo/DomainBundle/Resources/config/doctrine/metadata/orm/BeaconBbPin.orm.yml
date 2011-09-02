@@ -1,0 +1,36 @@
+BeaconBbPin:
+  type: entity
+  table: beacon_bb_pin
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    pin:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    introTs:
+      type: bigint
+      nullable: true
+      column: intro_ts
+    introBy:
+      type: bigint
+      nullable: true
+      column: intro_by
+    retireTs:
+      type: bigint
+      nullable: true
+      column: retire_ts
+    retireBy:
+      type: bigint
+      nullable: true
+      column: retire_by
+  lifecycleCallbacks: {  }

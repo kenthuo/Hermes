@@ -1,0 +1,83 @@
+LoginHistory:
+  type: entity
+  table: login_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    firstname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lastname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    employeeNum:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: employee_num
+    username:
+      type: string
+      length: 200
+      fixed: false
+      nullable: false
+    password:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    email:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    isAllowed:
+      type: boolean
+      nullable: true
+      column: is_allowed
+    locale:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

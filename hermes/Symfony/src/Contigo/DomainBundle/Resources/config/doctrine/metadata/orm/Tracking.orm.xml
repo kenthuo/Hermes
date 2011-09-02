@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Tracking" table="tracking">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="status" type="string" column="status" length="20"/>
+    <field name="startTimestamp" type="bigint" column="start_timestamp"/>
+    <field name="freqSec" type="integer" column="freq_sec"/>
+    <field name="initialRequestTime" type="bigint" column="initial_request_time"/>
+    <field name="endTimestamp" type="bigint" column="end_timestamp"/>
+    <field name="starttimezone" type="float" column="starttimezone"/>
+    <field name="endtimezone" type="float" column="endtimezone"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

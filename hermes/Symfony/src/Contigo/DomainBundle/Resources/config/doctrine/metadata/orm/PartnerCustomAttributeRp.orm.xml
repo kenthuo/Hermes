@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PartnerCustomAttributeRp" table="partner_custom_attribute_rp">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="partnerId" type="bigint" column="partner_id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="externalWww" type="string" column="external_www" length="100"/>
+    <field name="welcomeEmail" type="boolean" column="welcome_email"/>
+    <field name="termOfService" type="boolean" column="term_of_service"/>
+    <field name="supportNo" type="string" column="support_no" length="50"/>
+    <field name="htmlPageTitle" type="string" column="html_page_title" length="200"/>
+    <field name="alertEmail" type="string" column="alert_email" length="100"/>
+    <field name="custServiceEmail" type="string" column="cust_service_email" length="100"/>
+    <field name="notificationEmail" type="string" column="notification_email" length="100"/>
+    <many-to-one field="partner" target-entity="Customer" orphan-removal="">
+      <join-columns>
+        <join-column name="partner_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

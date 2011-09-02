@@ -1,0 +1,42 @@
+DriverPhoto:
+  type: entity
+  table: driver_photo
+  fields:
+    guardianId:
+      id: true
+      type: bigint
+      nullable: false
+      column: guardian_id
+    type:
+      id: true
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+    filetype:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    filesize:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    photo:
+      type: bytea
+      nullable: true
+    notes:
+      type: text
+      nullable: true
+  oneToOne:
+    guardian:
+      targetEntity: Guardian
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        guardian_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

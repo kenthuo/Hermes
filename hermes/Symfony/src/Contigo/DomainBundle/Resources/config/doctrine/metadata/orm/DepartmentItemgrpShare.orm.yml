@@ -1,0 +1,38 @@
+DepartmentItemgrpShare:
+  type: entity
+  table: department_itemgrp_share
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    toDepartment:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        to_department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    departmentItemgrp:
+      targetEntity: DepartmentItemgrp
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_itemgrp_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

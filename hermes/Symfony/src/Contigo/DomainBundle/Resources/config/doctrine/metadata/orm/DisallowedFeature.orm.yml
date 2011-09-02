@@ -1,0 +1,30 @@
+DisallowedFeature:
+  type: entity
+  table: disallowed_feature
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    feature:
+      targetEntity: Feature
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        feature_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

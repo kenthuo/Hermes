@@ -1,0 +1,29 @@
+NotificationAction:
+  type: entity
+  table: notification_action
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    actionIndexId:
+      type: bigint
+      nullable: true
+      column: action_index_id
+    actionId:
+      type: bigint
+      nullable: true
+      column: action_id
+  oneToOne:
+    notificationScheme:
+      targetEntity: NotificationScheme
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        notification_scheme_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

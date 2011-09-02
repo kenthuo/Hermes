@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Module" table="module">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="mnemonic" type="string" column="mnemonic" length="20"/>
+    <field name="description" type="string" column="description" length="50"/>
+    <field name="introTs" type="bigint" column="intro_ts"/>
+    <field name="retireTs" type="bigint" column="retire_ts"/>
+    <field name="isVap" type="boolean" column="is_vap"/>
+    <field name="isDefault" type="boolean" column="is_default"/>
+    <field name="dspOrder" type="integer" column="dsp_order"/>
+    <field name="propertyKey" type="string" column="property_key" length="255"/>
+    <many-to-one field="permission" target-entity="Permission" orphan-removal="">
+      <join-columns>
+        <join-column name="permission_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="appln" target-entity="Appln" orphan-removal="">
+      <join-columns>
+        <join-column name="appln_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

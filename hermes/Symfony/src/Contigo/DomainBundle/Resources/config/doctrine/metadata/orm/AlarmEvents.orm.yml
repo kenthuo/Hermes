@@ -1,0 +1,30 @@
+AlarmEvents:
+  type: entity
+  table: alarm_events
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    actionEvent:
+      targetEntity: ActionEvent
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        action_event_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

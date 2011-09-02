@@ -1,0 +1,49 @@
+DependentIvrShiftState:
+  type: entity
+  table: dependent_ivr_shift_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    shiftId:
+      type: bigint
+      nullable: false
+      column: shift_id
+    shiftState:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+      column: shift_state
+    shiftStateTs:
+      type: bigint
+      nullable: false
+      column: shift_state_ts
+    note:
+      type: text
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    endedBy:
+      type: text
+      nullable: true
+      column: ended_by
+    lastUpdatedTs:
+      type: bigint
+      nullable: false
+      column: last_updated_ts
+    checkInInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: check_in_interval
+  lifecycleCallbacks: {  }

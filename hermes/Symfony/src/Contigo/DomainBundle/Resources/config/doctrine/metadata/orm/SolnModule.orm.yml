@@ -1,0 +1,44 @@
+SolnModule:
+  type: entity
+  table: soln_module
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    nameInSoln:
+      type: string
+      length: 40
+      fixed: false
+      nullable: true
+      column: name_in_soln
+    isMandatory:
+      type: boolean
+      nullable: false
+      column: is_mandatory
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  oneToOne:
+    solution:
+      targetEntity: Solution
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        solution_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    module:
+      targetEntity: Module
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        module_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

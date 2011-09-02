@@ -1,0 +1,80 @@
+Enforamtgu:
+  type: entity
+  table: enforamtgu
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    ip:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    lastLoginTimestamp:
+      type: bigint
+      nullable: true
+      column: last_login_timestamp
+    version:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    rebootOnNoresp:
+      type: boolean
+      nullable: true
+      column: reboot_on_noresp
+    useResetWatchdog:
+      type: boolean
+      nullable: true
+      column: use_reset_watchdog
+    sendResetWatchdogNotif:
+      type: boolean
+      nullable: true
+      column: send_reset_watchdog_notif
+    watchdogResetTimeout:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: watchdog_reset_timeout
+    debugMode:
+      type: boolean
+      nullable: true
+      column: debug_mode
+    lastInitializedTimestamp:
+      type: bigint
+      nullable: true
+      column: last_initialized_timestamp
+    gfmiState:
+      type: boolean
+      nullable: true
+      column: gfmi_state
+    gfmiActivatedTimestamp:
+      type: bigint
+      nullable: true
+      column: gfmi_activated_timestamp
+    detectVehiclePresence:
+      type: boolean
+      nullable: true
+      column: detect_vehicle_presence
+    lastOfflineNotificationTs:
+      type: bigint
+      nullable: true
+      column: last_offline_notification_ts
+  oneToOne:
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

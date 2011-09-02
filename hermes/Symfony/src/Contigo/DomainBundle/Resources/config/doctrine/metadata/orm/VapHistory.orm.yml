@@ -1,0 +1,53 @@
+VapHistory:
+  type: entity
+  table: vap_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    itemName:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: item_name
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    beaconName:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: beacon_name
+    isMultiple:
+      type: boolean
+      nullable: true
+      column: is_multiple
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

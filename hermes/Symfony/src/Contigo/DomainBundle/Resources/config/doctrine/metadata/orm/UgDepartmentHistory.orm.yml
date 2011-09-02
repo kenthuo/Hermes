@@ -1,0 +1,24 @@
+UgDepartmentHistory:
+  type: entity
+  table: ug_department_history
+  fields:
+    usergpId:
+      id: true
+      type: bigint
+      nullable: false
+      column: usergp_id
+    departmentId:
+      id: true
+      type: bigint
+      nullable: false
+      column: department_id
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+DrvOrgPndDrvStatus:
+  type: entity
+  table: drv_org_pnd_drv_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    drvStatusType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+      column: drv_status_type
+    drvStatusId:
+      type: smallint
+      nullable: false
+      column: drv_status_id
+    drvStatus:
+      type: string
+      length: 49
+      fixed: false
+      nullable: false
+      column: drv_status
+    createdTs:
+      type: bigint
+      nullable: false
+      column: created_ts
+    retiredTs:
+      type: bigint
+      nullable: false
+      column: retired_ts
+  lifecycleCallbacks: {  }

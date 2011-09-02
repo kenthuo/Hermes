@@ -1,0 +1,45 @@
+ActionTrackNoFreqHistory:
+  type: entity
+  table: action_track_no_freq_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    period:
+      type: integer
+      unsigned: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,44 @@
+EventIgnition200901B1to5k:
+  type: entity
+  table: event_ignition_200901_b1to5k
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    locateId:
+      type: bigint
+      nullable: false
+      column: locate_id
+    state:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+  lifecycleCallbacks: {  }

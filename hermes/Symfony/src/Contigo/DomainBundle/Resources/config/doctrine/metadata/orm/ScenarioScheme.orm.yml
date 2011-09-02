@@ -1,0 +1,30 @@
+ScenarioScheme:
+  type: entity
+  table: scenario_scheme
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    notificationScheme:
+      targetEntity: NotificationScheme
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        notification_scheme_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    scenario:
+      targetEntity: Scenario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        scenario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Privilege" table="privilege">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="description" type="string" column="description" length="255"/>
+    <field name="wUser" type="boolean" column="w_user"/>
+    <field name="rUser" type="boolean" column="r_user"/>
+    <field name="wLogin" type="boolean" column="w_login"/>
+    <field name="rLogin" type="boolean" column="r_login"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

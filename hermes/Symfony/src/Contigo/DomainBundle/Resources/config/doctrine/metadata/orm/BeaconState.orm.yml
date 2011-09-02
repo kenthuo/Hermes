@@ -1,0 +1,44 @@
+BeaconState:
+  type: entity
+  table: beacon_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    isConfigured:
+      type: boolean
+      nullable: true
+      column: is_configured
+    isTested:
+      type: boolean
+      nullable: true
+      column: is_tested
+    isOperable:
+      type: boolean
+      nullable: true
+      column: is_operable
+    isBillable:
+      type: boolean
+      nullable: true
+      column: is_billable
+    isAssigned:
+      type: boolean
+      nullable: true
+      column: is_assigned
+    isRegistered:
+      type: boolean
+      nullable: true
+      column: is_registered
+    isProvisioned:
+      type: boolean
+      nullable: true
+      column: is_provisioned
+  lifecycleCallbacks: {  }

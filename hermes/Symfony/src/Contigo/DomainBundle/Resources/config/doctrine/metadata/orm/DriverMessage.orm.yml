@@ -1,0 +1,163 @@
+DriverMessage:
+  type: entity
+  table: driver_message
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    driverId:
+      type: bigint
+      nullable: true
+      column: driver_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    msgType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+      column: msg_type
+    ackToDspMsgId:
+      type: bigint
+      nullable: true
+      column: ack_to_dsp_msg_id
+    ackToDspMsgTs:
+      type: bigint
+      nullable: true
+      column: ack_to_dsp_msg_ts
+    subject:
+      type: text
+      nullable: true
+    body:
+      type: text
+      nullable: true
+    readTs:
+      type: bigint
+      nullable: true
+      column: read_ts
+    readBy:
+      type: bigint
+      nullable: true
+      column: read_by
+    softDeletedTs:
+      type: bigint
+      nullable: true
+      column: soft_deleted_ts
+    softDeletedBy:
+      type: bigint
+      nullable: true
+      column: soft_deleted_by
+    mdtEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: mdt_esn
+    mdtTimestamp:
+      type: bigint
+      nullable: true
+      column: mdt_timestamp
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    direction:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    altitude:
+      type: float
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    isValidFix:
+      type: boolean
+      nullable: true
+      column: is_valid_fix
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: zip_code
+    paramName:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: param_name
+    paramType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: param_type
+    paramValue:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: param_value
+    mdtTsRaw:
+      type: string
+      length: 12
+      fixed: false
+      nullable: true
+      column: mdt_ts_raw
+  lifecycleCallbacks: {  }

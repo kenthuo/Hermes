@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventEngineHoursStatus" table="event_engine_hours_status">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="customerId" type="bigint" column="customer_id"/>
+    <field name="bmDevice" type="string" column="bm_device" length="25"/>
+    <field name="bmModel" type="string" column="bm_model" length="25"/>
+    <field name="bmFwVersion" type="string" column="bm_fw_version" length="25"/>
+    <field name="isPriorityScheduled" type="boolean" column="is_priority_scheduled"/>
+    <field name="createTs" type="bigint" column="create_ts"/>
+    <field name="initProcessedTs" type="bigint" column="init_processed_ts"/>
+    <field name="finProcessedTs" type="bigint" column="fin_processed_ts"/>
+    <field name="statusCode" type="smallint" column="status_code"/>
+    <field name="comments" type="text" column="comments"/>
+    <field name="isPriorityMaintenance" type="boolean" column="is_priority_maintenance"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

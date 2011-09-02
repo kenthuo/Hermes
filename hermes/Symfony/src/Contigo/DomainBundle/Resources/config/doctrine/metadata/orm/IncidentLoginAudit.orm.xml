@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IncidentLoginAudit" table="incident_login_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="incidentId" type="bigint" column="incident_id"/>
+    <field name="loginName" type="string" column="login_name" length="50"/>
+    <field name="passcode" type="string" column="passcode" length="10"/>
+    <field name="ip" type="string" column="ip" length="25"/>
+    <field name="status" type="string" column="status" length="25"/>
+    <field name="valid" type="boolean" column="valid"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

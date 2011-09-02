@@ -1,0 +1,39 @@
+MaintenanceEmailNg:
+  type: entity
+  table: maintenance_email_ng
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    notificationScheme:
+      targetEntity: NotificationScheme
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        notification_scheme_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    maintenance:
+      targetEntity: Maintenance
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        maintenance_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    email:
+      targetEntity: Email
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        email_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

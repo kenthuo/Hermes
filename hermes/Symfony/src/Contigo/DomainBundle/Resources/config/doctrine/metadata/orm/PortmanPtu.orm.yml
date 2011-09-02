@@ -1,0 +1,33 @@
+PortmanPtu:
+  type: entity
+  table: portman_ptu
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    ip:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    lastLoginTimestamp:
+      type: bigint
+      nullable: true
+      column: last_login_timestamp
+    version:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+ScenarioAction:
+  type: entity
+  table: scenario_action
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    actionIndexId:
+      type: bigint
+      nullable: true
+      column: action_index_id
+    actionId:
+      type: bigint
+      nullable: true
+      column: action_id
+  oneToOne:
+    scenario:
+      targetEntity: Scenario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        scenario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

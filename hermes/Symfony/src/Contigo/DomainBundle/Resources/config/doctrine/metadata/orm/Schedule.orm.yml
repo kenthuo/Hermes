@@ -1,0 +1,52 @@
+Schedule:
+  type: entity
+  table: schedule
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    isScheduledEvent:
+      type: boolean
+      nullable: true
+      column: is_scheduled_event
+    cron:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+  oneToOne:
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

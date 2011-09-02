@@ -1,0 +1,28 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+home:
+    pattern:  /
+    defaults: { _controller: ContigoGamHomeBundle:Default:index }
+    
+solution:
+    pattern:  /solution/
+    defaults: { _controller: ContigoGamSolutionBundle:Default:index }
+    
+partner:
+    pattern:  /partner/
+    defaults: { _controller: ContigoGamPartnerBundle:Default:index }
+    
+beacon:
+    pattern:  /beacon/
+    defaults: { _controller: ContigoGamBeaconBundle:Default:index }
+    
+support:
+    pattern:  /support/
+    defaults: { _controller: ContigoGamSupportBundle:Default:index }
+    
+developer:
+    pattern:  /developer/
+    defaults: { _controller: ContigoGamDeveloperBundle:Default:index } 

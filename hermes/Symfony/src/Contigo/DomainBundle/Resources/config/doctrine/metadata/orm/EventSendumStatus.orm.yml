@@ -1,0 +1,56 @@
+EventSendumStatus:
+  type: entity
+  table: event_sendum_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    batteryVoltage:
+      type: decimal
+      nullable: true
+      column: battery_voltage
+    temperatureFahrenheit:
+      type: smallint
+      nullable: true
+      column: temperature_fahrenheit
+    signalStrength:
+      type: smallint
+      nullable: true
+      column: signal_strength
+    batteryType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: battery_type
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+  lifecycleCallbacks: {  }

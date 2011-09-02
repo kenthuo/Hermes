@@ -1,0 +1,36 @@
+AirceptDataAudit:
+  type: entity
+  table: aircept_data_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    orgId:
+      type: bigint
+      nullable: true
+      column: org_id
+    esn:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    dig:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

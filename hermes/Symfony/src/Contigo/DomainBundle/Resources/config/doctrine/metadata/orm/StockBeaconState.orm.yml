@@ -1,0 +1,29 @@
+StockBeaconState:
+  type: entity
+  table: stock_beacon_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    stockId:
+      type: bigint
+      nullable: false
+      column: stock_id
+    beaconStateId:
+      type: bigint
+      nullable: false
+      column: beacon_state_id
+    timestamp:
+      type: bigint
+      nullable: true
+    iscurrent:
+      type: boolean
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

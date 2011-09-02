@@ -1,0 +1,29 @@
+NotificationScheme:
+  type: entity
+  table: notification_scheme
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+  lifecycleCallbacks: {  }

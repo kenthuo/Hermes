@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Session" table="session">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="sessionId" type="string" column="session_id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="lastActivatedTimestamp" type="bigint" column="last_activated_timestamp"/>
+    <field name="startTimestamp" type="bigint" column="start_timestamp"/>
+    <field name="data" type="text" column="data"/>
+    <field name="ip" type="string" column="ip" length="25"/>
+    <field name="portal" type="string" column="portal" length="20"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

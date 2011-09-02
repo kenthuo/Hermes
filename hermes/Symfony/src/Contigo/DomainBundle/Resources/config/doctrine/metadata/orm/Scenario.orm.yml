@@ -1,0 +1,47 @@
+Scenario:
+  type: entity
+  table: scenario
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+  oneToOne:
+    schedule:
+      targetEntity: Schedule
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        schedule_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

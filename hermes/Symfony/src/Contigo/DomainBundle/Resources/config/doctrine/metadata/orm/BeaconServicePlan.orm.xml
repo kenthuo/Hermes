@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconServicePlan" table="beacon_service_plan">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="planId" type="bigint" column="plan_id"/>
+    <field name="oldPlanId" type="bigint" column="old_plan_id"/>
+    <field name="startTimestamp" type="bigint" column="start_timestamp"/>
+    <field name="endTimestamp" type="bigint" column="end_timestamp"/>
+    <field name="canNotifyStation" type="boolean" column="can_notify_station"/>
+    <field name="mexicoRoamingStartTs" type="bigint" column="mexico_roaming_start_ts"/>
+    <field name="contractExpiry" type="bigint" column="contract_expiry"/>
+    <field name="status" type="string" column="status" length="15"/>
+    <field name="type" type="string" column="type" length="20"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,41 @@
+ActionDailyPing:
+  type: entity
+  table: action_daily_ping
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    scheduledTime:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: scheduled_time
+    includeWeekends:
+      type: boolean
+      nullable: true
+      column: include_weekends
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+  lifecycleCallbacks: {  }

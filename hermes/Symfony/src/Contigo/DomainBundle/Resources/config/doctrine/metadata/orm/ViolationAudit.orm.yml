@@ -1,0 +1,33 @@
+ViolationAudit:
+  type: entity
+  table: violation_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    timestamp:
+      type: bigint
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    zoneMonitoringAuditIds:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: zone_monitoring_audit_ids
+  lifecycleCallbacks: {  }

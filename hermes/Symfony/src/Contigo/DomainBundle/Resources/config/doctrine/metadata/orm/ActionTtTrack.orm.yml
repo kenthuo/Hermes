@@ -1,0 +1,92 @@
+ActionTtTrack:
+  type: entity
+  table: action_tt_track
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    type:
+      type: integer
+      unsigned: false
+      nullable: true
+    intervalTrackMotion:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: interval_track_motion
+    intervalTrackMotionUnit:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: interval_track_motion_unit
+    intervalTrack:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: interval_track
+    intervalTrackUnit:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: interval_track_unit
+    intervalStatusStationary:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: interval_status_stationary
+    intervalStatusStationaryUnit:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: interval_status_stationary_unit
+    scheduledStatusType:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: scheduled_status_type
+    scheduledStatusTime:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: scheduled_status_time
+    scheduledStatusDay:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: scheduled_status_day
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    lockdown:
+      type: boolean
+      nullable: true
+    notificationType:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: notification_type
+  lifecycleCallbacks: {  }

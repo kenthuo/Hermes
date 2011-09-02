@@ -1,0 +1,42 @@
+SolutionHistory:
+  type: entity
+  table: solution_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    applnId:
+      type: bigint
+      nullable: false
+      column: appln_id
+    name:
+      type: string
+      length: 40
+      fixed: false
+      nullable: false
+    homePageTemplateId:
+      type: bigint
+      nullable: true
+      column: home_page_template_id
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: false
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

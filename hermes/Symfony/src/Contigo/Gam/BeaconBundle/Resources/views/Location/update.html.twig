@@ -1,0 +1,17 @@
+<form action="{{ path('location_update', { 'id': id }) }}" method="post" {{ form_enctype(form) }} id="entity-update-form" class="entity-form">
+    {% include 'ContigoGamPartialBundle:Form:required-note.html.twig' %}
+    <fieldset>
+        <legend>Basic Information</legend>        
+        {{ form_label(form.name, 'Name:', { 'attr': {'class': 'required'}}) }}
+        {{ form_widget(form.name, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}
+        {% if form_errors(form.name) is not empty %}
+        <div class="field-error">{{ form_errors(form.name) }}</div>
+        {% endif %} 
+        {{ form_label(form.address, 'Address:', { 'attr': {'class': 'required'}}) }}
+        {{ form_widget(form.address, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}
+        {% if form_errors(form.address) is not empty %}
+        <div class="field-error">{{ form_errors(form.address) }}</div>
+        {% endif %}         
+        {{ form_rest(form) }}
+	</fieldset>
+</form>

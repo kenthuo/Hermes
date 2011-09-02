@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventEngineHours201006" table="event_engine_hours_201006">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="duration" type="integer" column="duration"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

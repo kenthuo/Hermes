@@ -1,0 +1,22 @@
+Receiver:
+  type: entity
+  table: receiver
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+    className:
+      type: string
+      length: null
+      fixed: false
+      nullable: false
+      column: class_name
+  lifecycleCallbacks: {  }

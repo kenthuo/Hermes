@@ -1,0 +1,14 @@
+RequestProfile:
+  type: entity
+  table: request_profile
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    profile:
+      type: text
+      nullable: false
+  lifecycleCallbacks: {  }

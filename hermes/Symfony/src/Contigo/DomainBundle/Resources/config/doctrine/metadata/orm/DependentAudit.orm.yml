@@ -1,0 +1,32 @@
+DependentAudit:
+  type: entity
+  table: dependent_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    createDate:
+      type: bigint
+      nullable: true
+      column: create_date
+    deleteDate:
+      type: bigint
+      nullable: true
+      column: delete_date
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

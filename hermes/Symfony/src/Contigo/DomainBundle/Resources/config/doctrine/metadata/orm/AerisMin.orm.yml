@@ -1,0 +1,33 @@
+AerisMin:
+  type: entity
+  table: aeris_min
+  fields:
+    min:
+      id: true
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    isGlobal:
+      type: boolean
+      nullable: true
+      column: is_global
+    isShared:
+      type: boolean
+      nullable: true
+      column: is_shared
+    airceptId:
+      type: bigint
+      nullable: true
+      column: aircept_id
+    slot:
+      type: integer
+      unsigned: false
+      nullable: true
+    isPrimary:
+      type: boolean
+      nullable: true
+      column: is_primary
+  lifecycleCallbacks: {  }

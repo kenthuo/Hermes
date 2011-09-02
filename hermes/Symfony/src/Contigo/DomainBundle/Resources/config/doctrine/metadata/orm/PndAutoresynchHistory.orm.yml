@@ -1,0 +1,24 @@
+PndAutoresynchHistory:
+  type: entity
+  table: pnd_autoresynch_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: pnd_esn
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

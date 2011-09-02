@@ -1,0 +1,136 @@
+TestMaster:
+  type: entity
+  table: test_master
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    parentCustomerId:
+      type: bigint
+      nullable: true
+      column: parent_customer_id
+    daylightSaving:
+      type: boolean
+      nullable: true
+      column: daylight_saving
+    timezone:
+      type: float
+      nullable: true
+    notes:
+      type: text
+      nullable: true
+    status:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    streetAddress:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: street_address
+    city:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: zip_code
+    contactName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: contact_name
+    contactNumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: contact_number
+    contactEmail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: contact_email
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    shortname:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    refreshFreq:
+      type: bigint
+      nullable: true
+      column: refresh_freq
+    subdomainName:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: subdomain_name
+    notificationEmail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: notification_email
+    custServiceEmail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: cust_service_email
+    dealerPricing:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: dealer_pricing
+    dpExpiry:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: dp_expiry
+    spExpiry:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: sp_expiry
+    allowAccountLogin:
+      type: boolean
+      nullable: true
+      column: allow_account_login
+    test:
+      type: integer
+      unsigned: false
+      nullable: true
+  lifecycleCallbacks: {  }

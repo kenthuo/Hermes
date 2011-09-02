@@ -1,0 +1,64 @@
+AirceptPageRequest:
+  type: entity
+  table: aircept_page_request
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    secondaryMins:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: secondary_mins
+    pagedMins:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: paged_mins
+    waitMin:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: wait_min
+    seqAckId:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: seq_ack_id
+    overallAckId:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: overall_ack_id
+    numRetries:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: num_retries
+    numRetried:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: num_retried
+    holdingPeriod:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: holding_period
+    requestTimestamp:
+      type: bigint
+      nullable: true
+      column: request_timestamp
+  lifecycleCallbacks: {  }

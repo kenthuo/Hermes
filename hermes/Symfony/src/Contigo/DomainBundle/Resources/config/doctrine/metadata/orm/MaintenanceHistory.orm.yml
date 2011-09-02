@@ -1,0 +1,53 @@
+MaintenanceHistory:
+  type: entity
+  table: maintenance_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    notificationGroupId:
+      type: bigint
+      nullable: true
+      column: notification_group_id
+    serviceTypeId:
+      type: bigint
+      nullable: true
+      column: service_type_id
+    createTimestamp:
+      type: bigint
+      nullable: true
+      column: create_timestamp
+    initialTimestamp:
+      type: bigint
+      nullable: true
+      column: initial_timestamp
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

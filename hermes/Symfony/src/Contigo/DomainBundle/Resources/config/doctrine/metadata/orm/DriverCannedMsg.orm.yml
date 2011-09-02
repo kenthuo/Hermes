@@ -1,0 +1,45 @@
+DriverCannedMsg:
+  type: entity
+  table: driver_canned_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subject:
+      type: text
+      nullable: false
+    paramName:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: param_name
+    paramType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: param_type
+  oneToOne:
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    department:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

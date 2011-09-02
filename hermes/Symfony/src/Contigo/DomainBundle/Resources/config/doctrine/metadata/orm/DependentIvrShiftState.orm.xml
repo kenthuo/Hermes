@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DependentIvrShiftState" table="dependent_ivr_shift_state">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="dependentId" type="bigint" column="dependent_id"/>
+    <field name="shiftId" type="bigint" column="shift_id"/>
+    <field name="shiftState" type="string" column="shift_state" length="20"/>
+    <field name="shiftStateTs" type="bigint" column="shift_state_ts"/>
+    <field name="note" type="text" column="note"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <field name="endedBy" type="text" column="ended_by"/>
+    <field name="lastUpdatedTs" type="bigint" column="last_updated_ts"/>
+    <field name="checkInInterval" type="integer" column="check_in_interval"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

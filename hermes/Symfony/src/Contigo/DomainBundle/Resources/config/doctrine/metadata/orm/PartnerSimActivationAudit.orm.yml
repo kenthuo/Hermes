@@ -1,0 +1,71 @@
+PartnerSimActivationAudit:
+  type: entity
+  table: partner_sim_activation_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    customerId:
+      type: bigint
+      nullable: false
+      column: customer_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    beaconImei:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: beacon_imei
+    simImei:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: sim_imei
+    simOldMin:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: sim_old_min
+    simNewMin:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: sim_new_min
+    simCarrier:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: sim_carrier
+    requestedTs:
+      type: bigint
+      nullable: true
+      column: requested_ts
+    requestedBy:
+      type: bigint
+      nullable: true
+      column: requested_by
+    activatedTs:
+      type: bigint
+      nullable: true
+      column: activated_ts
+    activationType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: activation_type
+    activationStatus:
+      type: text
+      nullable: true
+      column: activation_status
+  lifecycleCallbacks: {  }

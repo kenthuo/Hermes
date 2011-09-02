@@ -1,0 +1,7 @@
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: ContigoGamSolutionBundle:Default:index }
+
+solution:
+    pattern:  /solution/
+    defaults: { _controller: ContigoGamSolutionBundle:Default:index }

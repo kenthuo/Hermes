@@ -1,0 +1,55 @@
+IncidentAudit:
+  type: entity
+  table: incident_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    incidentId:
+      type: bigint
+      nullable: true
+      column: incident_id
+    opUserId:
+      type: bigint
+      nullable: true
+      column: op_user_id
+    status:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    starttimezone:
+      type: float
+      nullable: true
+    startTzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: start_tz_abbrev
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    endtimezone:
+      type: float
+      nullable: true
+    endTzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: end_tz_abbrev
+    passcode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

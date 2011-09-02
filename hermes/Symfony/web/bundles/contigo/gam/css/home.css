@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------
+
+   home.css
+   * Stylesheet of home page
+
+-------------------------------------------------------------- */
+div > a {
+	padding: 5px 5px 5px 5px;
+    background-color:#FFC0CB;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+    display: block;
+}
+
+div > a:link {color: blue;}    /* unvisited link */
+div > a:visited {color: blue;} /* visited link */
+div > a:hover {color: blue; text-decoration: underline;}   /* mouse over link */
+div > a:active {color: blue;}  /* selected link */
+
+div > a {
+	width: 70%;
+	margin: 0 auto; /* centering in parent container */
+}
+
+div > a {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    /* behavior: url(/bundles/contigo/common/css/border-radius.htc); */ /* ie 8- */
+    border-radius: 5px;
+}
+
+div ul {
+    width: 68%;
+    margin: 0 auto; /* centering in parent container */
+}
+
+ul {
+    padding: 1em;  	
+}
+
+ul li {
+	margin: 1em;
+}

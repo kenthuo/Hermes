@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconReplacement" table="beacon_replacement">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="stockId" type="bigint" column="stock_id"/>
+    <field name="startTimestamp" type="bigint" column="start_timestamp"/>
+    <field name="endTimestamp" type="bigint" column="end_timestamp"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <field name="deviceModel" type="string" column="device_model" length="25"/>
+    <field name="fwVersion" type="string" column="fw_version" length="25"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

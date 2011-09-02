@@ -1,0 +1,73 @@
+IncidentPsap:
+  type: entity
+  table: incident_psap
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    incidentId:
+      type: bigint
+      nullable: true
+      column: incident_id
+    opUserId:
+      type: bigint
+      nullable: true
+      column: op_user_id
+    lat:
+      type: decimal
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    psapPrimaryPhone:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+      column: psap_primary_phone
+    psapSecondaryPhone:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+      column: psap_secondary_phone
+    psapName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: psap_name
+    psapCity:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: psap_city
+    psapState:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: psap_state
+    psapZipCode:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+      column: psap_zip_code
+    timestamp:
+      type: bigint
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

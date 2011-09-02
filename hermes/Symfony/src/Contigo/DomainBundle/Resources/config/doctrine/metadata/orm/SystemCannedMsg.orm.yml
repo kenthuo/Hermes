@@ -1,0 +1,34 @@
+SystemCannedMsg:
+  type: entity
+  table: system_canned_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+    subject:
+      type: text
+      nullable: false
+    body:
+      type: text
+      nullable: true
+    paramName:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: param_name
+    paramType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: param_type
+  lifecycleCallbacks: {  }

@@ -1,0 +1,28 @@
+ScheduleAlltime:
+  type: entity
+  table: schedule_alltime
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

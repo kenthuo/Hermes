@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="GarminStock" table="garmin_stock">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="pndEsn" type="string" column="pnd_esn" length="50"/>
+    <field name="modelNumber" type="string" column="model_number" length="10"/>
+    <field name="fmiVersion" type="string" column="fmi_version" length="10"/>
+    <field name="firmwareVersion" type="string" column="firmware_version" length="50"/>
+    <field name="lastLoginTs" type="bigint" column="last_login_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

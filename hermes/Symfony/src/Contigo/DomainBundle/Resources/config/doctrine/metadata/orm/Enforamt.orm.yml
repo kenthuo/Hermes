@@ -1,0 +1,94 @@
+Enforamt:
+  type: entity
+  table: enforamt
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    ip:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    lastLoginTimestamp:
+      type: bigint
+      nullable: true
+      column: last_login_timestamp
+    version:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    rebootOnNoresp:
+      type: boolean
+      nullable: true
+      column: reboot_on_noresp
+    useResetWatchdog:
+      type: boolean
+      nullable: true
+      column: use_reset_watchdog
+    sendResetWatchdogNotif:
+      type: boolean
+      nullable: true
+      column: send_reset_watchdog_notif
+    watchdogResetTimeout:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: watchdog_reset_timeout
+    useGpsqual:
+      type: boolean
+      nullable: true
+      column: use_gpsqual
+    hdop:
+      type: integer
+      unsigned: false
+      nullable: true
+    wakeintvl:
+      type: integer
+      unsigned: false
+      nullable: true
+    waketime:
+      type: integer
+      unsigned: false
+      nullable: true
+    mottrans:
+      type: integer
+      unsigned: false
+      nullable: true
+    vibintvl:
+      type: integer
+      unsigned: false
+      nullable: true
+    lastStartstopIsStart:
+      type: boolean
+      nullable: true
+      column: last_startstop_is_start
+    lastStartstopTs:
+      type: bigint
+      nullable: true
+      column: last_startstop_ts
+    lastAwpIsSetup:
+      type: boolean
+      nullable: true
+      column: last_awp_is_setup
+    lastAwpTs:
+      type: bigint
+      nullable: true
+      column: last_awp_ts
+    debugMode:
+      type: boolean
+      nullable: true
+      column: debug_mode
+  lifecycleCallbacks: {  }

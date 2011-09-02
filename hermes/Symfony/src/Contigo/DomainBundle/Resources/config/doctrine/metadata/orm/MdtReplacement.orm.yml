@@ -1,0 +1,27 @@
+MdtReplacement:
+  type: entity
+  table: mdt_replacement
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    mdtId:
+      type: bigint
+      nullable: false
+      column: mdt_id
+    peripheralStockId:
+      type: bigint
+      nullable: false
+      column: peripheral_stock_id
+    startTs:
+      type: bigint
+      nullable: false
+      column: start_ts
+    endTs:
+      type: bigint
+      nullable: false
+      column: end_ts
+  lifecycleCallbacks: {  }

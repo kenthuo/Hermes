@@ -1,0 +1,32 @@
+SenEvent:
+  type: entity
+  table: sen_event
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    eventIndexId:
+      type: bigint
+      nullable: true
+      column: event_index_id
+    eventId:
+      type: bigint
+      nullable: true
+      column: event_id
+    scenarioName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: scenario_name
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

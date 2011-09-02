@@ -1,0 +1,16 @@
+Manufacturer:
+  type: entity
+  table: manufacturer
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

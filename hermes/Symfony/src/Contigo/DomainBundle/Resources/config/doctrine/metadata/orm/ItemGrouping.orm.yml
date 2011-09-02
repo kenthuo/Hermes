@@ -1,0 +1,40 @@
+ItemGrouping:
+  type: entity
+  table: item_grouping
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+  oneToOne:
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

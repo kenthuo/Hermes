@@ -1,0 +1,23 @@
+DependentIvrCheckin:
+  type: entity
+  table: dependent_ivr_checkin
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    lastMissedChkinTs:
+      type: bigint
+      nullable: true
+      column: last_missed_chkin_ts
+    isCallingOut:
+      type: boolean
+      nullable: true
+      column: is_calling_out
+  lifecycleCallbacks: {  }

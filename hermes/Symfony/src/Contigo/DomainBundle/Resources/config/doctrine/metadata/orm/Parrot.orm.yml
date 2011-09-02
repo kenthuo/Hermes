@@ -1,0 +1,29 @@
+Parrot:
+  type: entity
+  table: parrot
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    ip:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    version:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

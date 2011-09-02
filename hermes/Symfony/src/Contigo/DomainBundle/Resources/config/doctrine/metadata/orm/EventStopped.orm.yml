@@ -1,0 +1,29 @@
+EventStopped:
+  type: entity
+  table: event_stopped
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    locateId:
+      type: bigint
+      nullable: false
+      column: locate_id
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+  lifecycleCallbacks: {  }

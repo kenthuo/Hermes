@@ -1,0 +1,40 @@
+CustomReportPeriod:
+  type: entity
+  table: custom_report_period
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    name:
+      type: string
+      length: 200
+      fixed: false
+      nullable: false
+    description:
+      type: text
+      nullable: true
+    cronStr:
+      type: text
+      nullable: false
+      column: cron_str
+    exclusionRule:
+      type: boolean
+      nullable: false
+      column: exclusion_rule
+    type:
+      type: string
+      length: 200
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

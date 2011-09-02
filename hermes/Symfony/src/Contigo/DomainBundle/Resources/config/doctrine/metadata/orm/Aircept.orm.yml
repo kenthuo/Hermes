@@ -1,0 +1,46 @@
+Aircept:
+  type: entity
+  table: aircept
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    currentState:
+      type: smallint
+      nullable: true
+      column: current_state
+    previousState:
+      type: smallint
+      nullable: true
+      column: previous_state
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    aerisState:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: aeris_state
+    aerisServiceLevel:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: aeris_service_level
+    aerisOptionApproved:
+      type: boolean
+      nullable: true
+      column: aeris_option_approved
+    aerisMinProvisioned:
+      type: boolean
+      nullable: true
+      column: aeris_min_provisioned
+  lifecycleCallbacks: {  }

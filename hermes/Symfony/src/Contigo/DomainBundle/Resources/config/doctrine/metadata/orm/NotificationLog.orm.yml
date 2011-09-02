@@ -1,0 +1,37 @@
+NotificationLog:
+  type: entity
+  table: notification_log
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    addressee:
+      type: text
+      nullable: false
+    subject:
+      type: string
+      length: 300
+      fixed: false
+      nullable: false
+    body:
+      type: string
+      length: 2000
+      fixed: false
+      nullable: false
+    timestamp:
+      type: bigint
+      nullable: true
+  oneToOne:
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

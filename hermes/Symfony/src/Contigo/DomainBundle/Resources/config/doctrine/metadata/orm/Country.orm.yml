@@ -1,0 +1,22 @@
+Country:
+  type: entity
+  table: country
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    abbreviation:
+      type: string
+      length: null
+      fixed: true
+      nullable: false
+  lifecycleCallbacks: {  }

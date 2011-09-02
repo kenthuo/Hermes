@@ -1,0 +1,38 @@
+DepartmentMdt:
+  type: entity
+  table: department_mdt
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    mdt:
+      targetEntity: Mdt
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        mdt_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    department:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventIvrCheckIn" table="event_ivr_check_in">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="checkInType" type="string" column="check_in_type" length="50"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="dependentId" type="bigint" column="dependent_id"/>
+    <field name="eventTimestamp" type="bigint" column="event_timestamp"/>
+    <field name="locateId" type="bigint" column="locate_id"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="voiceNoteId" type="bigint" column="voice_note_id"/>
+    <field name="checkInInterval" type="integer" column="check_in_interval"/>
+    <field name="adminNote" type="text" column="admin_note"/>
+    <field name="senId" type="bigint" column="sen_id"/>
+    <field name="scenarioName" type="string" column="scenario_name" length="100"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

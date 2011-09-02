@@ -1,0 +1,67 @@
+BeaconServicePlanHistory:
+  type: entity
+  table: beacon_service_plan_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    oldPlanId:
+      type: bigint
+      nullable: true
+      column: old_plan_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    canNotifyStation:
+      type: boolean
+      nullable: true
+      column: can_notify_station
+    mexicoRoamingStartTs:
+      type: bigint
+      nullable: true
+      column: mexico_roaming_start_ts
+    contractExpiry:
+      type: bigint
+      nullable: true
+      column: contract_expiry
+    status:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

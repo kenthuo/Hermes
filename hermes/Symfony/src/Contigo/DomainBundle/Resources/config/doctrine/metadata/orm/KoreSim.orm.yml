@@ -1,0 +1,25 @@
+KoreSim:
+  type: entity
+  table: kore_sim
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    imei:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    min:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    provisionedDate:
+      type: bigint
+      nullable: true
+      column: provisioned_date
+  lifecycleCallbacks: {  }

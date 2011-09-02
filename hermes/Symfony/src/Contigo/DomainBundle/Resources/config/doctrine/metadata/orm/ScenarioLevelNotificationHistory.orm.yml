@@ -1,0 +1,31 @@
+ScenarioLevelNotificationHistory:
+  type: entity
+  table: scenario_level_notification_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scenarioId:
+      type: bigint
+      nullable: true
+      column: scenario_id
+    actionIndexId:
+      type: bigint
+      nullable: true
+      column: action_index_id
+    actionId:
+      type: bigint
+      nullable: true
+      column: action_id
+    introTs:
+      type: bigint
+      nullable: true
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: true
+      column: retire_ts
+  lifecycleCallbacks: {  }

@@ -1,0 +1,40 @@
+ActionSpotCheckIn:
+  type: entity
+  table: action_spot_check_in
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    timerEnabled:
+      type: boolean
+      nullable: true
+      column: timer_enabled
+    unit:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    frequency:
+      type: integer
+      unsigned: false
+      nullable: true
+  lifecycleCallbacks: {  }

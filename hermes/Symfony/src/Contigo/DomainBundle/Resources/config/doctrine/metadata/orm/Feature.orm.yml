@@ -1,0 +1,61 @@
+Feature:
+  type: entity
+  table: feature
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    maxAllowed:
+      type: smallint
+      nullable: true
+      column: max_allowed
+    ioType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: io_type
+    ioPortNum:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: io_port_num
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+    isVisibleCp:
+      type: boolean
+      nullable: true
+      column: is_visible_cp
+    isVisibleRp:
+      type: boolean
+      nullable: true
+      column: is_visible_rp
+    minTrkInterval:
+      type: smallint
+      nullable: false
+      column: min_trk_interval
+  oneToOne:
+    actionIndex:
+      targetEntity: ActionIndex
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        action_index_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    beaconmodel:
+      targetEntity: Beaconmodel
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beaconmodel_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,103 @@
+CurrentDriverState:
+  type: entity
+  table: current_driver_state
+  fields:
+    driverId:
+      id: true
+      type: bigint
+      nullable: false
+      column: driver_id
+      generator:
+        strategy: SEQUENCE
+    mdtEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: mdt_esn
+    mdtTimestamp:
+      type: bigint
+      nullable: true
+      column: mdt_timestamp
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    status:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    direction:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    altitude:
+      type: float
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    isValidFix:
+      type: boolean
+      nullable: true
+      column: is_valid_fix
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: zip_code
+    mdtTsRaw:
+      type: string
+      length: 12
+      fixed: false
+      nullable: true
+      column: mdt_ts_raw
+  lifecycleCallbacks: {  }

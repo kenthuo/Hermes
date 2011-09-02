@@ -1,0 +1,45 @@
+SubscriberModuleHistory:
+  type: entity
+  table: subscriber_module_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: false
+      column: subscriber_id
+    moduleId:
+      type: bigint
+      nullable: false
+      column: module_id
+    isVisible:
+      type: boolean
+      nullable: false
+      column: is_visible
+    isConfigurable:
+      type: boolean
+      nullable: false
+      column: is_configurable
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: false
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

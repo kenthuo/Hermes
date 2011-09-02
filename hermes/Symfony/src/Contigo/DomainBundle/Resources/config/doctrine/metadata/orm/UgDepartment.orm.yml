@@ -1,0 +1,38 @@
+UgDepartment:
+  type: entity
+  table: ug_department
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    usergp:
+      targetEntity: Usergp
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        usergp_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    department:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

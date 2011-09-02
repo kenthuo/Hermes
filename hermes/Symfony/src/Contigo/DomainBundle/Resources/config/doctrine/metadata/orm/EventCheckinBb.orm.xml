@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventCheckinBb" table="event_checkin_bb">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="locateId" type="bigint" column="locate_id"/>
+    <field name="duration" type="bigint" column="duration"/>
+    <field name="isCheckin" type="boolean" column="is_checkin"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="checkinAddr" type="string" column="checkin_addr" length="200"/>
+    <field name="checkinNote" type="text" column="checkin_note"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

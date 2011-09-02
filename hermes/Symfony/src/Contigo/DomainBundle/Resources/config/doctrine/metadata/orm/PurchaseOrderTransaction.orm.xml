@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PurchaseOrderTransaction" table="purchase_order_transaction">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="ponum" type="bigint" column="ponum"/>
+    <field name="customerId" type="bigint" column="customer_id"/>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="billingName" type="string" column="billing_name" length="100"/>
+    <field name="ccProvider" type="string" column="cc_provider" length="20"/>
+    <field name="amount" type="float" column="amount"/>
+    <field name="comment1" type="string" column="comment1" length="255"/>
+    <field name="comment2" type="string" column="comment2" length="255"/>
+    <field name="transactionId" type="string" column="transaction_id" length="12"/>
+    <field name="transactionType" type="string" column="transaction_type" length="20"/>
+    <field name="description" type="string" column="description" length="255"/>
+    <field name="operator" type="string" column="operator" length="255"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

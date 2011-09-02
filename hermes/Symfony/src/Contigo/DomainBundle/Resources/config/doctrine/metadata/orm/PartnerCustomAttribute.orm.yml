@@ -1,0 +1,68 @@
+PartnerCustomAttribute:
+  type: entity
+  table: partner_custom_attribute
+  fields:
+    partnerId:
+      id: true
+      type: bigint
+      nullable: false
+      column: partner_id
+      generator:
+        strategy: SEQUENCE
+    externalWww:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: external_www
+    welcomeEmail:
+      type: boolean
+      nullable: false
+      column: welcome_email
+    termOfService:
+      type: boolean
+      nullable: false
+      column: term_of_service
+    supportNo:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: support_no
+    htmlPageTitle:
+      type: string
+      length: 200
+      fixed: false
+      nullable: true
+      column: html_page_title
+    ivrDefaultMinCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: ivr_default_min_checkin_interval
+    ivrDefaultMaxCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: ivr_default_max_checkin_interval
+    ivrAbsMinCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: ivr_abs_min_checkin_interval
+    ivrAbsMaxCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: ivr_abs_max_checkin_interval
+  oneToOne:
+    partner:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        partner_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

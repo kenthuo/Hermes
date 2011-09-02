@@ -1,0 +1,32 @@
+ActionEvent:
+  type: entity
+  table: action_event
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    actionIndexId:
+      type: bigint
+      nullable: false
+      column: action_index_id
+    eventIndexId:
+      type: bigint
+      nullable: false
+      column: event_index_id
+    description:
+      type: text
+      nullable: true
+    isVisibleEvent:
+      type: boolean
+      nullable: true
+      column: is_visible_event
+    propertyKey:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: property_key
+  lifecycleCallbacks: {  }

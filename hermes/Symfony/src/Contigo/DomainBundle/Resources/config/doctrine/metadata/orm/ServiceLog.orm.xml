@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ServiceLog" table="service_log">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="vapId" type="bigint" column="vap_id"/>
+    <field name="serviceTypeId" type="bigint" column="service_type_id"/>
+    <field name="odometer" type="integer" column="odometer"/>
+    <field name="serviceTimestamp" type="bigint" column="service_timestamp"/>
+    <field name="comments" type="text" column="comments"/>
+    <field name="engineHours" type="bigint" column="engine_hours"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

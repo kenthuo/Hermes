@@ -1,0 +1,35 @@
+ConflictFeature:
+  type: entity
+  table: conflict_feature
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    maxTimeConflict:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: max_time_conflict
+  oneToOne:
+    feature2:
+      targetEntity: Feature
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        feature_id_2:
+          referencedColumnName: id
+      orphanRemoval: false
+    feature1:
+      targetEntity: Feature
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        feature_id_1:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

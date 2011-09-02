@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconRegistration" table="beacon_registration">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="regDate" type="bigint" column="reg_date"/>
+    <field name="unregDate" type="bigint" column="unreg_date"/>
+    <field name="billingDate" type="bigint" column="billing_date"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

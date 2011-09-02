@@ -1,0 +1,120 @@
+DrvPndDriverCurStatus:
+  type: entity
+  table: drv_pnd_driver_cur_status
+  fields:
+    guardianId:
+      id: true
+      type: bigint
+      nullable: false
+      column: guardian_id
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: pnd_esn
+    driverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: true
+      column: driver_id
+    drvStatusId:
+      type: smallint
+      nullable: true
+      column: drv_status_id
+    drvStatus:
+      type: string
+      length: 49
+      fixed: false
+      nullable: false
+      column: drv_status
+    drvStatusTs:
+      type: bigint
+      nullable: true
+      column: drv_status_ts
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    direction:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    altitude:
+      type: float
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    isValidFix:
+      type: boolean
+      nullable: true
+      column: is_valid_fix
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: zip_code
+  lifecycleCallbacks: {  }

@@ -1,0 +1,40 @@
+SvcFeature:
+  type: entity
+  table: svc_feature
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scenarioParameter:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_parameter
+    maxTimeConflict:
+      type: smallint
+      nullable: false
+      column: max_time_conflict
+  oneToOne:
+    plan:
+      targetEntity: Plan
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        plan_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    feature:
+      targetEntity: Feature
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        feature_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

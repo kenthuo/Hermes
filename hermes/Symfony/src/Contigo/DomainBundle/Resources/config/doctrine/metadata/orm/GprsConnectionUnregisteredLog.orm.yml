@@ -1,0 +1,19 @@
+GprsConnectionUnregisteredLog:
+  type: entity
+  table: gprs_connection_unregistered_log
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    esn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: false
+  lifecycleCallbacks: {  }

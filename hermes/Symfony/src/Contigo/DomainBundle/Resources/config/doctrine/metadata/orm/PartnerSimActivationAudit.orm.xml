@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PartnerSimActivationAudit" table="partner_sim_activation_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="customerId" type="bigint" column="customer_id"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="beaconImei" type="string" column="beacon_imei" length="50"/>
+    <field name="simImei" type="string" column="sim_imei" length="50"/>
+    <field name="simOldMin" type="string" column="sim_old_min" length="25"/>
+    <field name="simNewMin" type="string" column="sim_new_min" length="25"/>
+    <field name="simCarrier" type="string" column="sim_carrier" length="50"/>
+    <field name="requestedTs" type="bigint" column="requested_ts"/>
+    <field name="requestedBy" type="bigint" column="requested_by"/>
+    <field name="activatedTs" type="bigint" column="activated_ts"/>
+    <field name="activationType" type="string" column="activation_type" length="50"/>
+    <field name="activationStatus" type="text" column="activation_status"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

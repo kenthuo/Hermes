@@ -1,0 +1,42 @@
+EventTamperDetectorAccessory:
+  type: entity
+  table: event_tamper_detector_accessory
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    networkTimestamp:
+      type: bigint
+      nullable: false
+      column: network_timestamp
+    wasOpen:
+      type: boolean
+      nullable: true
+      column: was_open
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+  lifecycleCallbacks: {  }

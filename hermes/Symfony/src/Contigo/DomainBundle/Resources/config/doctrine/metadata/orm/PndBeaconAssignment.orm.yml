@@ -1,0 +1,108 @@
+PndBeaconAssignment:
+  type: entity
+  table: pnd_beacon_assignment
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    pndConnected:
+      type: boolean
+      nullable: false
+      column: pnd_connected
+    currPndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: curr_pnd_esn
+    currPndFmi:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: curr_pnd_fmi
+    currGarminProdId:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: curr_garmin_prod_id
+    currDeviceFmi:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: curr_device_fmi
+    rcvdTs:
+      type: bigint
+      nullable: true
+      column: rcvd_ts
+    lastPndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: last_pnd_esn
+    lastPndFmi:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: last_pnd_fmi
+    lastGarminProdId:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: last_garmin_prod_id
+    lastDeviceFmi:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: last_device_fmi
+    lastRcvdTs:
+      type: bigint
+      nullable: true
+      column: last_rcvd_ts
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    guardianId:
+      type: bigint
+      nullable: true
+      column: guardian_id
+    pndDriverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: true
+      column: pnd_driver_id
+    lastGuardianId:
+      type: bigint
+      nullable: true
+      column: last_guardian_id
+    lastPndDriverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: true
+      column: last_pnd_driver_id
+    isLoginValid:
+      type: boolean
+      nullable: true
+      column: is_login_valid
+  lifecycleCallbacks: {  }

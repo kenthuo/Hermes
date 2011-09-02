@@ -1,0 +1,19 @@
+SteppPowerResetLog:
+  type: entity
+  table: stepp_power_reset_log
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+  lifecycleCallbacks: {  }

@@ -1,0 +1,31 @@
+ScenarioContactHistory:
+  type: entity
+  table: scenario_contact_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scenarioId:
+      type: bigint
+      nullable: true
+      column: scenario_id
+    phoneId:
+      type: bigint
+      nullable: true
+      column: phone_id
+    emailId:
+      type: bigint
+      nullable: true
+      column: email_id
+    introTs:
+      type: bigint
+      nullable: true
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: true
+      column: retire_ts
+  lifecycleCallbacks: {  }

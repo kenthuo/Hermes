@@ -1,0 +1,24 @@
+UgPermissionHistory:
+  type: entity
+  table: ug_permission_history
+  fields:
+    usergpId:
+      id: true
+      type: bigint
+      nullable: false
+      column: usergp_id
+    permissionId:
+      id: true
+      type: bigint
+      nullable: false
+      column: permission_id
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  lifecycleCallbacks: {  }

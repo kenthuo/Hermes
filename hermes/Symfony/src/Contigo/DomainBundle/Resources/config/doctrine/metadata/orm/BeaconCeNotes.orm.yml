@@ -1,0 +1,21 @@
+BeaconCeNotes:
+  type: entity
+  table: beacon_ce_notes
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    notes:
+      type: text
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

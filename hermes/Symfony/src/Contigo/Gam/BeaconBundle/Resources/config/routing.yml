@@ -1,0 +1,25 @@
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: ContigoGamBeaconBundle:Default:index }
+
+beacon:
+    pattern:  /beacon/
+    defaults: { _controller: ContigoGamBeaconBundle:Default:index }
+    
+location_list:
+    pattern:  /beacon/locations/
+    defaults: { _controller: ContigoGamBeaconBundle:Location:index }
+    
+location_add:
+    pattern:  /beacon/location/add/
+    defaults: { _controller: ContigoGamBeaconBundle:Location:add }
+    
+location_update:
+    pattern:  /beacon/location/update/{id}
+    defaults: { _controller: ContigoGamBeaconBundle:Location:update }  
+    requirements:
+        id: \d+ 
+        
+location_delete:
+    pattern:  /beacon/location/delete/
+    defaults: { _controller: ContigoGamBeaconBundle:Location:delete }    

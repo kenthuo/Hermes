@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconNote" table="beacon_note">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="dependentId" type="bigint" column="dependent_id"/>
+    <field name="itemName" type="string" column="item_name" length="100"/>
+    <field name="registeredTo" type="string" column="registered_to" length="255"/>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="noteType" type="string" column="note_type" length="30"/>
+    <field name="note" type="text" column="note"/>
+    <field name="regTs" type="bigint" column="reg_ts"/>
+    <field name="unregTs" type="bigint" column="unreg_ts"/>
+    <field name="installTs" type="bigint" column="install_ts"/>
+    <field name="noteCreateTs" type="bigint" column="note_create_ts"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

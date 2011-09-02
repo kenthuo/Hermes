@@ -1,0 +1,50 @@
+ActionStartstop:
+  type: entity
+  table: action_startstop
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    stopDuration:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: stop_duration
+    startDuration:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: start_duration
+    speed:
+      type: decimal
+      nullable: true
+    speedUnit:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: speed_unit
+    useAdvancedFeatures:
+      type: boolean
+      nullable: true
+      column: use_advanced_features
+  lifecycleCallbacks: {  }

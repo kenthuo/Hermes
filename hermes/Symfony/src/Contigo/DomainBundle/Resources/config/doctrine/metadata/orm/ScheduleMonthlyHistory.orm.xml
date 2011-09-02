@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ScheduleMonthlyHistory" table="schedule_monthly_history">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="scheduleId" type="bigint" column="schedule_id"/>
+    <field name="startTimestamp" type="bigint" column="start_timestamp"/>
+    <field name="endTimestamp" type="bigint" column="end_timestamp"/>
+    <field name="dayOfMonth" type="smallint" column="day_of_month"/>
+    <field name="weekOfMonth" type="smallint" column="week_of_month"/>
+    <field name="dayOfWeek" type="smallint" column="day_of_week"/>
+    <field name="everyXMonths" type="smallint" column="every_x_months"/>
+    <field name="xOccurrences" type="smallint" column="x_occurrences"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <field name="xid" type="bigint" column="xid"/>
+    <field name="isDeleted" type="boolean" column="is_deleted"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

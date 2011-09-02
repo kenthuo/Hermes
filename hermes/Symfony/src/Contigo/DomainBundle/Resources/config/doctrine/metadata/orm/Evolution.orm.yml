@@ -1,0 +1,25 @@
+Evolution:
+  type: entity
+  table: evolution
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    beaconConfiguration:
+      type: string
+      length: 1000
+      fixed: false
+      nullable: true
+      column: beacon_configuration
+  lifecycleCallbacks: {  }

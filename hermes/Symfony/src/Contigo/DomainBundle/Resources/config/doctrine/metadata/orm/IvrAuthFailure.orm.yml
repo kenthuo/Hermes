@@ -1,0 +1,46 @@
+IvrAuthFailure:
+  type: entity
+  table: ivr_auth_failure
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    eventTimestamp:
+      type: bigint
+      nullable: false
+      column: event_timestamp
+    phoneNoAttempted:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: phone_no_attempted
+    pinAttempted:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: pin_attempted
+    callerClid:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: caller_clid
+    ivrDialInNo:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: ivr_dial_in_no
+    customerId:
+      type: bigint
+      nullable: true
+      column: customer_id
+    status:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

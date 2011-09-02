@@ -1,0 +1,41 @@
+Stepp2:
+  type: entity
+  table: stepp2
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    ip:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    lastLoginTimestamp:
+      type: bigint
+      nullable: true
+      column: last_login_timestamp
+    version:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    useHistory:
+      type: boolean
+      nullable: true
+      column: use_history
+    toBeReplaced:
+      type: boolean
+      nullable: true
+      column: to_be_replaced
+  lifecycleCallbacks: {  }

@@ -1,0 +1,34 @@
+AlarmQueue:
+  type: entity
+  table: alarm_queue
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    event:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    emailNotification:
+      type: text
+      nullable: true
+      column: email_notification
+    smsNotification:
+      type: text
+      nullable: true
+      column: sms_notification
+  oneToOne:
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

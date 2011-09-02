@@ -1,0 +1,33 @@
+ScenarioSchemeHistory:
+  type: entity
+  table: scenario_scheme_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scenarioId:
+      type: bigint
+      nullable: true
+      column: scenario_id
+    notificationSchemeId:
+      type: bigint
+      nullable: true
+      column: notification_scheme_id
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,33 @@
+MakeMdtModel:
+  type: entity
+  table: make_mdt_model
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    makeId:
+      type: bigint
+      nullable: false
+      column: make_id
+    createdTs:
+      type: bigint
+      nullable: false
+      column: created_ts
+    deletedTs:
+      type: bigint
+      nullable: false
+      column: deleted_ts
+  oneToOne:
+    mdtModel:
+      targetEntity: MdtModel
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        mdt_model_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

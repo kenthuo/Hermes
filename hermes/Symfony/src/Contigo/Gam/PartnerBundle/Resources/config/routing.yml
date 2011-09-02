@@ -1,0 +1,7 @@
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: ContigoGamPartnerBundle:Default:index }
+
+partner:
+    pattern:  /partner/
+    defaults: { _controller: ContigoGamPartnerBundle:Default:index }

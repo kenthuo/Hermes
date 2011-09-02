@@ -1,0 +1,39 @@
+ActionSendumStatus:
+  type: entity
+  table: action_sendum_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    period:
+      type: integer
+      unsigned: false
+      nullable: true
+    statusNotification:
+      type: boolean
+      nullable: true
+      column: status_notification
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="TestSlave" table="test_slave">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="defaultGuardianId" type="bigint" column="default_guardian_id"/>
+    <field name="title" type="string" column="title" length="20"/>
+    <field name="firstName" type="string" column="first_name" length="255"/>
+    <field name="initial" type="string" column="initial" length="10"/>
+    <field name="lastName" type="string" column="last_name" length="255"/>
+    <field name="suffix" type="string" column="suffix" length="20"/>
+    <field name="streetAddr" type="string" column="street_addr" length="255"/>
+    <field name="city" type="string" column="city" length="255"/>
+    <field name="state" type="string" column="state" length="255"/>
+    <field name="country" type="string" column="country" length="255"/>
+    <field name="zipCode" type="string" column="zip_code" length="50"/>
+    <field name="status" type="string" column="status" length="20"/>
+    <field name="bldgNum" type="string" column="bldg_num" length="10"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="daylightSaving" type="boolean" column="daylight_saving"/>
+    <field name="csNumber" type="string" column="cs_number" length="20"/>
+    <field name="startupTutorial" type="boolean" column="startup_tutorial"/>
+    <many-to-one field="testMaster" target-entity="TestMaster" orphan-removal="">
+      <join-columns>
+        <join-column name="test_master_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

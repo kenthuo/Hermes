@@ -1,0 +1,31 @@
+HomePageTemplate:
+  type: entity
+  table: home_page_template
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 30
+      fixed: false
+      nullable: false
+    filename:
+      type: string
+      length: 15
+      fixed: false
+      nullable: false
+  oneToOne:
+    appln:
+      targetEntity: Appln
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        appln_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

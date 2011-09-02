@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Reports" table="reports">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="description" type="text" column="description"/>
+    <field name="shortName" type="string" column="short_name" length="25"/>
+    <field name="fileName" type="string" column="file_name" length="25"/>
+    <field name="module" type="string" column="module" length="25"/>
+    <field name="modulePriority" type="integer" column="module_priority"/>
+    <field name="priority" type="integer" column="priority"/>
+    <field name="type" type="string" column="type" length="10"/>
+    <field name="applnId" type="bigint" column="appln_id"/>
+    <field name="propertyKey" type="string" column="property_key" length="255"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,42 @@
+DepartmentNg:
+  type: entity
+  table: department_ng
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    isSharable:
+      type: boolean
+      nullable: false
+      column: is_sharable
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    notificationScheme:
+      targetEntity: NotificationScheme
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        notification_scheme_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    department:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

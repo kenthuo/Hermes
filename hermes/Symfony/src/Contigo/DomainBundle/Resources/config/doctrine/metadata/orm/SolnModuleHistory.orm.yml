@@ -1,0 +1,47 @@
+SolnModuleHistory:
+  type: entity
+  table: soln_module_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    solutionId:
+      type: bigint
+      nullable: false
+      column: solution_id
+    moduleId:
+      type: bigint
+      nullable: false
+      column: module_id
+    nameInSoln:
+      type: string
+      length: 40
+      fixed: false
+      nullable: true
+      column: name_in_soln
+    isMandatory:
+      type: boolean
+      nullable: false
+      column: is_mandatory
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: false
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

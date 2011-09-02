@@ -1,0 +1,155 @@
+PlanHistory:
+  type: entity
+  table: plan_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    monthlyFee:
+      type: float
+      nullable: true
+      column: monthly_fee
+    currency:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    usageAmount:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: usage_amount
+    overagePlan:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: overage_plan
+    pricePerOverageUnit:
+      type: float
+      nullable: true
+      column: price_per_overage_unit
+    pricePerOverageBucket:
+      type: float
+      nullable: true
+      column: price_per_overage_bucket
+    usageAmountPerOverageBucket:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: usage_amount_per_overage_bucket
+    comments:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    maxSen:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: max_sen
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    type:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    usageUnit:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: usage_unit
+    dataPolicy:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: data_policy
+    visibility:
+      type: boolean
+      nullable: true
+    showNotifyStation:
+      type: boolean
+      nullable: true
+      column: show_notify_station
+    showMessaging:
+      type: boolean
+      nullable: true
+      column: show_messaging
+    availableCp:
+      type: boolean
+      nullable: true
+      column: available_cp
+    availableRp:
+      type: boolean
+      nullable: true
+      column: available_rp
+    annualFee:
+      type: float
+      nullable: true
+      column: annual_fee
+    showMexicoRoaming:
+      type: boolean
+      nullable: true
+      column: show_mexico_roaming
+    annualCostMexicoRoaming:
+      type: float
+      nullable: true
+      column: annual_cost_mexico_roaming
+    monthlyCostMexicoRoaming:
+      type: float
+      nullable: true
+      column: monthly_cost_mexico_roaming
+    showPndDispatch:
+      type: boolean
+      nullable: false
+      column: show_pnd_dispatch
+    monthlyCostPndDispatch:
+      type: float
+      nullable: true
+      column: monthly_cost_pnd_dispatch
+    showIvr:
+      type: boolean
+      nullable: false
+      column: show_ivr
+    isPayPerUse:
+      type: boolean
+      nullable: true
+      column: is_pay_per_use
+    banType:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: ban_type
+    isBulkIvrUse:
+      type: boolean
+      nullable: true
+      column: is_bulk_ivr_use
+  lifecycleCallbacks: {  }

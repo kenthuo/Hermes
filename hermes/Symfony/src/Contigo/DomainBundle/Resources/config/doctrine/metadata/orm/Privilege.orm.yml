@@ -1,0 +1,37 @@
+Privilege:
+  type: entity
+  table: privilege
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    wUser:
+      type: boolean
+      nullable: true
+      column: w_user
+    rUser:
+      type: boolean
+      nullable: true
+      column: r_user
+    wLogin:
+      type: boolean
+      nullable: true
+      column: w_login
+    rLogin:
+      type: boolean
+      nullable: true
+      column: r_login
+  lifecycleCallbacks: {  }

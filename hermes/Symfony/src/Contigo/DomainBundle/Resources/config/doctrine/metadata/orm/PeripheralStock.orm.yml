@@ -1,0 +1,48 @@
+PeripheralStock:
+  type: entity
+  table: peripheral_stock
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    makeId:
+      type: bigint
+      nullable: true
+      column: make_id
+    locationId:
+      type: bigint
+      nullable: true
+      column: location_id
+    esn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    receivedDate:
+      type: date
+      nullable: true
+      column: received_date
+    gmmsCost:
+      type: float
+      nullable: true
+      column: gmms_cost
+    gmmsCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: gmms_cost_currency
+    p2pCost:
+      type: float
+      nullable: true
+      column: p2p_cost
+    p2pCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: p2p_cost_currency
+  lifecycleCallbacks: {  }

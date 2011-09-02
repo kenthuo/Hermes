@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventIvrEscalate" table="event_ivr_escalate">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="eventIvrCheckInId" type="bigint" column="event_ivr_check_in_id"/>
+    <field name="missedChkInTs" type="bigint" column="missed_chk_in_ts"/>
+    <field name="eventTimestamp" type="bigint" column="event_timestamp"/>
+    <field name="phoneId" type="bigint" column="phone_id"/>
+    <field name="phoneNo" type="string" column="phone_no" length="50"/>
+    <field name="contactName" type="string" column="contact_name" length="50"/>
+    <field name="callResult" type="string" column="call_result" length="10"/>
+    <field name="locateId" type="bigint" column="locate_id"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="contactType" type="string" column="contact_type" length="10"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

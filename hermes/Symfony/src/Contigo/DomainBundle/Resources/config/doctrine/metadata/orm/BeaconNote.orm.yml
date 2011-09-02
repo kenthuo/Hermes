@@ -1,0 +1,72 @@
+BeaconNote:
+  type: entity
+  table: beacon_note
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    itemName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: item_name
+    registeredTo:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: registered_to
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    noteType:
+      type: string
+      length: 30
+      fixed: false
+      nullable: false
+      column: note_type
+    note:
+      type: text
+      nullable: true
+    regTs:
+      type: bigint
+      nullable: true
+      column: reg_ts
+    unregTs:
+      type: bigint
+      nullable: true
+      column: unreg_ts
+    installTs:
+      type: bigint
+      nullable: true
+      column: install_ts
+    noteCreateTs:
+      type: bigint
+      nullable: true
+      column: note_create_ts
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

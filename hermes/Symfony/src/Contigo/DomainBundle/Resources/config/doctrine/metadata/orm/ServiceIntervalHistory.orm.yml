@@ -1,0 +1,47 @@
+ServiceIntervalHistory:
+  type: entity
+  table: service_interval_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    unit:
+      type: integer
+      unsigned: false
+      nullable: true
+    unitOfMeasurement:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: unit_of_measurement
+    maintenanceId:
+      type: bigint
+      nullable: true
+      column: maintenance_id
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

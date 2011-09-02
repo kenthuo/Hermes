@@ -1,0 +1,42 @@
+ScheduleWeekly:
+  type: entity
+  table: schedule_weekly
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    weekdayList:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+      column: weekday_list
+    xOccurrences:
+      type: smallint
+      nullable: true
+      column: x_occurrences
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

@@ -1,0 +1,41 @@
+News:
+  type: entity
+  table: news
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    headline:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    content:
+      type: text
+      nullable: true
+    url:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+  oneToOne:
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+PeripheralStockStateHistory:
+  type: entity
+  table: peripheral_stock_state_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    peripheralStockId:
+      type: bigint
+      nullable: false
+      column: peripheral_stock_id
+    peripheralStateId:
+      type: bigint
+      nullable: false
+      column: peripheral_state_id
+    peripheralStateName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: peripheral_state_name
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ActionZoneCircle" table="action_zone_circle">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="centerLat" type="decimal" column="center_lat"/>
+    <field name="centerLon" type="decimal" column="center_lon"/>
+    <field name="radiusMeters" type="integer" column="radius_meters"/>
+    <field name="boundary" type="string" column="boundary" length="20"/>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="description" type="text" column="description"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

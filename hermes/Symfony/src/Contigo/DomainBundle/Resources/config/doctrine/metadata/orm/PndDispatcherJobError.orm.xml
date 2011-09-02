@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PndDispatcherJobError" table="pnd_dispatcher_job_error">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="pndDispatcherJobId" type="bigint" column="pnd_dispatcher_job_id"/>
+    <field name="errorCode" type="string" column="error_code" length="100"/>
+    <field name="errorMsg" type="text" column="error_msg"/>
+    <field name="rcvdTs" type="bigint" column="rcvd_ts"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="5"/>
+    <field name="pndJobAuditId" type="bigint" column="pnd_job_audit_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

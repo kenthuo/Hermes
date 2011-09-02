@@ -1,0 +1,53 @@
+BeaconInventoryAudit:
+  type: entity
+  table: beacon_inventory_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    esn:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    serialNumber:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: serial_number
+    ownerCustomerId:
+      type: bigint
+      nullable: true
+      column: owner_customer_id
+    gmmsCost:
+      type: float
+      nullable: true
+      column: gmms_cost
+    gmmsCostCurrency:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: gmms_cost_currency
+    p2pCost:
+      type: float
+      nullable: true
+      column: p2p_cost
+    p2pCostCurrency:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: p2p_cost_currency
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

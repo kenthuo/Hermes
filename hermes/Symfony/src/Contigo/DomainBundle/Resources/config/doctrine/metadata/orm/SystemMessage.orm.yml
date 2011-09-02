@@ -1,0 +1,31 @@
+SystemMessage:
+  type: entity
+  table: system_message
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    notice:
+      type: text
+      nullable: true
+    status:
+      type: text
+      nullable: true
+    maintenance:
+      type: text
+      nullable: true
+    name:
+      type: text
+      nullable: true
+    createTs:
+      type: bigint
+      nullable: true
+      column: create_ts
+    isActive:
+      type: boolean
+      nullable: true
+      column: is_active
+  lifecycleCallbacks: {  }

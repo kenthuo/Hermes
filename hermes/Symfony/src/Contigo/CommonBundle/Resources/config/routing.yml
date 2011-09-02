@@ -1,0 +1,9 @@
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: ContigoGamBeaconBundle:Default:index }
+
+picture:
+    pattern:  /picture/{id}
+    defaults: { _controller: ContigoCommonBundle:Picture:index }
+    requirements:
+        id: \d+  

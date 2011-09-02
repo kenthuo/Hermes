@@ -1,0 +1,32 @@
+Spot:
+  type: entity
+  table: spot
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    version:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    phoneNumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: phone_number
+  oneToOne:
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

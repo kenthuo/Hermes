@@ -1,0 +1,43 @@
+BeaconReplacement:
+  type: entity
+  table: beacon_replacement
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    stockId:
+      type: bigint
+      nullable: true
+      column: stock_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    deviceModel:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: device_model
+    fwVersion:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: fw_version
+  lifecycleCallbacks: {  }

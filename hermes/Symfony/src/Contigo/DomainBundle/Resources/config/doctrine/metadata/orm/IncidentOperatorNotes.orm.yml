@@ -1,0 +1,34 @@
+IncidentOperatorNotes:
+  type: entity
+  table: incident_operator_notes
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    incidentId:
+      type: bigint
+      nullable: true
+      column: incident_id
+    opUserId:
+      type: bigint
+      nullable: true
+      column: op_user_id
+    notes:
+      type: text
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

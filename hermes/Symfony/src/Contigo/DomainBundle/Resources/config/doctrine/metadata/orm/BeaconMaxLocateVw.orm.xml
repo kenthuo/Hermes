@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconMaxLocateVw" table="beacon_max_locate_vw">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="beaconId" type="bigint" column="beacon_id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="locateId" type="bigint" column="locate_id"/>
+    <field name="lastInTcpAudit" type="bigint" column="last_in_tcp_audit"/>
+    <field name="lastInSmsAudit" type="bigint" column="last_in_sms_audit"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="dependentId" type="bigint" column="dependent_id"/>
+    <field name="planId" type="bigint" column="plan_id"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="direction" type="string" column="direction" length="100"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="altitude" type="float" column="altitude"/>
+    <field name="speed" type="float" column="speed"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <field name="isValidFix" type="boolean" column="is_valid_fix"/>
+    <field name="gpsAge" type="integer" column="gps_age"/>
+    <field name="lastActivityTimestamp" type="bigint" column="last_activity_timestamp"/>
+    <field name="lastInUdpAudit" type="bigint" column="last_in_udp_audit"/>
+    <field name="signalQuality" type="integer" column="signal_quality"/>
+    <field name="gpsSats" type="integer" column="gps_sats"/>
+    <field name="lockedGpsCounter" type="bigint" column="locked_gps_counter"/>
+    <field name="isAsleep" type="boolean" column="is_asleep"/>
+    <field name="lastAsleepTimestamp" type="bigint" column="last_asleep_timestamp"/>
+    <field name="accuracy" type="integer" column="accuracy"/>
+    <field name="battLevel" type="integer" column="batt_level"/>
+    <field name="address" type="text" column="address"/>
+    <field name="streetAddr" type="string" column="street_addr" length="255"/>
+    <field name="city" type="string" column="city" length="70"/>
+    <field name="county" type="string" column="county" length="50"/>
+    <field name="state" type="string" column="state" length="25"/>
+    <field name="country" type="string" column="country" length="25"/>
+    <field name="zipCode" type="string" column="zip_code" length="10"/>
+    <field name="eventIndexId" type="bigint" column="event_index_id"/>
+    <field name="eventDescription" type="text" column="event_description"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

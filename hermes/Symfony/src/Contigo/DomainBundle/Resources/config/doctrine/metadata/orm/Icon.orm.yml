@@ -1,0 +1,32 @@
+Icon:
+  type: entity
+  table: icon
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    filename:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    data:
+      type: bytea
+      nullable: true
+    filesize:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    filetype:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

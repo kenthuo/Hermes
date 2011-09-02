@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BatchJob" table="batch_job">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="createdTimestamp" type="bigint" column="created_timestamp"/>
+    <field name="modifiedTimestamp" type="bigint" column="modified_timestamp"/>
+    <field name="state" type="integer" column="state"/>
+    <field name="job" type="bytea" column="job"/>
+    <field name="type" type="integer" column="type"/>
+    <field name="referenceid" type="bigint" column="referenceid"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,19 @@
+TrackingLocate:
+  type: entity
+  table: tracking_locate
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    trackingId:
+      type: bigint
+      nullable: false
+      column: tracking_id
+    locateId:
+      type: bigint
+      nullable: false
+      column: locate_id
+  lifecycleCallbacks: {  }

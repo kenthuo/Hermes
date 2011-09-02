@@ -1,0 +1,21 @@
+PndDispatcherJobToDelete:
+  type: entity
+  table: pnd_dispatcher_job_to_delete
+  fields:
+    pndDispatcherJobId:
+      id: true
+      type: bigint
+      nullable: false
+      column: pnd_dispatcher_job_id
+      generator:
+        strategy: SEQUENCE
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    timestamp:
+      type: bigint
+      nullable: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,40 @@
+Anydata:
+  type: entity
+  table: anydata
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    phoneNumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+      column: phone_number
+    isUserplane:
+      type: smallint
+      nullable: true
+      column: is_userplane
+    isControlplane:
+      type: smallint
+      nullable: true
+      column: is_controlplane
+    haGpsDestId:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: ha_gps_dest_id
+  oneToOne:
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

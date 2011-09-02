@@ -1,0 +1,38 @@
+UgPermission:
+  type: entity
+  table: ug_permission
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    usergp:
+      targetEntity: Usergp
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        usergp_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    permission:
+      targetEntity: Permission
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        permission_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

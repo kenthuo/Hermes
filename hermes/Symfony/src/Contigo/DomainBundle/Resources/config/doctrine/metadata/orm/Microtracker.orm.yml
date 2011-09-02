@@ -1,0 +1,31 @@
+Microtracker:
+  type: entity
+  table: microtracker
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    unitId:
+      type: string
+      length: 8
+      fixed: false
+      nullable: true
+      column: unit_id
+    securityPassword:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: security_password
+  lifecycleCallbacks: {  }

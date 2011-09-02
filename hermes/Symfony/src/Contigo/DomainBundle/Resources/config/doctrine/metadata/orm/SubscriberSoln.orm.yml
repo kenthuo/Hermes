@@ -1,0 +1,34 @@
+SubscriberSoln:
+  type: entity
+  table: subscriber_soln
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  oneToOne:
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    solution:
+      targetEntity: Solution
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        solution_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IncidentAudit" table="incident_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="incidentId" type="bigint" column="incident_id"/>
+    <field name="opUserId" type="bigint" column="op_user_id"/>
+    <field name="status" type="string" column="status" length="20"/>
+    <field name="startTimestamp" type="bigint" column="start_timestamp"/>
+    <field name="starttimezone" type="float" column="starttimezone"/>
+    <field name="startTzAbbrev" type="string" column="start_tz_abbrev" length="4"/>
+    <field name="endTimestamp" type="bigint" column="end_timestamp"/>
+    <field name="endtimezone" type="float" column="endtimezone"/>
+    <field name="endTzAbbrev" type="string" column="end_tz_abbrev" length="4"/>
+    <field name="passcode" type="string" column="passcode" length="10"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

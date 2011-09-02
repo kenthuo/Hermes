@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Followit" table="followit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="unitId" type="bigint" column="unit_id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="basePhoneNumber" type="string" column="base_phone_number" length="30"/>
+    <field name="currentState" type="smallint" column="current_state"/>
+    <field name="previousState" type="smallint" column="previous_state"/>
+    <field name="alarmCount" type="integer" column="alarm_count"/>
+    <field name="lastTrackingStopped" type="bigint" column="last_tracking_stopped"/>
+    <field name="sentSpeedNotification" type="boolean" column="sent_speed_notification"/>
+    <field name="sentZoneNotification" type="boolean" column="sent_zone_notification"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,33 @@
+BeaconItemGroupingHistory:
+  type: entity
+  table: beacon_item_grouping_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    itemGroupingId:
+      type: bigint
+      nullable: true
+      column: item_grouping_id
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

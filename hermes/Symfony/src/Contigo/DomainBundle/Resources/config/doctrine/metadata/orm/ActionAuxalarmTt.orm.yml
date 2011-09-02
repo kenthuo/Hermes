@@ -1,0 +1,85 @@
+ActionAuxalarmTt:
+  type: entity
+  table: action_auxalarm_tt
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: text
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    lpaType:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: lpa_type
+    lpaName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: lpa_name
+    mpaType:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: mpa_type
+    mpaName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: mpa_name
+    mpaNotification:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: mpa_notification
+    hpaType:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: hpa_type
+    hpaName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: hpa_name
+    hpaNotification:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: hpa_notification
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    lpaRuntimeSchedule:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+      column: lpa_runtime_schedule
+    mpaPcWarning:
+      type: boolean
+      nullable: true
+      column: mpa_pc_warning
+  lifecycleCallbacks: {  }

@@ -1,0 +1,31 @@
+DepartmentAssetHistory:
+  type: entity
+  table: department_asset_history
+  fields:
+    departmentId:
+      id: true
+      type: bigint
+      nullable: false
+      column: department_id
+    assetId:
+      id: true
+      type: bigint
+      nullable: false
+      column: asset_id
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    id:
+      type: bigint
+      nullable: false
+    isSharable:
+      type: boolean
+      nullable: false
+      column: is_sharable
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  lifecycleCallbacks: {  }

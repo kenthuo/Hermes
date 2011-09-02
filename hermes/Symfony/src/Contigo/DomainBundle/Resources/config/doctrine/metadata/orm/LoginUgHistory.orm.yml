@@ -1,0 +1,27 @@
+LoginUgHistory:
+  type: entity
+  table: login_ug_history
+  fields:
+    loginId:
+      id: true
+      type: bigint
+      nullable: false
+      column: login_id
+    usergpId:
+      id: true
+      type: bigint
+      nullable: false
+      column: usergp_id
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    id:
+      type: bigint
+      nullable: false
+    introTs:
+      type: bigint
+      nullable: true
+      column: intro_ts
+  lifecycleCallbacks: {  }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconDispatchInterface" table="beacon_dispatch_interface">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="type" type="string" column="type" length="50"/>
+    <field name="activatedTs" type="bigint" column="activated_ts"/>
+    <field name="activatedBy" type="bigint" column="activated_by"/>
+    <field name="deactivatedTs" type="bigint" column="deactivated_ts"/>
+    <field name="deactivatedBy" type="bigint" column="deactivated_by"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

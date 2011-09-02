@@ -1,0 +1,27 @@
+Tipoftheday:
+  type: entity
+  table: tipoftheday
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    tip:
+      type: string
+      length: 250
+      fixed: false
+      nullable: false
+    explanation:
+      type: string
+      length: 250
+      fixed: false
+      nullable: false
+    portal:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

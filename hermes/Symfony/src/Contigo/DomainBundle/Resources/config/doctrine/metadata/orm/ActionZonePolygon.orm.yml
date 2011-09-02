@@ -1,0 +1,32 @@
+ActionZonePolygon:
+  type: entity
+  table: action_zone_polygon
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    boundary:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

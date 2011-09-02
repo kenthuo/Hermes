@@ -1,0 +1,28 @@
+IdenMessageAudit:
+  type: entity
+  table: iden_message_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    message:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    flow:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

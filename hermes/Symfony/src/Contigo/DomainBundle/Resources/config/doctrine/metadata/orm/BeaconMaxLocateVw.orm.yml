@@ -1,0 +1,160 @@
+BeaconMaxLocateVw:
+  type: entity
+  table: beacon_max_locate_vw
+  fields:
+    beaconId:
+      id: true
+      type: bigint
+      nullable: false
+      column: beacon_id
+      generator:
+        strategy: SEQUENCE
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    lastInTcpAudit:
+      type: bigint
+      nullable: true
+      column: last_in_tcp_audit
+    lastInSmsAudit:
+      type: bigint
+      nullable: true
+      column: last_in_sms_audit
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    direction:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    altitude:
+      type: float
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    isValidFix:
+      type: boolean
+      nullable: true
+      column: is_valid_fix
+    gpsAge:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: gps_age
+    lastActivityTimestamp:
+      type: bigint
+      nullable: true
+      column: last_activity_timestamp
+    lastInUdpAudit:
+      type: bigint
+      nullable: true
+      column: last_in_udp_audit
+    signalQuality:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: signal_quality
+    gpsSats:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: gps_sats
+    lockedGpsCounter:
+      type: bigint
+      nullable: true
+      column: locked_gps_counter
+    isAsleep:
+      type: boolean
+      nullable: true
+      column: is_asleep
+    lastAsleepTimestamp:
+      type: bigint
+      nullable: true
+      column: last_asleep_timestamp
+    accuracy:
+      type: integer
+      unsigned: false
+      nullable: true
+    battLevel:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: batt_level
+    address:
+      type: text
+      nullable: true
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 70
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: zip_code
+    eventIndexId:
+      type: bigint
+      nullable: true
+      column: event_index_id
+    eventDescription:
+      type: text
+      nullable: true
+      column: event_description
+  lifecycleCallbacks: {  }

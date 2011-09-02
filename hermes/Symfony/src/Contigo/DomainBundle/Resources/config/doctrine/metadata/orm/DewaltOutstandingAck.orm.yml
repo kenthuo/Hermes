@@ -1,0 +1,18 @@
+DewaltOutstandingAck:
+  type: entity
+  table: dewalt_outstanding_ack
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    ack:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

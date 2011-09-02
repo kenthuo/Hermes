@@ -1,0 +1,82 @@
+Member:
+  type: entity
+  table: member
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+    username:
+      id: true
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    daylightSaving:
+      type: boolean
+      nullable: true
+      column: daylight_saving
+    password:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    firstname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lastname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    employeeId:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: employee_id
+    phAreacode:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: ph_areacode
+    phNumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: ph_number
+    phExtension:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: ph_extension
+    dateDisplayFormat:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: date_display_format
+    timezone:
+      type: float
+      nullable: true
+  oneToOne:
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

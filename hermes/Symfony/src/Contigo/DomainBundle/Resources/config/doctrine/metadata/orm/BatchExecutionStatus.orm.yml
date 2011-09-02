@@ -1,0 +1,35 @@
+BatchExecutionStatus:
+  type: entity
+  table: batch_execution_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    jobId:
+      type: bigint
+      nullable: true
+      column: job_id
+    handledTimestamp:
+      type: bigint
+      nullable: true
+      column: handled_timestamp
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    stateCodeId:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: state_code_id
+    message:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

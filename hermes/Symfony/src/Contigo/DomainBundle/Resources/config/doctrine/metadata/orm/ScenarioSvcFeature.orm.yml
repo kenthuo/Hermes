@@ -1,0 +1,30 @@
+ScenarioSvcFeature:
+  type: entity
+  table: scenario_svc_feature
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    svcFeature:
+      targetEntity: SvcFeature
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        svc_feature_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    scenario:
+      targetEntity: Scenario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        scenario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

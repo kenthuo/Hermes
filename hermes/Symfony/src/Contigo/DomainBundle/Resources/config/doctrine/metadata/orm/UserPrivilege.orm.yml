@@ -1,0 +1,19 @@
+UserPrivilege:
+  type: entity
+  table: user_privilege
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    masterUserId:
+      type: bigint
+      nullable: true
+      column: master_user_id
+    privilegeId:
+      type: bigint
+      nullable: true
+      column: privilege_id
+  lifecycleCallbacks: {  }

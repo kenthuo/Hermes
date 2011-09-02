@@ -1,0 +1,21 @@
+TelusBanType:
+  type: entity
+  table: telus_ban_type
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    category:
+      type: string
+      length: 25
+      fixed: false
+      nullable: false
+    code:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

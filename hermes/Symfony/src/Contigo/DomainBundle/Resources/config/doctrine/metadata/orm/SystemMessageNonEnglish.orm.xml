@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SystemMessageNonEnglish" table="system_message_non_english">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="systemMessageId" type="bigint" column="system_message_id"/>
+    <id name="locale" type="string" column="locale"/>
+    <field name="notice" type="text" column="notice"/>
+    <field name="status" type="text" column="status"/>
+    <field name="maintenance" type="text" column="maintenance"/>
+    <many-to-one field="systemMessage" target-entity="SystemMessage" orphan-removal="">
+      <join-columns>
+        <join-column name="system_message_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

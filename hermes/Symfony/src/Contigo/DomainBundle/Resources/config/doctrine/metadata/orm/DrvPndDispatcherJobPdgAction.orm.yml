@@ -1,0 +1,25 @@
+DrvPndDispatcherJobPdgAction:
+  type: entity
+  table: drv_pnd_dispatcher_job_pdg_action
+  fields:
+    drvPndDispatcherJobId:
+      id: true
+      type: bigint
+      nullable: false
+      column: drv_pnd_dispatcher_job_id
+      generator:
+        strategy: SEQUENCE
+    guardianId:
+      type: bigint
+      nullable: false
+      column: guardian_id
+    action:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    lastUpdatedTs:
+      type: bigint
+      nullable: false
+      column: last_updated_ts
+  lifecycleCallbacks: {  }

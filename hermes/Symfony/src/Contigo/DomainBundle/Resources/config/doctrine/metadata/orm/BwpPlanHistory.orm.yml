@@ -1,0 +1,100 @@
+BwpPlanHistory:
+  type: entity
+  table: bwp_plan_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    gmmsMonthlyFee:
+      type: float
+      nullable: true
+      column: gmms_monthly_fee
+    p2pMonthlyFee:
+      type: float
+      nullable: true
+      column: p2p_monthly_fee
+    p2pUsageAmount:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: p2p_usage_amount
+    gmmsPricePerOverage:
+      type: float
+      nullable: true
+      column: gmms_price_per_overage
+    p2pOveragePlan:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: p2p_overage_plan
+    p2pPricePerOverageUnit:
+      type: float
+      nullable: true
+      column: p2p_price_per_overage_unit
+    p2pPricePerOverageBucket:
+      type: float
+      nullable: true
+      column: p2p_price_per_overage_bucket
+    p2pUsagePerOverageBucket:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: p2p_usage_per_overage_bucket
+    gmmsCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: gmms_currency
+    p2pCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: p2p_currency
+    p2pWirelessNetworkProvider:
+      type: string
+      length: 8
+      fixed: false
+      nullable: true
+      column: p2p_wireless_network_provider
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    type:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    usageUnit:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: usage_unit
+  lifecycleCallbacks: {  }

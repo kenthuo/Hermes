@@ -1,0 +1,37 @@
+DepartmentHistory:
+  type: entity
+  table: department_history
+  fields:
+    organizationId:
+      id: true
+      type: bigint
+      nullable: false
+      column: organization_id
+    name:
+      id: true
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    id:
+      type: bigint
+      nullable: false
+    description:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    isDefault:
+      type: boolean
+      nullable: true
+      column: is_default
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  lifecycleCallbacks: {  }

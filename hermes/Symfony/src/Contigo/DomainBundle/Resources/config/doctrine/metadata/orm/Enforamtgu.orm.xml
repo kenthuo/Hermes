@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Enforamtgu" table="enforamtgu">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="ip" type="string" column="ip" length="30"/>
+    <field name="lastTrackingStopped" type="bigint" column="last_tracking_stopped"/>
+    <field name="lastLoginTimestamp" type="bigint" column="last_login_timestamp"/>
+    <field name="version" type="string" column="version" length="10"/>
+    <field name="rebootOnNoresp" type="boolean" column="reboot_on_noresp"/>
+    <field name="useResetWatchdog" type="boolean" column="use_reset_watchdog"/>
+    <field name="sendResetWatchdogNotif" type="boolean" column="send_reset_watchdog_notif"/>
+    <field name="watchdogResetTimeout" type="integer" column="watchdog_reset_timeout"/>
+    <field name="debugMode" type="boolean" column="debug_mode"/>
+    <field name="lastInitializedTimestamp" type="bigint" column="last_initialized_timestamp"/>
+    <field name="gfmiState" type="boolean" column="gfmi_state"/>
+    <field name="gfmiActivatedTimestamp" type="bigint" column="gfmi_activated_timestamp"/>
+    <field name="detectVehiclePresence" type="boolean" column="detect_vehicle_presence"/>
+    <field name="lastOfflineNotificationTs" type="bigint" column="last_offline_notification_ts"/>
+    <many-to-one field="beacon" target-entity="Beacon" orphan-removal="">
+      <join-columns>
+        <join-column name="beacon_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DrvPndDispatcherMsgCannedResp" table="drv_pnd_dispatcher_msg_canned_resp">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="guardianId" type="bigint" column="guardian_id"/>
+    <field name="drvPndDispatcherMsgId" type="bigint" column="drv_pnd_dispatcher_msg_id"/>
+    <field name="cannedResponseId" type="integer" column="canned_response_id"/>
+    <field name="cannedResponseText" type="string" column="canned_response_text" length="200"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,54 @@
+SpeedMonitoringAudit:
+  type: entity
+  table: speed_monitoring_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    speed:
+      type: integer
+      unsigned: false
+      nullable: true
+    boundary:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    speedUnitdisplay:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: speed_unitdisplay
+    emailNotification:
+      type: text
+      nullable: true
+      column: email_notification
+    smsNotification:
+      type: text
+      nullable: true
+      column: sms_notification
+    createDate:
+      type: bigint
+      nullable: true
+      column: create_date
+    deleteDate:
+      type: bigint
+      nullable: true
+      column: delete_date
+  lifecycleCallbacks: {  }

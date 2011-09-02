@@ -1,0 +1,30 @@
+RoutePoints:
+  type: entity
+  table: route_points
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    lat:
+      type: decimal
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    sequence:
+      type: bigint
+      nullable: true
+  oneToOne:
+    route:
+      targetEntity: Route
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        route_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

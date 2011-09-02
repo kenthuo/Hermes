@@ -1,0 +1,30 @@
+MakeBeaconmodel:
+  type: entity
+  table: make_beaconmodel
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    beaconmodel:
+      targetEntity: Beaconmodel
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beaconmodel_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    make:
+      targetEntity: Make
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        make_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

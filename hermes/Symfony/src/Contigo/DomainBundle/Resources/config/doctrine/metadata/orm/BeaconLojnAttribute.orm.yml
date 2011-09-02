@@ -1,0 +1,44 @@
+BeaconLojnAttribute:
+  type: entity
+  table: beacon_lojn_attribute
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    type:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    value:
+      type: text
+      nullable: true
+    activatedTs:
+      type: bigint
+      nullable: false
+      column: activated_ts
+    activatedBy:
+      type: bigint
+      nullable: false
+      column: activated_by
+    deactivatedTs:
+      type: bigint
+      nullable: false
+      column: deactivated_ts
+    deactivatedBy:
+      type: bigint
+      nullable: true
+      column: deactivated_by
+  lifecycleCallbacks: {  }

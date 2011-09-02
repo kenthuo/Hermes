@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DispatchApiPndConnectionAudit201105" table="dispatch_api_pnd_connection_audit_201105">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="beaconEsn" type="string" column="beacon_esn" length="50"/>
+    <field name="pndEsn" type="string" column="pnd_esn" length="50"/>
+    <field name="connectionStatus" type="string" column="connection_status" length="50"/>
+    <field name="networkTs" type="bigint" column="network_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

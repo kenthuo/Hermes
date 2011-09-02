@@ -1,0 +1,69 @@
+ActionEmailHistory:
+  type: entity
+  table: action_email_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    fromEmail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: from_email
+    toEmails:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: to_emails
+    subject:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    body:
+      type: text
+      nullable: true
+    additionalCustomBody:
+      type: text
+      nullable: true
+      column: additional_custom_body
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    emailId:
+      type: bigint
+      nullable: true
+      column: email_id
+  lifecycleCallbacks: {  }

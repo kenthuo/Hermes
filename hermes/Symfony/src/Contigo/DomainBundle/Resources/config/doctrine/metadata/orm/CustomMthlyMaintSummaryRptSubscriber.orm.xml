@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="CustomMthlyMaintSummaryRptSubscriber" table="custom_mthly_maint_summary_rpt_subscriber">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="organizationId" type="bigint" column="organization_id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

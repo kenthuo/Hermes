@@ -1,0 +1,33 @@
+Item:
+  type: entity
+  table: item
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    price:
+      type: float
+      nullable: false
+    product:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    quantity:
+      type: integer
+      unsigned: false
+      nullable: false
+  oneToOne:
+    order:
+      targetEntity: TOrder
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        order_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

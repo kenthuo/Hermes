@@ -1,0 +1,62 @@
+Phone:
+  type: entity
+  table: phone
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    areacode:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+    number:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    extention:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+  oneToOne:
+    guardian:
+      targetEntity: Guardian
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        guardian_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    carrier:
+      targetEntity: Carrier
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        carrier_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

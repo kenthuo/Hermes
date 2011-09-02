@@ -1,0 +1,124 @@
+{# 
+    View variables:
+        sizeOfBeaconmodels: 
+            Description: the number of beaconmodels in the list
+            Type: integer
+        beaconmodels: 
+            Description: a list of beaconmodels
+            Type: associative array
+            Elements of array:
+                The first element of the array: beaconmodel object
+                    id:
+                        Description: identity of a beaconmodel
+                        Type: integer
+                    name:
+                        Description: name of a beaconmodel
+                        Type: string
+                    model:
+                        Description: model of a beaconmodel
+                        Type: string                        
+                    version:
+                        Description: version of a beaconmodel
+                        Type: string                     
+                usedCount:
+                    Description: the number of beacons have been associated with the beaconmodel
+                    Type: integer
+                picture:
+                    Description: the identity of the picture of the beaconmodel 
+                    Type: integer                    
+    Example:
+        'beaconmodels' => array(array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '3'), array(object(Beaconmodel), 'usedCount' => '29'), array(object(Beaconmodel), 'usedCount' => '3315') ...                    
+#}
+
+{% extends '::base.html.twig' %}
+
+{# 'add' and 'delete' buttons are in the toolbar #}
+
+{% set beaconmodelAddRoute %}{{ path('beaconmodel_add') }}{% endset %}
+{% set beaconmodelDeleteRoute %}{{ path('beaconmodel_delete') }}{% endset %}
+
+{% block body %}
+
+<ul class="breadcrumbs">
+    <li><a href="{{ path('home') }}">Home</a></li>
+    <li><a href="{{ path('developer') }}">Developer Pod</a></li>
+    <li>List Beacon Models</li>
+</ul>
+<div id="beaconmodel-list-panel">
+    <form action="#" method="post" name="entity-list-form" id="entity-list-form">
+    
+	    {% include 'ContigoGamPartialBundle:Toolbar:index.html.twig' with { 'sizeOfEntities' : sizeOfBeaconmodels, 'entityAddRoute' : beaconmodelAddRoute, 'entityDeleteRoute' : beaconmodelDeleteRoute } %}
+	    
+	    {% if sizeOfBeaconmodels > 0 %}
+	    <table id="beaconmodel-list-table" class="tablesorter">
+	        <thead> 
+	            <tr> 
+	                <th class="leading-checkbox-column"><input type="checkbox" name="check-all" id="check-all"></th>	                 
+	                <th>Name</th> 
+	                <th>Model#</th>
+	                <th>Version</th> 
+	                <th>Picture</th>
+	            </tr> 
+	        </thead> 
+	        <tbody>    
+	           {% for entity in beaconmodels %}
+		        <tr>
+	                <td>
+	                {% if entity.usedCount == 0 %}
+	                    <input type="checkbox" name="entity[]" value="{{ entity[0].id }}">
+	                {% else %}
+	                    &nbsp;
+	                {% endif %}    
+	                </td>		            
+		            <td>
+                        <a id="entity-of-{{ entity[0].id }}" href="{{ path('beaconmodel_update', { 'id': entity[0].id }) }}">{{ entity[0].name | capitalize }}</a>	              
+		            </td>
+		            <td>{{ entity[0].model }}</td>
+		            <td>{{ entity[0].version }}</td>
+		            <td><a rel="prettyPhoto" title="{{ entity[0].model }}" href="{{ path('picture', { 'id': entity.picture }) }}"><img class="entity-image-thumbnail" src="{{ path('picture', { 'id': entity.picture }) }}"></a></td>
+		        </tr>  
+		        {% endfor %}
+	        </tbody>
+	    </table>
+	    {% else %}    
+	    <table id="beaconmodel-list-table" class="notablesorter">
+	        <thead> 
+	            <tr> 	                 
+	                <th>Name</th>
+	                <th>Model#</th>
+                    <th>Version</th> 
+                    <th>Picture</th>	                
+	            </tr> 
+	        </thead> 
+	        <tbody>     
+	            <tr>
+	                <td colspan="4">No beaconmodel data found.</td>
+	            </tr>         
+	        </tbody>
+	    </table>
+	    {% endif %}   
+    </form>      
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/reset.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/typography.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/jquery-ui/redmond/jquery-ui.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/tablesorter/contigo/style.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/prettyPhoto.css') }}" />     
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/gam/css/common.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/gam/css/developer.css') }}" />
+{% endblock %} 
+ 
+{% block javascripts %}
+    <script src="{{ asset('bundles/contigo/common/js/jquery/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/contigo/common/js/jquery/jquery-ui.min.js') }}" type="text/javascript"></script>    
+    <script src="{{ asset('bundles/contigo/common/js/jquery/plugin/jquery.form.js') }}" type="text/javascript"></script>    
+    <script src="{{ asset('bundles/contigo/common/js/jquery/plugin/tablesorter/jquery.tablesorter.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/contigo/common/js/jquery/plugin/tablesorter/jquery.tablesorter.filter.js') }}" type="text/javascript"></script>    
+    <script src="{{ asset('bundles/contigo/common/js/jquery/plugin/tablesorter/jquery.tablesorter.pager.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/contigo/common/js/jquery/plugin/jquery.prettyPhoto.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/contigo/gam/js/common.js') }}" type="text/javascript"></script> 
+    <script src="{{ asset('bundles/contigo/gam/js/developer/beaconmodel/index..js') }}" type="text/javascript"></script>
+{% endblock %}

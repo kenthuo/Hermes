@@ -1,0 +1,22 @@
+EventEngineHours201006:
+  type: entity
+  table: event_engine_hours_201006
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    duration:
+      type: integer
+      unsigned: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

@@ -1,0 +1,63 @@
+Stepp2Odometer201009:
+  type: entity
+  table: stepp2_odometer_201009
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    networkTs:
+      type: bigint
+      nullable: false
+      column: network_ts
+    timestamp:
+      type: bigint
+      nullable: false
+    odometer:
+      type: bigint
+      nullable: true
+    eventType:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+      column: event_type
+    deltaOdometer:
+      type: bigint
+      nullable: false
+      column: delta_odometer
+    locateId:
+      type: bigint
+      nullable: false
+      column: locate_id
+    insertTs:
+      type: bigint
+      nullable: false
+      column: insert_ts
+    lastUpdatedTs:
+      type: bigint
+      nullable: true
+      column: last_updated_ts
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

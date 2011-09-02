@@ -1,0 +1,30 @@
+LastBbLoginLogout:
+  type: entity
+  table: last_bb_login_logout
+  fields:
+    beaconId:
+      id: true
+      type: bigint
+      nullable: false
+      column: beacon_id
+      generator:
+        strategy: SEQUENCE
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    isLogin:
+      type: boolean
+      nullable: true
+      column: is_login
+  lifecycleCallbacks: {  }

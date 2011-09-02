@@ -1,0 +1,125 @@
+DispatchApiPndMsgAudit201010:
+  type: entity
+  table: dispatch_api_pnd_msg_audit_201010
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    beaconEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: beacon_esn
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    driverMsgId:
+      type: bigint
+      nullable: true
+      column: driver_msg_id
+    msgStatus:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: msg_status
+    msgResponseType:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: msg_response_type
+    msgFromDriver:
+      type: text
+      nullable: true
+      column: msg_from_driver
+    street:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    city:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: zip_code
+    gpsTs:
+      type: bigint
+      nullable: true
+      column: gps_ts
+    networkTs:
+      type: bigint
+      nullable: true
+      column: network_ts
+    lat:
+      type: decimal
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    altitude:
+      type: float
+      nullable: true
+    direction:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    isValidFix:
+      type: boolean
+      nullable: true
+      column: is_valid_fix
+    dispatcherMsgId:
+      type: bigint
+      nullable: true
+      column: dispatcher_msg_id
+    driverId:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: driver_id
+  lifecycleCallbacks: {  }

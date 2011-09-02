@@ -1,0 +1,66 @@
+PartnerCustomAttributeRp:
+  type: entity
+  table: partner_custom_attribute_rp
+  fields:
+    partnerId:
+      id: true
+      type: bigint
+      nullable: false
+      column: partner_id
+      generator:
+        strategy: SEQUENCE
+    externalWww:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: external_www
+    welcomeEmail:
+      type: boolean
+      nullable: false
+      column: welcome_email
+    termOfService:
+      type: boolean
+      nullable: false
+      column: term_of_service
+    supportNo:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: support_no
+    htmlPageTitle:
+      type: string
+      length: 200
+      fixed: false
+      nullable: true
+      column: html_page_title
+    alertEmail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: alert_email
+    custServiceEmail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: cust_service_email
+    notificationEmail:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: notification_email
+  oneToOne:
+    partner:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        partner_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+TelusHpSdfAcct:
+  type: entity
+  table: telus_hp_sdf_acct
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    telusSubscriberId:
+      type: decimal
+      nullable: false
+      column: telus_subscriber_id
+    groupId:
+      type: bigint
+      nullable: true
+      column: group_id
+    mdn:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+    serviceId:
+      type: string
+      length: 18
+      fixed: false
+      nullable: true
+      column: service_id
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    lastStateTs:
+      type: bigint
+      nullable: false
+      column: last_state_ts
+  lifecycleCallbacks: {  }

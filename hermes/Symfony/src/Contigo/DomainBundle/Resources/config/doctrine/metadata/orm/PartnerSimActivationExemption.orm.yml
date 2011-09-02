@@ -1,0 +1,38 @@
+PartnerSimActivationExemption:
+  type: entity
+  table: partner_sim_activation_exemption
+  fields:
+    customerId:
+      id: true
+      type: bigint
+      nullable: false
+      column: customer_id
+      generator:
+        strategy: SEQUENCE
+    ownOwnSim:
+      type: boolean
+      nullable: false
+      column: own_own_sim
+    partialExempt:
+      type: boolean
+      nullable: false
+      column: partial_exempt
+    cpFeeExempt:
+      type: boolean
+      nullable: false
+      column: cp_fee_exempt
+    rpFeeExempt:
+      type: boolean
+      nullable: false
+      column: rp_fee_exempt
+  oneToOne:
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

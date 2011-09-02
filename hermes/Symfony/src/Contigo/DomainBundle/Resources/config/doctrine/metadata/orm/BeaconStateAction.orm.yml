@@ -1,0 +1,19 @@
+BeaconStateAction:
+  type: entity
+  table: beacon_state_action
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconStateId:
+      type: bigint
+      nullable: false
+      column: beacon_state_id
+    allowedBsId:
+      type: bigint
+      nullable: false
+      column: allowed_bs_id
+  lifecycleCallbacks: {  }

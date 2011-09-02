@@ -1,0 +1,256 @@
+NOTE: make sure the following things before exporting
+1. No duplicate reference keys in the constraint of the table. Some of tables may have different foreign keys but refer to the same table.
+2. Write custom data types for non-supported Postgres data type in Doctrine. For example, bytes, blob, _int4 (integer[]). 
+   Those are defined under C:\opt\workspace-php\hermes\Symfony\src\Contigo\CommonBundle\Doctrine\DBAL folder, and they need to be registered in
+   the boot() method of C:\opt\workspace-php\hermes\Symfony\src\Contigo\CommonBundle\ContigoCommonBundle.php class. 
+
+1. Change directory to
+C:\opt\workspace-php\hermes\Symfony>
+
+2. If exporting as xml,
+C:\opt\workspace-php\hermes\Symfony>php gam/console doctrine:mapping:convert xml ./src/Contigo/DomainBundle/Resources/config/doctrine/metadata/orm --from-database --force
+
+Example: Stock.orm.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Stock" table="stock">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="esn" type="string" column="esn" length="50"/>
+    <field name="serialNumber" type="string" column="serial_number" length="50"/>
+    <field name="receivedDate" type="date" column="received_date"/>
+    <field name="gmmsCost" type="float" column="gmms_cost"/>
+    <field name="gmmsCostCurrency" type="string" column="gmms_cost_currency" length="5"/>
+    <field name="p2pCost" type="float" column="p2p_cost"/>
+    <field name="p2pCostCurrency" type="string" column="p2p_cost_currency" length="5"/>
+    <field name="enforaActivationCode" type="string" column="enfora_activation_code" length="50"/>
+    <many-to-one field="location" target-entity="Location" orphan-removal="">
+      <join-columns>
+        <join-column name="location_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="koreSim" target-entity="KoreSim" orphan-removal="">
+      <join-columns>
+        <join-column name="kore_sim_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="make" target-entity="Make" orphan-removal="">
+      <join-columns>
+        <join-column name="make_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>
+
+
+2. If exporting as yml,
+C:\opt\workspace-php\hermes\Symfony>php gam/console doctrine:mapping:convert yml ./src/Contigo/DomainBundle/Resources/config/doctrine/metadata/orm --from-database --force
+
+Example: Stock.orm.yml
+
+Stock:
+  type: entity
+  table: stock
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    esn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    serialNumber:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: serial_number
+    receivedDate:
+      type: date
+      nullable: true
+      column: received_date
+    gmmsCost:
+      type: float
+      nullable: true
+      column: gmms_cost
+    gmmsCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: gmms_cost_currency
+    p2pCost:
+      type: float
+      nullable: true
+      column: p2p_cost
+    p2pCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: p2p_cost_currency
+    enforaActivationCode:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: enfora_activation_code
+  oneToOne:
+    location:
+      targetEntity: Location
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        location_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    koreSim:
+      targetEntity: KoreSim
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        kore_sim_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    make:
+      targetEntity: Make
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        make_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
+
+
+3. If exporting as annotation
+C:\opt\workspace-php\hermes\Symfony>php gam/console doctrine:mapping:convert annotation ./src --from-database --force --namespace=Contigo\DomainBundle\Entity\
+
+Example: Stock.php
+
+<?php
+
+namespace Contigo\DomainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contigo\DomainBundle\Entity\Stock
+ *
+ * @Table(name="stock")
+ * @Entity
+ */
+class Stock
+{
+    /**
+     * @var bigint $id
+     *
+     * @Column(name="id", type="bigint", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="SEQUENCE")
+     * @SequenceGenerator(sequenceName="stock_id_seq", allocationSize="1", initialValue="1")
+     */
+    private $id;
+
+    /**
+     * @var string $esn
+     *
+     * @Column(name="esn", type="string", length=50, nullable=true)
+     */
+    private $esn;
+
+    /**
+     * @var string $serialNumber
+     *
+     * @Column(name="serial_number", type="string", length=50, nullable=true)
+     */
+    private $serialNumber;
+
+    /**
+     * @var date $receivedDate
+     *
+     * @Column(name="received_date", type="date", nullable=true)
+     */
+    private $receivedDate;
+
+    /**
+     * @var float $gmmsCost
+     *
+     * @Column(name="gmms_cost", type="float", nullable=true)
+     */
+    private $gmmsCost;
+
+    /**
+     * @var string $gmmsCostCurrency
+     *
+     * @Column(name="gmms_cost_currency", type="string", length=5, nullable=true)
+     */
+    private $gmmsCostCurrency;
+
+    /**
+     * @var float $p2pCost
+     *
+     * @Column(name="p2p_cost", type="float", nullable=true)
+     */
+    private $p2pCost;
+
+    /**
+     * @var string $p2pCostCurrency
+     *
+     * @Column(name="p2p_cost_currency", type="string", length=5, nullable=true)
+     */
+    private $p2pCostCurrency;
+
+    /**
+     * @var string $enforaActivationCode
+     *
+     * @Column(name="enfora_activation_code", type="string", length=50, nullable=true)
+     */
+    private $enforaActivationCode;
+
+    /**
+     * @var Contigo\DomainBundle\Entity\Location
+     *
+     * @ManyToOne(targetEntity="Contigo\DomainBundle\Entity\Location")
+     * @JoinColumns({
+     *   @JoinColumn(name="location_id", referencedColumnName="id")
+     * })
+     */
+    private $location;
+
+    /**
+     * @var Contigo\DomainBundle\Entity\KoreSim
+     *
+     * @ManyToOne(targetEntity="Contigo\DomainBundle\Entity\KoreSim")
+     * @JoinColumns({
+     *   @JoinColumn(name="kore_sim_id", referencedColumnName="id")
+     * })
+     */
+    private $koreSim;
+
+    /**
+     * @var Contigo\DomainBundle\Entity\Make
+     *
+     * @ManyToOne(targetEntity="Contigo\DomainBundle\Entity\Make")
+     * @JoinColumns({
+     *   @JoinColumn(name="make_id", referencedColumnName="id")
+     * })
+     */
+    private $make;
+
+
+}
+
+4. Generate Getter and Setter for a class
+C:\opt\workspace-php\hermes\Symfony>php gam/console doctrine:generate:entities Contigo/DomainBundle/Entity/Asset

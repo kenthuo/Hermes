@@ -1,0 +1,28 @@
+DrvPndCannedRespIdx:
+  type: entity
+  table: drv_pnd_canned_resp_idx
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    guardianId:
+      type: bigint
+      nullable: false
+      column: guardian_id
+    cannedResponseId:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: canned_response_id
+    lastUpdatedTs:
+      type: bigint
+      nullable: false
+      column: last_updated_ts
+    isAvailable:
+      type: boolean
+      nullable: false
+      column: is_available
+  lifecycleCallbacks: {  }

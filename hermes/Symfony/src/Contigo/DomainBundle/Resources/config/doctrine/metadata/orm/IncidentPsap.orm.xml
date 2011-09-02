@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IncidentPsap" table="incident_psap">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="incidentId" type="bigint" column="incident_id"/>
+    <field name="opUserId" type="bigint" column="op_user_id"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="psapPrimaryPhone" type="string" column="psap_primary_phone" length="15"/>
+    <field name="psapSecondaryPhone" type="string" column="psap_secondary_phone" length="15"/>
+    <field name="psapName" type="string" column="psap_name" length="100"/>
+    <field name="psapCity" type="string" column="psap_city" length="100"/>
+    <field name="psapState" type="string" column="psap_state" length="10"/>
+    <field name="psapZipCode" type="string" column="psap_zip_code" length="15"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

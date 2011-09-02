@@ -1,0 +1,29 @@
+PermissionCategory:
+  type: entity
+  table: permission_category
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    mnemonic:
+      type: string
+      length: 40
+      fixed: false
+      nullable: false
+    description:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  lifecycleCallbacks: {  }

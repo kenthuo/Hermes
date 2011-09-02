@@ -1,0 +1,166 @@
+Trimtrac15:
+  type: entity
+  table: trimtrac15
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    issuedCmd:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: issued_cmd
+    issuedCmdTimestamp:
+      type: bigint
+      nullable: true
+      column: issued_cmd_timestamp
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    securityPassword:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: security_password
+    commMode:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: comm_mode
+    trackingFreq:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: tracking_freq
+    motionFreq:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: motion_freq
+    nonMotionFreq:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: non_motion_freq
+    scheduledMode:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: scheduled_mode
+    scheduledTime:
+      type: bigint
+      nullable: true
+      column: scheduled_time
+    sequence:
+      type: integer
+      unsigned: false
+      nullable: true
+    version:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+    unitId:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: unit_id
+    seqNumber:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: seq_number
+    lockdown:
+      type: boolean
+      nullable: true
+    motionSensitivity:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: motion_sensitivity
+    notificationType:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: notification_type
+    scheduledHours:
+      type: boolean
+      nullable: true
+      column: scheduled_hours
+    dailyStartTime:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: daily_start_time
+    workDayLength:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: work_day_length
+    firstWorkDay:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: first_work_day
+    consecutiveWorkDays:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: consecutive_work_days
+    isStartStopMode:
+      type: boolean
+      nullable: true
+      column: is_start_stop_mode
+    shoControl:
+      type: boolean
+      nullable: true
+      column: sho_control
+    fastGpsFix:
+      type: boolean
+      nullable: true
+      column: fast_gps_fix
+    hpaType:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: hpa_type
+    mpaType:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: mpa_type
+    lpaType:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: lpa_type
+    mpaStatus:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: mpa_status
+    sentClearMpa:
+      type: boolean
+      nullable: true
+      column: sent_clear_mpa
+  lifecycleCallbacks: {  }

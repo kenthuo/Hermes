@@ -1,0 +1,141 @@
+Asset:
+  type: entity
+  table: asset
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    other:
+      type: text
+      nullable: true
+    vZoneradius:
+      type: bigint
+      nullable: true
+      column: v_zoneradius
+    vZoning:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: v_zoning
+    vMotiondetector:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: v_motiondetector
+    serialnum:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    vVin:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: v_vin
+    vLicensenum:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: v_licensenum
+    vYear:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: v_year
+    vColor:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+      column: v_color
+    vModel:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: v_model
+    vMake:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: v_make
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    vState:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: v_state
+    vCountry:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: v_country
+    timezone:
+      type: float
+      nullable: true
+    daylightSaving:
+      type: boolean
+      nullable: true
+      column: daylight_saving
+    iconId:
+      type: bigint
+      nullable: true
+      column: icon_id
+    syncedMileage:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: synced_mileage
+    syncedTimestamp:
+      type: bigint
+      nullable: true
+      column: synced_timestamp
+    syncedEngineHours:
+      type: bigint
+      nullable: true
+      column: synced_engine_hours
+  oneToOne:
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

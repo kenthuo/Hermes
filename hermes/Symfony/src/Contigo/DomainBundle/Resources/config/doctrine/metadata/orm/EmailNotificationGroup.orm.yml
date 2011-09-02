@@ -1,0 +1,19 @@
+EmailNotificationGroup:
+  type: entity
+  table: email_notification_group
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    notificationSchemeId:
+      type: bigint
+      nullable: true
+      column: notification_scheme_id
+    emailId:
+      type: bigint
+      nullable: true
+      column: email_id
+  lifecycleCallbacks: {  }

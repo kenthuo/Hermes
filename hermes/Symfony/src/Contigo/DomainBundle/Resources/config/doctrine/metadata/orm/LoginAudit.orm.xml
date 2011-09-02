@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="LoginAudit" table="login_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="loginId" type="bigint" column="login_id"/>
+    <field name="opUserId" type="bigint" column="op_user_id"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="usergpId" type="bigint" column="usergp_id"/>
+    <field name="usergpName" type="string" column="usergp_name" length="50"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

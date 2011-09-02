@@ -1,0 +1,31 @@
+ActionTrackNoFreq:
+  type: entity
+  table: action_track_no_freq
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    period:
+      type: integer
+      unsigned: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

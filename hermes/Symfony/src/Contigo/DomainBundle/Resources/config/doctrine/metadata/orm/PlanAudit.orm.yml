@@ -1,0 +1,26 @@
+PlanAudit:
+  type: entity
+  table: plan_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    oldPlanId:
+      type: bigint
+      nullable: true
+      column: old_plan_id
+    newPlanId:
+      type: bigint
+      nullable: true
+      column: new_plan_id
+    date:
+      type: bigint
+      nullable: false
+  lifecycleCallbacks: {  }

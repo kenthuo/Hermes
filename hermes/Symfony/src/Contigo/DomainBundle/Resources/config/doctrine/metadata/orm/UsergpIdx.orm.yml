@@ -1,0 +1,15 @@
+UsergpIdx:
+  type: entity
+  table: usergp_idx
+  fields:
+    usergpId:
+      id: true
+      type: bigint
+      nullable: false
+      column: usergp_id
+    childUsergpId:
+      id: true
+      type: bigint
+      nullable: false
+      column: child_usergp_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+VapMaintenance:
+  type: entity
+  table: vap_maintenance
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    vapId:
+      type: bigint
+      nullable: true
+      column: vap_id
+    maintenanceId:
+      type: bigint
+      nullable: true
+      column: maintenance_id
+    status:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    initialOdometer:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: initial_odometer
+    previousStatus:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: previous_status
+    lastNotificationTimestamp:
+      type: bigint
+      nullable: true
+      column: last_notification_timestamp
+  lifecycleCallbacks: {  }

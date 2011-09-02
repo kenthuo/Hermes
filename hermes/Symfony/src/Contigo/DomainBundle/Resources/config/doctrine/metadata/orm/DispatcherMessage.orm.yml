@@ -1,0 +1,71 @@
+DispatcherMessage:
+  type: entity
+  table: dispatcher_message
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subject:
+      type: text
+      nullable: true
+    body:
+      type: text
+      nullable: true
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    driverId:
+      type: bigint
+      nullable: true
+      column: driver_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    mdtEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: mdt_esn
+    sentBy:
+      type: bigint
+      nullable: false
+      column: sent_by
+    sentTs:
+      type: bigint
+      nullable: false
+      column: sent_ts
+    arrivedTs:
+      type: bigint
+      nullable: true
+      column: arrived_ts
+    readTs:
+      type: bigint
+      nullable: true
+      column: read_ts
+    readBy:
+      type: bigint
+      nullable: true
+      column: read_by
+    softDeletedTs:
+      type: bigint
+      nullable: true
+      column: soft_deleted_ts
+    softDeletedBy:
+      type: bigint
+      nullable: true
+      column: soft_deleted_by
+    isSetupMsg:
+      type: boolean
+      nullable: true
+      column: is_setup_msg
+  lifecycleCallbacks: {  }

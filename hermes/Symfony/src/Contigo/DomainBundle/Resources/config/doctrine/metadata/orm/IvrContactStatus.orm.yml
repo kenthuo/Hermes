@@ -1,0 +1,32 @@
+IvrContactStatus:
+  type: entity
+  table: ivr_contact_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    sessionId:
+      type: text
+      nullable: true
+      column: session_id
+    state:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    ivrTimestamp:
+      type: bigint
+      nullable: false
+      column: ivr_timestamp
+    isInbound:
+      type: boolean
+      nullable: true
+      column: is_inbound
+  lifecycleCallbacks: {  }

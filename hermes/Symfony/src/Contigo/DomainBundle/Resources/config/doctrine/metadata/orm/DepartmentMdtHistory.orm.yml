@@ -1,0 +1,27 @@
+DepartmentMdtHistory:
+  type: entity
+  table: department_mdt_history
+  fields:
+    departmentId:
+      id: true
+      type: bigint
+      nullable: false
+      column: department_id
+    mdtId:
+      id: true
+      type: bigint
+      nullable: false
+      column: mdt_id
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    id:
+      type: bigint
+      nullable: false
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  lifecycleCallbacks: {  }

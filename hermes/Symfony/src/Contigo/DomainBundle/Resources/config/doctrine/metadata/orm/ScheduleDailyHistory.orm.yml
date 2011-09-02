@@ -1,0 +1,58 @@
+ScheduleDailyHistory:
+  type: entity
+  table: schedule_daily_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    everyXDays:
+      type: smallint
+      nullable: true
+      column: every_x_days
+    everyWeekday:
+      type: boolean
+      nullable: true
+      column: every_weekday
+    xOccurrences:
+      type: smallint
+      nullable: true
+      column: x_occurrences
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

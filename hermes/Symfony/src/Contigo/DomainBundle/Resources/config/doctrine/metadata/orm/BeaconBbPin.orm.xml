@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconBbPin" table="beacon_bb_pin">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="pin" type="string" column="pin" length="10"/>
+    <field name="introTs" type="bigint" column="intro_ts"/>
+    <field name="introBy" type="bigint" column="intro_by"/>
+    <field name="retireTs" type="bigint" column="retire_ts"/>
+    <field name="retireBy" type="bigint" column="retire_by"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

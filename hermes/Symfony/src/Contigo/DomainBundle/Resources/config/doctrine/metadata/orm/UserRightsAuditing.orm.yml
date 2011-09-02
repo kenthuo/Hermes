@@ -1,0 +1,99 @@
+UserRightsAuditing:
+  type: entity
+  table: user_rights_auditing
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    loginId:
+      type: bigint
+      nullable: true
+      column: login_id
+    loginName:
+      type: string
+      length: 250
+      fixed: false
+      nullable: true
+      column: login_name
+    usergpId:
+      type: bigint
+      nullable: true
+      column: usergp_id
+    usergpName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: usergp_name
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    departmentName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: department_name
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    organizationName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: organization_name
+    customerId:
+      type: bigint
+      nullable: true
+      column: customer_id
+    customerName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: customer_name
+    guardianUserId:
+      type: bigint
+      nullable: true
+      column: guardian_user_id
+    guardianUserName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: guardian_user_name
+    timestamp:
+      type: bigint
+      nullable: true
+    actionType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: action_type
+    actionRequest:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: action_request
+    objectType:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: object_type
+    objectId:
+      type: bigint
+      nullable: true
+      column: object_id
+    permission:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

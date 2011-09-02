@@ -1,0 +1,12 @@
+OrganizationDefaultDepartment:
+  type: entity
+  table: organization_default_department
+  fields:
+    organizationId:
+      id: true
+      type: bigint
+      nullable: false
+      column: organization_id
+      generator:
+        strategy: SEQUENCE
+  lifecycleCallbacks: {  }

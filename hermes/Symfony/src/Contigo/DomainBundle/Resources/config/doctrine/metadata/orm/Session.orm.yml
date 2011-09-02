@@ -1,0 +1,35 @@
+Session:
+  type: entity
+  table: session
+  fields:
+    sessionId:
+      id: true
+      type: string
+      length: 35
+      fixed: false
+      nullable: false
+      column: session_id
+      generator:
+        strategy: SEQUENCE
+    lastActivatedTimestamp:
+      type: bigint
+      nullable: true
+      column: last_activated_timestamp
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    data:
+      type: text
+      nullable: true
+    ip:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    portal:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

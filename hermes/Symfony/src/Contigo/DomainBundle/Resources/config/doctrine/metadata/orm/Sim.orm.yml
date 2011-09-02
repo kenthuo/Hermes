@@ -1,0 +1,28 @@
+Sim:
+  type: entity
+  table: sim
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    version:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    lastLoginTimestamp:
+      type: bigint
+      nullable: true
+      column: last_login_timestamp
+  lifecycleCallbacks: {  }

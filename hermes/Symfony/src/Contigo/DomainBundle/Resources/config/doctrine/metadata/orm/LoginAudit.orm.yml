@@ -1,0 +1,40 @@
+LoginAudit:
+  type: entity
+  table: login_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    loginId:
+      type: bigint
+      nullable: true
+      column: login_id
+    opUserId:
+      type: bigint
+      nullable: true
+      column: op_user_id
+    timestamp:
+      type: bigint
+      nullable: true
+    usergpId:
+      type: bigint
+      nullable: true
+      column: usergp_id
+    usergpName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: usergp_name
+  lifecycleCallbacks: {  }

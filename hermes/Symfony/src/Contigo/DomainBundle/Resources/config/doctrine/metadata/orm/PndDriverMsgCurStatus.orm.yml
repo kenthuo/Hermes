@@ -1,0 +1,42 @@
+PndDriverMsgCurStatus:
+  type: entity
+  table: pnd_driver_msg_cur_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    pndDispatcherMsgId:
+      type: bigint
+      nullable: true
+      column: pnd_dispatcher_msg_id
+    receivedTs:
+      type: bigint
+      nullable: true
+      column: received_ts
+    responseType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: response_type
+  lifecycleCallbacks: {  }

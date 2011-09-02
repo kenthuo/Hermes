@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ZoneMonitoringAudit" table="zone_monitoring_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="type" type="string" column="type" length="20"/>
+    <field name="rlat1" type="decimal" column="rlat1"/>
+    <field name="rlat2" type="decimal" column="rlat2"/>
+    <field name="rlon1" type="decimal" column="rlon1"/>
+    <field name="rlon2" type="decimal" column="rlon2"/>
+    <field name="clat" type="decimal" column="clat"/>
+    <field name="clon" type="decimal" column="clon"/>
+    <field name="cradius" type="integer" column="cradius"/>
+    <field name="boundary" type="string" column="boundary" length="20"/>
+    <field name="emailNotification" type="text" column="email_notification"/>
+    <field name="smsNotification" type="text" column="sms_notification"/>
+    <field name="notifyStation" type="boolean" column="notify_station"/>
+    <field name="createDate" type="bigint" column="create_date"/>
+    <field name="deleteDate" type="bigint" column="delete_date"/>
+    <field name="name" type="string" column="name" length="255"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,35 @@
+BeaconTestState:
+  type: entity
+  table: beacon_test_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    cancelTimestamp:
+      type: bigint
+      nullable: true
+      column: cancel_timestamp
+    cancelAccessListId:
+      type: bigint
+      nullable: true
+      column: cancel_access_list_id
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,58 @@
+DrvPndLastConnBeacon:
+  type: entity
+  table: drv_pnd_last_conn_beacon
+  fields:
+    pndEsn:
+      id: true
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    pndDriverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: true
+      column: pnd_driver_id
+    guardianId:
+      type: bigint
+      nullable: true
+      column: guardian_id
+    isBeaconConnected:
+      type: boolean
+      nullable: false
+      column: is_beacon_connected
+    isResetInProgress:
+      type: boolean
+      nullable: false
+      column: is_reset_in_progress
+    sentWarningMsg:
+      type: boolean
+      nullable: false
+      column: sent_warning_msg
+    lastConnectedTs:
+      type: bigint
+      nullable: true
+      column: last_connected_ts
+    lastInboundMsgType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: last_inbound_msg_type
+    prevConnBeaconId:
+      type: bigint
+      nullable: true
+      column: prev_conn_beacon_id
+    prevConnGuardianId:
+      type: bigint
+      nullable: true
+      column: prev_conn_guardian_id
+  lifecycleCallbacks: {  }

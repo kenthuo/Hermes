@@ -1,0 +1,49 @@
+Sendum:
+  type: entity
+  table: sendum
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    phoneNumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: phone_number
+    haGpsDestId:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: ha_gps_dest_id
+    isUserplane:
+      type: smallint
+      nullable: true
+      column: is_userplane
+    isControlplane:
+      type: smallint
+      nullable: true
+      column: is_controlplane
+    isPanic:
+      type: smallint
+      nullable: true
+      column: is_panic
+    msid:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    dynamicBrewId:
+      type: string
+      length: null
+      fixed: false
+      nullable: true
+      column: dynamic_brew_id
+  lifecycleCallbacks: {  }

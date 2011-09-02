@@ -1,0 +1,43 @@
+SvcFeatureHistory:
+  type: entity
+  table: svc_feature_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    featureId:
+      type: bigint
+      nullable: false
+      column: feature_id
+    planId:
+      type: bigint
+      nullable: false
+      column: plan_id
+    scenarioParameter:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_parameter
+    maxTimeConflict:
+      type: smallint
+      nullable: false
+      column: max_time_conflict
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: false
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

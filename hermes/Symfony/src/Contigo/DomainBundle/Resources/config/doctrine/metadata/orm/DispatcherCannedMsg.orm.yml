@@ -1,0 +1,25 @@
+DispatcherCannedMsg:
+  type: entity
+  table: dispatcher_canned_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    subject:
+      type: text
+      nullable: false
+    body:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

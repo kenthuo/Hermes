@@ -1,0 +1,29 @@
+Appln:
+  type: entity
+  table: appln
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    mnemonic:
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+    description:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: true
+      column: retire_ts
+  lifecycleCallbacks: {  }

@@ -1,0 +1,21 @@
+DependentIvrAltCallbackNo:
+  type: entity
+  table: dependent_ivr_alt_callback_no
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    alternatePhoneNo:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: alternate_phone_no
+  lifecycleCallbacks: {  }

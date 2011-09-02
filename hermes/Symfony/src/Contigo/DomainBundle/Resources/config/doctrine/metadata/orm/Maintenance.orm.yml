@@ -1,0 +1,45 @@
+Maintenance:
+  type: entity
+  table: maintenance
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    notificationGroupId:
+      type: bigint
+      nullable: true
+      column: notification_group_id
+    serviceTypeId:
+      type: bigint
+      nullable: true
+      column: service_type_id
+    createTimestamp:
+      type: bigint
+      nullable: true
+      column: create_timestamp
+    initialTimestamp:
+      type: bigint
+      nullable: true
+      column: initial_timestamp
+  oneToOne:
+    department:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SystemMessage" table="system_message">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="notice" type="text" column="notice"/>
+    <field name="status" type="text" column="status"/>
+    <field name="maintenance" type="text" column="maintenance"/>
+    <field name="name" type="text" column="name"/>
+    <field name="createTs" type="bigint" column="create_ts"/>
+    <field name="isActive" type="boolean" column="is_active"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

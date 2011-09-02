@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Customer" table="customer">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="parentCustomerId" type="bigint" column="parent_customer_id"/>
+    <field name="daylightSaving" type="boolean" column="daylight_saving"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="notes" type="text" column="notes"/>
+    <field name="status" type="string" column="status" length="20"/>
+    <field name="streetAddress" type="string" column="street_address" length="100"/>
+    <field name="city" type="string" column="city" length="100"/>
+    <field name="state" type="string" column="state" length="100"/>
+    <field name="country" type="string" column="country" length="100"/>
+    <field name="zipCode" type="string" column="zip_code" length="10"/>
+    <field name="contactName" type="string" column="contact_name" length="100"/>
+    <field name="contactNumber" type="string" column="contact_number" length="20"/>
+    <field name="contactEmail" type="string" column="contact_email" length="100"/>
+    <field name="name" type="string" column="name" length="255"/>
+    <field name="type" type="string" column="type" length="20"/>
+    <field name="refreshFreq" type="bigint" column="refresh_freq"/>
+    <field name="subdomainName" type="string" column="subdomain_name" length="255"/>
+    <field name="notificationEmail" type="string" column="notification_email" length="100"/>
+    <field name="custServiceEmail" type="string" column="cust_service_email" length="100"/>
+    <field name="dealerPricing" type="string" column="dealer_pricing" length="20"/>
+    <field name="dpExpiry" type="integer" column="dp_expiry"/>
+    <field name="spExpiry" type="integer" column="sp_expiry"/>
+    <field name="shortname" type="string" column="shortname" length="255"/>
+    <field name="allowAccountLogin" type="boolean" column="allow_account_login"/>
+    <field name="alertEmail" type="string" column="alert_email" length="255"/>
+    <field name="isSubscriberUnique" type="boolean" column="is_subscriber_unique"/>
+    <field name="isDealerUnique" type="boolean" column="is_dealer_unique"/>
+    <field name="dealerUniqueId" type="string" column="dealer_unique_id" length="25"/>
+    <field name="isTicketMaster" type="boolean" column="is_ticket_master"/>
+    <field name="ticketCounter" type="bigint" column="ticket_counter"/>
+    <field name="supportNotes" type="text" column="support_notes"/>
+    <field name="nextBillCycle" type="boolean" column="next_bill_cycle"/>
+    <field name="custServiceEmailCc" type="text" column="cust_service_email_cc"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

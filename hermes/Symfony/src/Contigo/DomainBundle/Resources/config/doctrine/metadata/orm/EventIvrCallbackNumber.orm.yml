@@ -1,0 +1,54 @@
+EventIvrCallbackNumber:
+  type: entity
+  table: event_ivr_callback_number
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    eventTimestamp:
+      type: bigint
+      nullable: false
+      column: event_timestamp
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    phoneNo:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: phone_no
+    isEndShift:
+      type: boolean
+      nullable: false
+      column: is_end_shift
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    adminNote:
+      type: text
+      nullable: true
+      column: admin_note
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

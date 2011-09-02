@@ -1,0 +1,80 @@
+Stock:
+  type: entity
+  table: stock
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    esn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    serialNumber:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: serial_number
+    receivedDate:
+      type: date
+      nullable: true
+      column: received_date
+    gmmsCost:
+      type: float
+      nullable: true
+      column: gmms_cost
+    gmmsCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: gmms_cost_currency
+    p2pCost:
+      type: float
+      nullable: true
+      column: p2p_cost
+    p2pCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: p2p_cost_currency
+    enforaActivationCode:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: enfora_activation_code
+  oneToOne:
+    location:
+      targetEntity: Location
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        location_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    koreSim:
+      targetEntity: KoreSim
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        kore_sim_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    make:
+      targetEntity: Make
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        make_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

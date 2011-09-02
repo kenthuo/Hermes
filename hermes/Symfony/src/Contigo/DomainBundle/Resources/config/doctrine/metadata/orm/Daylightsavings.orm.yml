@@ -1,0 +1,20 @@
+Daylightsavings:
+  type: entity
+  table: daylightsavings
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    timezone:
+      type: float
+      nullable: false
+    startdate:
+      type: bigint
+      nullable: true
+    enddate:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

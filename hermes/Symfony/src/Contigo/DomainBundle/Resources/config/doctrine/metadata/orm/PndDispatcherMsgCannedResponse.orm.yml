@@ -1,0 +1,30 @@
+PndDispatcherMsgCannedResponse:
+  type: entity
+  table: pnd_dispatcher_msg_canned_response
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    pndDispatcherMsgId:
+      type: bigint
+      nullable: false
+      column: pnd_dispatcher_msg_id
+    cannedResponseId:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: canned_response_id
+    cannedResponseText:
+      type: string
+      length: 200
+      fixed: false
+      nullable: false
+      column: canned_response_text
+  lifecycleCallbacks: {  }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Trimtrac15" table="trimtrac15">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="issuedCmd" type="string" column="issued_cmd"/>
+    <field name="issuedCmdTimestamp" type="bigint" column="issued_cmd_timestamp"/>
+    <field name="lastTrackingStopped" type="bigint" column="last_tracking_stopped"/>
+    <field name="securityPassword" type="string" column="security_password"/>
+    <field name="commMode" type="string" column="comm_mode"/>
+    <field name="trackingFreq" type="integer" column="tracking_freq"/>
+    <field name="motionFreq" type="integer" column="motion_freq"/>
+    <field name="nonMotionFreq" type="integer" column="non_motion_freq"/>
+    <field name="scheduledMode" type="string" column="scheduled_mode"/>
+    <field name="scheduledTime" type="bigint" column="scheduled_time"/>
+    <field name="sequence" type="integer" column="sequence"/>
+    <field name="version" type="string" column="version"/>
+    <field name="unitId" type="string" column="unit_id"/>
+    <field name="seqNumber" type="integer" column="seq_number"/>
+    <field name="lockdown" type="boolean" column="lockdown"/>
+    <field name="motionSensitivity" type="string" column="motion_sensitivity"/>
+    <field name="notificationType" type="integer" column="notification_type"/>
+    <field name="scheduledHours" type="boolean" column="scheduled_hours"/>
+    <field name="dailyStartTime" type="integer" column="daily_start_time"/>
+    <field name="workDayLength" type="integer" column="work_day_length"/>
+    <field name="firstWorkDay" type="string" column="first_work_day"/>
+    <field name="consecutiveWorkDays" type="string" column="consecutive_work_days"/>
+    <field name="isStartStopMode" type="boolean" column="is_start_stop_mode"/>
+    <field name="shoControl" type="boolean" column="sho_control"/>
+    <field name="fastGpsFix" type="boolean" column="fast_gps_fix"/>
+    <field name="hpaType" type="string" column="hpa_type"/>
+    <field name="mpaType" type="string" column="mpa_type"/>
+    <field name="lpaType" type="string" column="lpa_type"/>
+    <field name="mpaStatus" type="string" column="mpa_status"/>
+    <field name="sentClearMpa" type="boolean" column="sent_clear_mpa"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

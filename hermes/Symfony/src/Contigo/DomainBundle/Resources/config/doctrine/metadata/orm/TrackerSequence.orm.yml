@@ -1,0 +1,34 @@
+TrackerSequence:
+  type: entity
+  table: tracker_sequence
+  fields:
+    pid:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    id:
+      type: integer
+      unsigned: false
+      nullable: true
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    timestamp:
+      type: bigint
+      nullable: true
+    expiry:
+      type: bigint
+      nullable: true
+    frequency:
+      type: bigint
+      nullable: true
+    type:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

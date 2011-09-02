@@ -1,0 +1,41 @@
+BeaconCustomSetting:
+  type: entity
+  table: beacon_custom_setting
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    customSetting:
+      type: text
+      nullable: false
+      column: custom_setting
+    createdTs:
+      type: bigint
+      nullable: false
+      column: created_ts
+    createdBy:
+      type: bigint
+      nullable: false
+      column: created_by
+    terminatedTs:
+      type: bigint
+      nullable: true
+      column: terminated_ts
+    terminatedBy:
+      type: bigint
+      nullable: true
+      column: terminated_by
+  oneToOne:
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

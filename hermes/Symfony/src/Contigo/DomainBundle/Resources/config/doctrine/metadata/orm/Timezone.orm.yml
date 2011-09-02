@@ -1,0 +1,30 @@
+Timezone:
+  type: entity
+  table: timezone
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    timezone:
+      type: float
+      nullable: false
+    abbreviation:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    propertyKey:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: property_key
+  lifecycleCallbacks: {  }

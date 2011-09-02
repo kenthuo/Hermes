@@ -1,0 +1,38 @@
+DependentIvrPhone:
+  type: entity
+  table: dependent_ivr_phone
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    callSequence:
+      type: smallint
+      nullable: false
+      column: call_sequence
+    createTs:
+      type: bigint
+      nullable: false
+      column: create_ts
+  oneToOne:
+    phone:
+      targetEntity: Phone
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        phone_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    dependent:
+      targetEntity: Dependent
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        dependent_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

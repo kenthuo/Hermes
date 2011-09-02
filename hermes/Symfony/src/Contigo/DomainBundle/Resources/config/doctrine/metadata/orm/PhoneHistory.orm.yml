@@ -1,0 +1,65 @@
+PhoneHistory:
+  type: entity
+  table: phone_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    guardianId:
+      type: bigint
+      nullable: true
+      column: guardian_id
+    areacode:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+    number:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    extention:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+    carrierId:
+      type: bigint
+      nullable: true
+      column: carrier_id
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

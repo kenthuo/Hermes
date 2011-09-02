@@ -1,0 +1,69 @@
+EventIvrCheckIn:
+  type: entity
+  table: event_ivr_check_in
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    checkInType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: check_in_type
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    eventTimestamp:
+      type: bigint
+      nullable: false
+      column: event_timestamp
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    voiceNoteId:
+      type: bigint
+      nullable: true
+      column: voice_note_id
+    checkInInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: check_in_interval
+    adminNote:
+      type: text
+      nullable: true
+      column: admin_note
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

@@ -1,0 +1,38 @@
+ModuleReport:
+  type: entity
+  table: module_report
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    report:
+      targetEntity: Reports
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        report_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    module:
+      targetEntity: Module
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        module_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

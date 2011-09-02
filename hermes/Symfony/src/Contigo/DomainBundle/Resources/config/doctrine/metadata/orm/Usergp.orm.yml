@@ -1,0 +1,48 @@
+Usergp:
+  type: entity
+  table: usergp
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    description:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    parent:
+      targetEntity: Usergp
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        parent_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

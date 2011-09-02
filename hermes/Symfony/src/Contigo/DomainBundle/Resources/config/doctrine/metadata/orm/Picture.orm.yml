@@ -1,0 +1,60 @@
+Picture:
+  type: entity
+  table: picture
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    datetime:
+      type: datetime
+      nullable: true
+    data:
+      type: bytea
+      nullable: true
+    filesize:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    filetype:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+  oneToOne:
+    beaconmodel:
+      targetEntity: Beaconmodel
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beaconmodel_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    dependent:
+      targetEntity: Dependent
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        dependent_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    asset:
+      targetEntity: Asset
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        asset_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

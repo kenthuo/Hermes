@@ -1,0 +1,24 @@
+<legend>Date/Time to Epoch</legend>
+<table> 
+    <tr>
+        <td>Mon</td>
+        <td>Day</td>
+        <td>Yr</td>
+        <td>&nbsp;</td>
+        <td>Hr</td>
+        <td>Min</td>
+        <td>Sec</td>
+    </tr> 
+    <tr>
+        <td><input type="text" maxlength="2" value="{{ mm }}" name="mm" class="dt">&nbsp;/&nbsp;</td> 
+        <td><input type="text" maxlength="2" value="{{ dd }}" name="dd" class="dt">&nbsp;/&nbsp;</td> 
+        <td><input type="text" maxlength="4" value="{{ yyyy }}" name="yyyy" class="dt"></td> 
+        <td>&nbsp;</td> 
+        <td><input type="text" maxlength="2" value="{{ hh }}" name="hh" class="dt">&nbsp;:&nbsp;</td>
+        <td><input type="text" maxlength="2" value="{{ ii }}" name="ii" class="dt">&nbsp;:&nbsp;</td> 
+        <td><input type="text" maxlength="2" value="{{ ss }}" name="ss" class="dt"> GMT</td>
+        <td>&nbsp;</td> 
+    </tr>
+</table>
+<label>Epoch:</label><input type="text" value="{{ epoch }}" readonly="readonly" /><br />
+<input type="hidden" name="panel_id" value="datetime-to-epoch-fs"> 

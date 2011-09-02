@@ -1,0 +1,12 @@
+Stepp2NightlyInitExceptionList:
+  type: entity
+  table: stepp2_nightly_init_exception_list
+  fields:
+    beaconId:
+      id: true
+      type: bigint
+      nullable: false
+      column: beacon_id
+      generator:
+        strategy: SEQUENCE
+  lifecycleCallbacks: {  }

@@ -1,0 +1,76 @@
+PurchaseOrderTransaction:
+  type: entity
+  table: purchase_order_transaction
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    ponum:
+      type: bigint
+      nullable: true
+    customerId:
+      type: bigint
+      nullable: true
+      column: customer_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    billingName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: billing_name
+    ccProvider:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: cc_provider
+    amount:
+      type: float
+      nullable: true
+    comment1:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    comment2:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    transactionId:
+      type: string
+      length: 12
+      fixed: false
+      nullable: true
+      column: transaction_id
+    transactionType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: transaction_type
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    operator:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

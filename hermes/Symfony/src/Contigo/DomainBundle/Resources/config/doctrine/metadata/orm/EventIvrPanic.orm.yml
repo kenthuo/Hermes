@@ -1,0 +1,58 @@
+EventIvrPanic:
+  type: entity
+  table: event_ivr_panic
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    eventTimestamp:
+      type: bigint
+      nullable: false
+      column: event_timestamp
+    isCancelPanic:
+      type: boolean
+      nullable: false
+      column: is_cancel_panic
+    voiceNoteId:
+      type: bigint
+      nullable: true
+      column: voice_note_id
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    callsessionId:
+      type: text
+      nullable: true
+      column: callsession_id
+  lifecycleCallbacks: {  }

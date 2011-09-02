@@ -1,0 +1,34 @@
+EventIndex:
+  type: entity
+  table: event_index
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    eventName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: event_name
+    className:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: class_name
+    tableName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: table_name
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

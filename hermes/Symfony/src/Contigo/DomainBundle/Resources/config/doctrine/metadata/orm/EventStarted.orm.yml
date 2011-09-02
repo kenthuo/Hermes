@@ -1,0 +1,19 @@
+EventStarted:
+  type: entity
+  table: event_started
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    locateId:
+      type: bigint
+      nullable: false
+      column: locate_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,43 @@
+EventStartstop201010B5to10k:
+  type: entity
+  table: event_startstop_201010_b5to10k
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    isStop:
+      type: boolean
+      nullable: true
+      column: is_stop
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+  lifecycleCallbacks: {  }

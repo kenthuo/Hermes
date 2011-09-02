@@ -1,0 +1,70 @@
+BeaconHistory:
+  type: entity
+  table: beacon_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    stockId:
+      type: bigint
+      nullable: true
+      column: stock_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    registeredOrgId:
+      type: bigint
+      nullable: true
+      column: registered_org_id
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    beaconmodelId:
+      type: bigint
+      nullable: true
+      column: beaconmodel_id
+    registeredSubscriberId:
+      type: bigint
+      nullable: true
+      column: registered_subscriber_id
+    ownerCustomerId:
+      type: bigint
+      nullable: true
+      column: owner_customer_id
+    name:
+      type: string
+      length: 40
+      fixed: false
+      nullable: true
+    iconId:
+      type: bigint
+      nullable: true
+      column: icon_id
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    canNotifyStation:
+      type: boolean
+      nullable: true
+      column: can_notify_station
+  lifecycleCallbacks: {  }

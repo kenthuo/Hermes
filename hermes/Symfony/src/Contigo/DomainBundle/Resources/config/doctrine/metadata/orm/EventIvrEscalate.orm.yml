@@ -1,0 +1,72 @@
+EventIvrEscalate:
+  type: entity
+  table: event_ivr_escalate
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    eventIvrCheckInId:
+      type: bigint
+      nullable: false
+      column: event_ivr_check_in_id
+    missedChkInTs:
+      type: bigint
+      nullable: false
+      column: missed_chk_in_ts
+    eventTimestamp:
+      type: bigint
+      nullable: false
+      column: event_timestamp
+    phoneId:
+      type: bigint
+      nullable: false
+      column: phone_id
+    phoneNo:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: phone_no
+    contactName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: contact_name
+    callResult:
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+      column: call_result
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    contactType:
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+      column: contact_type
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

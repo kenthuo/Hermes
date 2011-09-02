@@ -1,0 +1,37 @@
+CustomerBmodelBwpHistory:
+  type: entity
+  table: customer_bmodel_bwp_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    customerId:
+      type: bigint
+      nullable: false
+      column: customer_id
+    beaconmodelId:
+      type: bigint
+      nullable: false
+      column: beaconmodel_id
+    bwpPlanId:
+      type: bigint
+      nullable: false
+      column: bwp_plan_id
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,33 @@
+ScheduledReportItemsHistory:
+  type: entity
+  table: scheduled_report_items_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduledReportId:
+      type: bigint
+      nullable: true
+      column: scheduled_report_id
+    vapId:
+      type: bigint
+      nullable: true
+      column: vap_id
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

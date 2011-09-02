@@ -1,0 +1,42 @@
+CustomerReceiver:
+  type: entity
+  table: customer_receiver
+  fields:
+    customerId:
+      id: true
+      type: bigint
+      nullable: false
+      column: customer_id
+      generator:
+        strategy: SEQUENCE
+    id:
+      type: bigint
+      nullable: false
+    ip:
+      type: string
+      length: 32
+      fixed: false
+      nullable: false
+    port:
+      type: bigint
+      nullable: false
+  oneToOne:
+    receiver:
+      targetEntity: Receiver
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        receiver_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

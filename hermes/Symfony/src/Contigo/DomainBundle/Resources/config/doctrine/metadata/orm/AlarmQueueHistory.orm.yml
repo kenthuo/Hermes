@@ -1,0 +1,42 @@
+AlarmQueueHistory:
+  type: entity
+  table: alarm_queue_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    customerId:
+      type: bigint
+      nullable: true
+      column: customer_id
+    event:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    emailNotification:
+      type: text
+      nullable: true
+      column: email_notification
+    smsNotification:
+      type: text
+      nullable: true
+      column: sms_notification
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

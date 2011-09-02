@@ -1,0 +1,23 @@
+BeaconmodelPlan:
+  type: entity
+  table: beaconmodel_plan
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconmodelId:
+      type: bigint
+      nullable: true
+      column: beaconmodel_id
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    slTrackingInterval:
+      type: smallint
+      nullable: false
+      column: sl_tracking_interval
+  lifecycleCallbacks: {  }

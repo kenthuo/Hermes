@@ -1,0 +1,136 @@
+Locate200904B1to5k:
+  type: entity
+  table: locate_200904_b1to5k
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    direction:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    address:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    altitude:
+      type: float
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    isValidFix:
+      type: boolean
+      nullable: true
+      column: is_valid_fix
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 70
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: zip_code
+    gpsAge:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: gps_age
+    eventIndexId:
+      type: bigint
+      nullable: true
+      column: event_index_id
+    odometer:
+      type: bigint
+      nullable: true
+    accuracy:
+      type: integer
+      unsigned: false
+      nullable: true
+    battLevel:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: batt_level
+    signalQuality:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: signal_quality
+    gpsSats:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: gps_sats
+    isAsleep:
+      type: boolean
+      nullable: false
+      column: is_asleep
+  lifecycleCallbacks: {  }

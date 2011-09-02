@@ -1,0 +1,31 @@
+BeaconServicePlanFirstOfMonthJob:
+  type: entity
+  table: beacon_service_plan_first_of_month_job
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconServicePlanId:
+      type: bigint
+      nullable: true
+      column: beacon_service_plan_id
+    oldBeaconServicePlanId:
+      type: bigint
+      nullable: true
+      column: old_beacon_service_plan_id
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    note:
+      type: string
+      length: 250
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

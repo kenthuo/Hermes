@@ -1,0 +1,27 @@
+<form action="{{ path('make_add') }}" method="post" {{ form_enctype(form) }} id="entity-add-form" class="entity-form">
+    {% include 'ContigoGamPartialBundle:Form:required-note.html.twig' %}
+    <fieldset>
+        <legend>Basic Information</legend>  
+        {{ form_label(form.manufacturer, 'Manufacturer:', { 'attr': {'class': 'required'}}) }}     
+        {{ form_widget(form.manufacturer) }}<br /> 
+        {% if form_errors(form.manufacturer) is not empty %}
+        <div class="field-error">{{ form_errors(form.manufacturer) }}</div>
+        {% endif %}
+        {{ form_label(form.name, 'Name:', { 'attr': {'class': 'required'}}) }}
+        {{ form_widget(form.name, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+        {% if form_errors(form.name) is not empty %}
+        <div class="field-error">{{ form_errors(form.name) }}</div>
+        {% endif %}        
+        {{ form_label(form.version, 'Version:', { 'attr': {'class': 'required'}}) }}
+        {{ form_widget(form.version, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+        {% if form_errors(form.version) is not empty %}
+        <div class="field-error">{{ form_errors(form.version) }}</div>
+        {% endif %}
+        {{ form_label(form.sim_required, 'SIM Required:', { 'attr': {'class': 'required'}}) }}
+        {{ form_widget(form.sim_required) }}<br />
+        {% if form_errors(form.sim_required) is not empty %}
+        <div class="field-error">{{ form_errors(form.sim_required) }}</div>
+        {% endif %}
+        {{ form_rest(form) }}
+    </fieldset>
+</form>

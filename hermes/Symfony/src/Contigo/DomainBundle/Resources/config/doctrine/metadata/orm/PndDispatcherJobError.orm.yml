@@ -1,0 +1,42 @@
+PndDispatcherJobError:
+  type: entity
+  table: pnd_dispatcher_job_error
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    pndDispatcherJobId:
+      type: bigint
+      nullable: false
+      column: pnd_dispatcher_job_id
+    errorCode:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: error_code
+    errorMsg:
+      type: text
+      nullable: true
+      column: error_msg
+    rcvdTs:
+      type: bigint
+      nullable: true
+      column: rcvd_ts
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    pndJobAuditId:
+      type: bigint
+      nullable: false
+      column: pnd_job_audit_id
+  lifecycleCallbacks: {  }

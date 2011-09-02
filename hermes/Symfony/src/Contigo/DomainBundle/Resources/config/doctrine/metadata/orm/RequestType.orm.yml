@@ -1,0 +1,14 @@
+RequestType:
+  type: entity
+  table: request_type
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    type:
+      type: text
+      nullable: false
+  lifecycleCallbacks: {  }

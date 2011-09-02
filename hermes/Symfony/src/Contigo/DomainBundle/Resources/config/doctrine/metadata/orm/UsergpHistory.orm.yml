@@ -1,0 +1,37 @@
+UsergpHistory:
+  type: entity
+  table: usergp_history
+  fields:
+    organizationId:
+      id: true
+      type: bigint
+      nullable: false
+      column: organization_id
+    name:
+      id: true
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    id:
+      type: bigint
+      nullable: false
+    parentId:
+      type: bigint
+      nullable: true
+      column: parent_id
+    description:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  lifecycleCallbacks: {  }

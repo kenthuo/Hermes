@@ -1,0 +1,48 @@
+Caretaker:
+  type: entity
+  table: caretaker
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    relationship:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+  oneToOne:
+    guardian:
+      targetEntity: Guardian
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        guardian_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    dependent:
+      targetEntity: Dependent
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        dependent_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    asset:
+      targetEntity: Asset
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        asset_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

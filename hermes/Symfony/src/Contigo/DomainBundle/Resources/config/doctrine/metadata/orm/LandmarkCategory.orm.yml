@@ -1,0 +1,37 @@
+LandmarkCategory:
+  type: entity
+  table: landmark_category
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    iconId:
+      type: bigint
+      nullable: true
+      column: icon_id
+    isDefault:
+      type: boolean
+      nullable: true
+      column: is_default
+    status:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

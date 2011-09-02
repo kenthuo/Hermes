@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PndDispatcherMsg" table="pnd_dispatcher_msg">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="pndEsn" type="string" column="pnd_esn" length="50"/>
+    <field name="priority" type="integer" column="priority"/>
+    <field name="message" type="text" column="message"/>
+    <field name="responseType" type="string" column="response_type" length="50"/>
+    <field name="status" type="string" column="status" length="50"/>
+    <field name="sentTs" type="bigint" column="sent_ts"/>
+    <field name="sentBy" type="bigint" column="sent_by"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="5"/>
+    <field name="pndMsgAuditId" type="bigint" column="pnd_msg_audit_id"/>
+    <field name="orgPndDispatcherMsgId" type="bigint" column="org_pnd_dispatcher_msg_id"/>
+    <field name="pndDispatcherGroupMsgId" type="bigint" column="pnd_dispatcher_group_msg_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

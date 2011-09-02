@@ -1,0 +1,43 @@
+TelusSoc:
+  type: entity
+  table: telus_soc
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    code:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+    telusServiceCode:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+      column: telus_service_code
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    propertyKey:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: property_key
+  oneToOne:
+    telusService:
+      targetEntity: TelusService
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        telus_service_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

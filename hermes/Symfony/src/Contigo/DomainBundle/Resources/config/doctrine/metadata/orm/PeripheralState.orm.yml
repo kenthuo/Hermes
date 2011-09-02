@@ -1,0 +1,16 @@
+PeripheralState:
+  type: entity
+  table: peripheral_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

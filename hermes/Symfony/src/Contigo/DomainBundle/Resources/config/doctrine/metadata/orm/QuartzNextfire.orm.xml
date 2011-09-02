@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="QuartzNextfire" table="quartz_nextfire">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="command" type="string" column="command" length="20"/>
+    <field name="nextFireTimestamp" type="bigint" column="next_fire_timestamp"/>
+    <many-to-one field="sen" target-entity="Sen" orphan-removal="">
+      <join-columns>
+        <join-column name="sen_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="scenario" target-entity="Scenario" orphan-removal="">
+      <join-columns>
+        <join-column name="scenario_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="beacon" target-entity="Beacon" orphan-removal="">
+      <join-columns>
+        <join-column name="beacon_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="actionIndex" target-entity="ActionIndex" orphan-removal="">
+      <join-columns>
+        <join-column name="action_index_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

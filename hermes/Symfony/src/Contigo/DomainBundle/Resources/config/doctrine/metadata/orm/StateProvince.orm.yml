@@ -1,0 +1,32 @@
+StateProvince:
+  type: entity
+  table: state_province
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    abbreviation:
+      type: string
+      length: null
+      fixed: true
+      nullable: false
+  oneToOne:
+    country:
+      targetEntity: Country
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        country_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

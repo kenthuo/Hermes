@@ -1,0 +1,22 @@
+PointLocate:
+  type: entity
+  table: point_locate
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    locateId:
+      type: bigint
+      nullable: true
+      column: locate_id
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

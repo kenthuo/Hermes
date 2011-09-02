@@ -1,0 +1,103 @@
+<?php
+
+namespace Contigo\DomainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contigo\DomainBundle\Entity\ActionSpotCheckInHistory
+ *
+ * @Table(name="action_spot_check_in_history")
+ * @Entity
+ */
+class ActionSpotCheckInHistory
+{
+    /**
+     * @var bigint $id
+     *
+     * @Column(name="id", type="bigint", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="SEQUENCE")
+     * @SequenceGenerator(sequenceName="action_spot_check_in_history_id_seq", allocationSize="1", initialValue="1")
+     */
+    private $id;
+
+    /**
+     * @var bigint $subscriberId
+     *
+     * @Column(name="subscriber_id", type="bigint", nullable=true)
+     */
+    private $subscriberId;
+
+    /**
+     * @var bigint $organizationId
+     *
+     * @Column(name="organization_id", type="bigint", nullable=true)
+     */
+    private $organizationId;
+
+    /**
+     * @var string $name
+     *
+     * @Column(name="name", type="string", length=100, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var text $description
+     *
+     * @Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var bigint $xid
+     *
+     * @Column(name="xid", type="bigint", nullable=false)
+     */
+    private $xid;
+
+    /**
+     * @var boolean $isDeleted
+     *
+     * @Column(name="is_deleted", type="boolean", nullable=true)
+     */
+    private $isDeleted;
+
+    /**
+     * @var bigint $timestamp
+     *
+     * @Column(name="timestamp", type="bigint", nullable=true)
+     */
+    private $timestamp;
+
+    /**
+     * @var bigint $accessListId
+     *
+     * @Column(name="access_list_id", type="bigint", nullable=true)
+     */
+    private $accessListId;
+
+    /**
+     * @var boolean $timerEnabled
+     *
+     * @Column(name="timer_enabled", type="boolean", nullable=true)
+     */
+    private $timerEnabled;
+
+    /**
+     * @var string $unit
+     *
+     * @Column(name="unit", type="string", length=20, nullable=true)
+     */
+    private $unit;
+
+    /**
+     * @var integer $frequency
+     *
+     * @Column(name="frequency", type="integer", nullable=true)
+     */
+    private $frequency;
+
+
+}

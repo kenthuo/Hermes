@@ -1,0 +1,26 @@
+ApiUseCount:
+  type: entity
+  table: api_use_count
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    date:
+      type: string
+      length: null
+      fixed: false
+      nullable: true
+    hour:
+      type: bigint
+      nullable: true
+    count:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

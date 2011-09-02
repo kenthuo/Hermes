@@ -1,0 +1,30 @@
+TelusSocContigoPlan:
+  type: entity
+  table: telus_soc_contigo_plan
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    telusSoc:
+      targetEntity: TelusSoc
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        telus_soc_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    plan:
+      targetEntity: Plan
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        plan_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

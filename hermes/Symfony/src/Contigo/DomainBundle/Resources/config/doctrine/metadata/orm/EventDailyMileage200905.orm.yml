@@ -1,0 +1,33 @@
+EventDailyMileage200905:
+  type: entity
+  table: event_daily_mileage_200905
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    distmeters:
+      type: bigint
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+    firstLocateTs:
+      type: bigint
+      nullable: true
+      column: first_locate_ts
+    lastLocateTs:
+      type: bigint
+      nullable: true
+      column: last_locate_ts
+    lastPingTs:
+      type: bigint
+      nullable: true
+      column: last_ping_ts
+  lifecycleCallbacks: {  }

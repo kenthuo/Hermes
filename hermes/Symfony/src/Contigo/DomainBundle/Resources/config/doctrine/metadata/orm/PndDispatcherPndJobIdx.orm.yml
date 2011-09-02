@@ -1,0 +1,21 @@
+PndDispatcherPndJobIdx:
+  type: entity
+  table: pnd_dispatcher_pnd_job_idx
+  fields:
+    pndDispatcherJobId:
+      id: true
+      type: bigint
+      nullable: false
+      column: pnd_dispatcher_job_id
+      generator:
+        strategy: SEQUENCE
+    pndJobIdx:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: pnd_job_idx
+    lastUpdateTs:
+      type: bigint
+      nullable: true
+      column: last_update_ts
+  lifecycleCallbacks: {  }

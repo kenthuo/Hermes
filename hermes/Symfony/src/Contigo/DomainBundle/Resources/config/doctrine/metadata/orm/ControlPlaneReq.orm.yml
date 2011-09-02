@@ -1,0 +1,60 @@
+ControlPlaneReq:
+  type: entity
+  table: control_plane_req
+  fields:
+    haGpsDestId:
+      id: true
+      type: bigint
+      nullable: false
+      column: ha_gps_dest_id
+    requestProfileId:
+      id: true
+      type: bigint
+      nullable: false
+      column: request_profile_id
+    requestTypeId:
+      id: true
+      type: bigint
+      nullable: false
+      column: request_type_id
+    acceptAccReqSeries:
+      type: integera
+      nullable: false
+      column: accept_acc_req_series
+    minAccReq:
+      type: bigint
+      nullable: false
+      column: min_acc_req
+    requestDelay:
+      type: bigint
+      nullable: false
+      column: request_delay
+  oneToOne:
+    requestType:
+      targetEntity: RequestType
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        request_type_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    requestProfile:
+      targetEntity: RequestProfile
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        request_profile_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    haGpsDest:
+      targetEntity: HaGpsDest
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        ha_gps_dest_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

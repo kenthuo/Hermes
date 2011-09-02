@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="UserRightsAuditing" table="user_rights_auditing">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="loginId" type="bigint" column="login_id"/>
+    <field name="loginName" type="string" column="login_name" length="250"/>
+    <field name="usergpId" type="bigint" column="usergp_id"/>
+    <field name="usergpName" type="string" column="usergp_name" length="100"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="departmentName" type="string" column="department_name" length="100"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="organizationName" type="string" column="organization_name" length="100"/>
+    <field name="customerId" type="bigint" column="customer_id"/>
+    <field name="customerName" type="string" column="customer_name" length="100"/>
+    <field name="guardianUserId" type="bigint" column="guardian_user_id"/>
+    <field name="guardianUserName" type="string" column="guardian_user_name" length="100"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="actionType" type="string" column="action_type" length="50"/>
+    <field name="actionRequest" type="string" column="action_request" length="100"/>
+    <field name="objectType" type="string" column="object_type" length="100"/>
+    <field name="objectId" type="bigint" column="object_id"/>
+    <field name="permission" type="text" column="permission"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

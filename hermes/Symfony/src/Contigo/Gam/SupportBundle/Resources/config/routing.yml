@@ -1,0 +1,17 @@
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: ContigoGamSupportBundle:Default:index }
+
+support:
+    pattern:  /support/
+    defaults: { _controller: ContigoGamSupportBundle:Default:index }
+    
+manage_account:
+    pattern:  /support/manage_account/
+    defaults: { _controller: ContigoGamSupportBundle:ManageAccount:index }  
+    
+manage_account_cc:
+    pattern:  /support/manage_account/change_customer/{id}
+    defaults: { _controller: ContigoGamSupportBundle:ManageAccount:changeCustomer } 
+    requirements:
+        id: \d+     

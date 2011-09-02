@@ -1,0 +1,32 @@
+IvrVoiceNote:
+  type: entity
+  table: ivr_voice_note
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    eventTimestamp:
+      type: bigint
+      nullable: false
+      column: event_timestamp
+    voiceNote:
+      type: bytea
+      nullable: false
+      column: voice_note
+    type:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

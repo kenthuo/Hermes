@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventSpot" table="event_spot">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="locateId" type="bigint" column="locate_id"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="senId" type="bigint" column="sen_id"/>
+    <field name="scenarioName" type="string" column="scenario_name" length="100"/>
+    <field name="msgId" type="bigint" column="msg_id"/>
+    <field name="msgMode" type="string" column="msg_mode" length="10"/>
+    <field name="esn" type="string" column="esn" length="20"/>
+    <field name="messageType" type="string" column="message_type" length="25"/>
+    <field name="messageDetail" type="text" column="message_detail"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="nearestTown" type="string" column="nearest_town" length="50"/>
+    <field name="nearestTownDistance" type="bigint" column="nearest_town_distance"/>
+    <field name="routerMsgSeq" type="bigint" column="router_msg_seq"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

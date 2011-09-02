@@ -1,0 +1,55 @@
+SupportTicket:
+  type: entity
+  table: support_ticket
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    customerId:
+      type: bigint
+      nullable: true
+      column: customer_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    email:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    phone:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    company:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    requestType:
+      type: string
+      length: 35
+      fixed: false
+      nullable: true
+      column: request_type
+    comment:
+      type: text
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

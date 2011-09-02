@@ -1,0 +1,69 @@
+EventAuxalarmTt:
+  type: entity
+  table: event_auxalarm_tt
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    locateId:
+      type: bigint
+      nullable: false
+      column: locate_id
+    networkTimestamp:
+      type: bigint
+      nullable: true
+      column: network_timestamp
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+    engineHours:
+      type: bigint
+      nullable: true
+      column: engine_hours
+    lpa:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+    mpa:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+    hpa:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+    batteryLevel:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: battery_level
+    inputName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: input_name
+    senId:
+      type: bigint
+      nullable: true
+      column: sen_id
+    scenarioName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: scenario_name
+  lifecycleCallbacks: {  }

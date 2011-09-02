@@ -1,0 +1,27 @@
+DepartmentBeaconHistory:
+  type: entity
+  table: department_beacon_history
+  fields:
+    departmentId:
+      id: true
+      type: bigint
+      nullable: false
+      column: department_id
+    beaconId:
+      id: true
+      type: bigint
+      nullable: false
+      column: beacon_id
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    id:
+      type: bigint
+      nullable: false
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  lifecycleCallbacks: {  }

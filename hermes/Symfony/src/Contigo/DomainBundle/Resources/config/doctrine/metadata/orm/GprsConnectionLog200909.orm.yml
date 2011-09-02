@@ -1,0 +1,23 @@
+GprsConnectionLog200909:
+  type: entity
+  table: gprs_connection_log_200909
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    esn:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    isConnect:
+      type: boolean
+      nullable: true
+      column: is_connect
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

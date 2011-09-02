@@ -1,0 +1,31 @@
+DepartmentScenarioHistory:
+  type: entity
+  table: department_scenario_history
+  fields:
+    departmentId:
+      id: true
+      type: bigint
+      nullable: false
+      column: department_id
+    scenarioId:
+      id: true
+      type: bigint
+      nullable: false
+      column: scenario_id
+    retireTs:
+      id: true
+      type: bigint
+      nullable: false
+      column: retire_ts
+    id:
+      type: bigint
+      nullable: true
+    isSharable:
+      type: boolean
+      nullable: true
+      column: is_sharable
+    introTs:
+      type: bigint
+      nullable: true
+      column: intro_ts
+  lifecycleCallbacks: {  }

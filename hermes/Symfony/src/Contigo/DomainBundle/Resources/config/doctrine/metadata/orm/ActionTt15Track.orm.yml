@@ -1,0 +1,134 @@
+ActionTt15Track:
+  type: entity
+  table: action_tt15_track
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    type:
+      type: integer
+      unsigned: false
+      nullable: true
+    intervalTrackMotion:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: interval_track_motion
+    intervalTrackMotionUnit:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: interval_track_motion_unit
+    intervalTrack:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: interval_track
+    intervalTrackUnit:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: interval_track_unit
+    intervalStatusStationary:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: interval_status_stationary
+    intervalStatusStationaryUnit:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: interval_status_stationary_unit
+    scheduledStatusType:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: scheduled_status_type
+    scheduledStatusTime:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: scheduled_status_time
+    scheduledStatusDay:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: scheduled_status_day
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    lockdown:
+      type: boolean
+      nullable: true
+    notificationType:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: notification_type
+    shoConfigSettings:
+      type: boolean
+      nullable: true
+      column: sho_config_settings
+    scheduledHours:
+      type: boolean
+      nullable: true
+      column: scheduled_hours
+    dailyStartTime:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: daily_start_time
+    workDayLength:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: work_day_length
+    firstWorkDay:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: first_work_day
+    consecutiveWorkDays:
+      type: string
+      length: null
+      fixed: true
+      nullable: true
+      column: consecutive_work_days
+    isStartStopMode:
+      type: boolean
+      nullable: true
+      column: is_start_stop_mode
+    shoControl:
+      type: boolean
+      nullable: true
+      column: sho_control
+    fastGpsFix:
+      type: boolean
+      nullable: true
+      column: fast_gps_fix
+  lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+GarminStock:
+  type: entity
+  table: garmin_stock
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    modelNumber:
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+      column: model_number
+    fmiVersion:
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+      column: fmi_version
+    firmwareVersion:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: firmware_version
+    lastLoginTs:
+      type: bigint
+      nullable: false
+      column: last_login_ts
+  lifecycleCallbacks: {  }

@@ -1,0 +1,30 @@
+CustomerPlan:
+  type: entity
+  table: customer_plan
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    plan:
+      targetEntity: Plan
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        plan_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

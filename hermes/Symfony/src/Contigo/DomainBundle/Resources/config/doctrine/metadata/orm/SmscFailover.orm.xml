@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SmscFailover" table="smsc_failover">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="name" type="string" column="name"/>
+    <field name="ip" type="string" column="ip" length="20"/>
+    <field name="port" type="integer" column="port"/>
+    <field name="username" type="string" column="username" length="20"/>
+    <field name="password" type="string" column="password" length="20"/>
+    <field name="sysId" type="string" column="sys_id" length="20"/>
+    <field name="useTransceiver" type="boolean" column="use_transceiver"/>
+    <field name="hostname" type="string" column="hostname"/>
+    <field name="rUsername" type="string" column="r_username" length="20"/>
+    <field name="rPassword" type="string" column="r_password" length="20"/>
+    <field name="rSysId" type="string" column="r_sys_id" length="20"/>
+    <many-to-one field="smsc" target-entity="Smsc" orphan-removal="">
+      <join-columns>
+        <join-column name="smsc_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

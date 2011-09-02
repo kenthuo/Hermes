@@ -1,0 +1,45 @@
+DispatchApiPndConnectionAudit201106:
+  type: entity
+  table: dispatch_api_pnd_connection_audit_201106
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    beaconEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: beacon_esn
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    connectionStatus:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: connection_status
+    networkTs:
+      type: bigint
+      nullable: true
+      column: network_ts
+  lifecycleCallbacks: {  }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Landmark" table="landmark">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="name" type="string" column="name" length="65"/>
+    <field name="landmarkCategoryId" type="bigint" column="landmark_category_id"/>
+    <field name="streetAddr" type="string" column="street_addr" length="255"/>
+    <field name="city" type="string" column="city" length="150"/>
+    <field name="state" type="string" column="state" length="25"/>
+    <field name="country" type="string" column="country" length="25"/>
+    <field name="zipCode" type="string" column="zip_code" length="10"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="shape" type="string" column="shape" length="10"/>
+    <field name="radius" type="decimal" column="radius"/>
+    <field name="isActive" type="boolean" column="is_active"/>
+    <field name="note" type="text" column="note"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

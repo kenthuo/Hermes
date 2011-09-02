@@ -1,0 +1,72 @@
+EventDailyMileageStatus:
+  type: entity
+  table: event_daily_mileage_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    customerId:
+      type: bigint
+      nullable: false
+      column: customer_id
+    bmDevice:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: bm_device
+    bmModel:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: bm_model
+    bmFwVersion:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: bm_fw_version
+    isPriorityScheduled:
+      type: boolean
+      nullable: true
+      column: is_priority_scheduled
+    createTs:
+      type: bigint
+      nullable: false
+      column: create_ts
+    initProcessedTs:
+      type: bigint
+      nullable: true
+      column: init_processed_ts
+    finProcessedTs:
+      type: bigint
+      nullable: true
+      column: fin_processed_ts
+    statusCode:
+      type: smallint
+      nullable: true
+      column: status_code
+    comments:
+      type: text
+      nullable: true
+    isPriorityMaintenance:
+      type: boolean
+      nullable: true
+      column: is_priority_maintenance
+  lifecycleCallbacks: {  }

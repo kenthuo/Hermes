@@ -1,0 +1,52 @@
+WebSen:
+  type: entity
+  table: web_sen
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    state:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    scenario:
+      targetEntity: Scenario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        scenario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    itemGrouping:
+      targetEntity: ItemGrouping
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        item_grouping_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,23 @@
+<div class="fg-toolbar ui-widget-header ui-corner-all ui-helper-clearfix">
+    <div class="fg-buttonset fg-buttonset-single ui-helper-clearfix">   
+        <a id="entity-add" href="{{ entityAddRoute }}" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all" title="Add"><span class="ui-icon ui-icon-plusthick"></span></a>
+        <a id="entity-delete" href="{{ entityDeleteRoute }}" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all" title="Delete"><span class="ui-icon ui-icon-trash"></span></a>
+    </div>
+    <div id="pager" class="fg-buttonset ui-helper-clearfix pager">
+        <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all first" title="First Page"><span class="ui-icon ui-icon-seek-start"></span></a>
+        <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all prev" title="Prev Page"><span class="ui-icon ui-icon-seek-prev"></span></a>
+        <input type="text" class="ui-widget pagedisplay" readonly="readonly" />                 
+        <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all next" title="Next Page"><span class="ui-icon ui-icon-seek-next"></span></a>
+        <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all last" title="Last Page"><span class="ui-icon ui-icon-seek-end"></span></a>
+        <select class="pagesize" id="pagesize" title="Size Per Page">
+            <option value="10">10</option>
+            <option selected="selected" value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100">100</option>
+            <option value="{{ sizeOfEntities }}">All</option>
+        </select>
+        <input id="filter-box" class="ui-widget filter-box" value="" maxlength="30" type="text" placeholder="Search" />             
+        <img id="filter-clear" class="filter-clear" src="{{ asset('bundles/contigo/common/images/cross.png') }}" title="Click to clear search filter" alt="Click to clear search filter" />          
+    </div>
+</div>

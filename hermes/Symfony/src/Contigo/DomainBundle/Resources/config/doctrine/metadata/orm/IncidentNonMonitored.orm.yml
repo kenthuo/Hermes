@@ -1,0 +1,68 @@
+IncidentNonMonitored:
+  type: entity
+  table: incident_non_monitored
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    initTimestamp:
+      type: bigint
+      nullable: true
+      column: init_timestamp
+    initType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: init_type
+    status:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    resolutionType:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: resolution_type
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    starttimezone:
+      type: float
+      nullable: true
+    startTzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: start_tz_abbrev
+    endtimezone:
+      type: float
+      nullable: true
+    endTzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: end_tz_abbrev
+    clearedBy:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: cleared_by
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

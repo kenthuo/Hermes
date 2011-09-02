@@ -1,0 +1,42 @@
+ServiceLog:
+  type: entity
+  table: service_log
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    vapId:
+      type: bigint
+      nullable: true
+      column: vap_id
+    serviceTypeId:
+      type: bigint
+      nullable: true
+      column: service_type_id
+    odometer:
+      type: integer
+      unsigned: false
+      nullable: true
+    serviceTimestamp:
+      type: bigint
+      nullable: true
+      column: service_timestamp
+    comments:
+      type: text
+      nullable: true
+    engineHours:
+      type: bigint
+      nullable: true
+      column: engine_hours
+  lifecycleCallbacks: {  }

@@ -1,0 +1,102 @@
+Beacon:
+  type: entity
+  table: beacon
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 40
+      fixed: false
+      nullable: true
+    canNotifyStation:
+      type: boolean
+      nullable: true
+      column: can_notify_station
+  oneToOne:
+    icon:
+      targetEntity: Icon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        icon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    stock:
+      targetEntity: Stock
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        stock_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    ownerCustomer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        owner_customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    registeredSubscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        registered_subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    beaconmodel:
+      targetEntity: Beaconmodel
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beaconmodel_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    dependent:
+      targetEntity: Dependent
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        dependent_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    registeredOrg:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        registered_org_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    plan:
+      targetEntity: Plan
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        plan_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    asset:
+      targetEntity: Asset
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        asset_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

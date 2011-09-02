@@ -1,0 +1,25 @@
+DrvPndDrvStatusSync:
+  type: entity
+  table: drv_pnd_drv_status_sync
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    lastSyncTs:
+      type: bigint
+      nullable: false
+      column: last_sync_ts
+  lifecycleCallbacks: {  }

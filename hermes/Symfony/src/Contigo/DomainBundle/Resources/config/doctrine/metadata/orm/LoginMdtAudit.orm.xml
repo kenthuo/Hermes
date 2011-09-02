@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="LoginMdtAudit" table="login_mdt_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="mdtEsn" type="string" column="mdt_esn" length="50"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="driverId" type="bigint" column="driver_id"/>
+    <field name="loginTimestamp" type="bigint" column="login_timestamp"/>
+    <field name="logoutTimestamp" type="bigint" column="logout_timestamp"/>
+    <field name="isLoginFailure" type="boolean" column="is_login_failure"/>
+    <field name="autoLogout" type="boolean" column="auto_logout"/>
+    <field name="driverMessageId" type="bigint" column="driver_message_id"/>
+    <field name="driverMessageTs" type="bigint" column="driver_message_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

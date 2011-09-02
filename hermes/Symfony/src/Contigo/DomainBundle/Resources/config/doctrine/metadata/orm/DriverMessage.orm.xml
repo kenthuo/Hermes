@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DriverMessage" table="driver_message">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="driverId" type="bigint" column="driver_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="msgType" type="string" column="msg_type" length="20"/>
+    <field name="ackToDspMsgId" type="bigint" column="ack_to_dsp_msg_id"/>
+    <field name="ackToDspMsgTs" type="bigint" column="ack_to_dsp_msg_ts"/>
+    <field name="subject" type="text" column="subject"/>
+    <field name="body" type="text" column="body"/>
+    <field name="readTs" type="bigint" column="read_ts"/>
+    <field name="readBy" type="bigint" column="read_by"/>
+    <field name="softDeletedTs" type="bigint" column="soft_deleted_ts"/>
+    <field name="softDeletedBy" type="bigint" column="soft_deleted_by"/>
+    <field name="mdtEsn" type="string" column="mdt_esn" length="50"/>
+    <field name="mdtTimestamp" type="bigint" column="mdt_timestamp"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="direction" type="string" column="direction" length="100"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="altitude" type="float" column="altitude"/>
+    <field name="speed" type="float" column="speed"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <field name="isValidFix" type="boolean" column="is_valid_fix"/>
+    <field name="streetAddr" type="string" column="street_addr" length="255"/>
+    <field name="city" type="string" column="city" length="25"/>
+    <field name="county" type="string" column="county" length="50"/>
+    <field name="state" type="string" column="state" length="25"/>
+    <field name="country" type="string" column="country" length="25"/>
+    <field name="zipCode" type="string" column="zip_code" length="10"/>
+    <field name="paramName" type="string" column="param_name" length="20"/>
+    <field name="paramType" type="string" column="param_type" length="20"/>
+    <field name="paramValue" type="string" column="param_value" length="20"/>
+    <field name="mdtTsRaw" type="string" column="mdt_ts_raw" length="12"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

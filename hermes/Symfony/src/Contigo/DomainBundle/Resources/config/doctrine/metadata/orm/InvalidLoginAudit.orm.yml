@@ -1,0 +1,39 @@
+InvalidLoginAudit:
+  type: entity
+  table: invalid_login_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    timestamp:
+      type: bigint
+      nullable: false
+    customerId:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: customer_id
+    ip:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    username:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    password:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    portal:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

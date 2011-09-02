@@ -1,0 +1,138 @@
+Subscriber:
+  type: entity
+  table: subscriber
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    defaultGuardianId:
+      type: bigint
+      nullable: true
+      column: default_guardian_id
+    title:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    firstName:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: first_name
+    initial:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    lastName:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: last_name
+    suffix:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: zip_code
+    status:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    bldgNum:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: bldg_num
+    timezone:
+      type: float
+      nullable: true
+    daylightSaving:
+      type: boolean
+      nullable: true
+      column: daylight_saving
+    csNumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: cs_number
+    startupTutorial:
+      type: boolean
+      nullable: true
+      column: startup_tutorial
+    quickStart:
+      type: boolean
+      nullable: true
+      column: quick_start
+    phoneAreacode:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: phone_areacode
+    phoneNumber:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+      column: phone_number
+    phoneExt:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: phone_ext
+    email:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    disclaimerAckTs:
+      type: bigint
+      nullable: false
+      column: disclaimer_ack_ts
+  oneToOne:
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

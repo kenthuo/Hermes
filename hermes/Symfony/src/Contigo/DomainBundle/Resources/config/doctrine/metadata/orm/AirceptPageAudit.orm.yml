@@ -1,0 +1,30 @@
+AirceptPageAudit:
+  type: entity
+  table: aircept_page_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    primaryMin:
+      type: string
+      length: 12
+      fixed: false
+      nullable: true
+      column: primary_min
+    secondaryMin:
+      type: string
+      length: 12
+      fixed: false
+      nullable: true
+      column: secondary_min
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

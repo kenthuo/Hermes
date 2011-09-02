@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="10000">
+                <source>home.solution.pod</source>
+                <target>Solution Pod</target>
+            </trans-unit>
+            <trans-unit id="10001">
+                <source>list.create.modify.solutions</source>
+                <target>List/Create/Modify Solutions</target>
+            </trans-unit>    
+                    
+            <trans-unit id="20000">
+                <source>home.partner.pod</source>
+                <target>Partner Pod</target>
+            </trans-unit>
+            <trans-unit id="20001">
+                <source>list.create.modify.partner</source>
+                <target>List/Create/Modify Partners</target>
+            </trans-unit>
+            <trans-unit id="20002">
+                <source>list.create.modify.delete.service.plan</source>
+                <target>List/Create/Modify/Delete Service Plans</target>
+            </trans-unit> 
+            <trans-unit id="20003">
+                <source>associate.service.plan.to.partner</source>
+                <target>Associate Service Plans To Partners</target>
+            </trans-unit> 
+            <trans-unit id="20004">
+                <source>upload.pp.graphics</source>
+                <target>Upload Partner's Portal Graphics</target>
+            </trans-unit> 
+            <trans-unit id="20005">
+                <source>list.create.modify.delete.beacon.tips</source>
+                <target>List/Create/Modify/Delete Beacon Tips For Subscriber Portals</target>
+            </trans-unit> 
+            <trans-unit id="20006">
+                <source>telus.administration</source>
+                <target>TELUS Administration</target>
+            </trans-unit>      
+                                                                                
+            <trans-unit id="30000">
+                <source>home.beacon.pod</source>
+                <target>Beacon Pod</target>
+            </trans-unit> 
+            <trans-unit id="30001">
+                <source>beacon.provisioning.control.system</source>
+                <target>Beacon Provisioning Control System</target>
+            </trans-unit>
+            <trans-unit id="30002">
+                <source>list.create.modify.delete.beacon.model</source>
+                <target>List/Create/Modify/Delete Beacon Model</target>
+            </trans-unit>
+            <trans-unit id="30003">
+                <source>view.gprs.beacon.connection.log</source>
+                <target>View Beacon (GPRS) Connection Logs</target>
+            </trans-unit>
+            <trans-unit id="30004">
+                <source>list.create.delete.beacon.icon.used.in.mapping</source>
+                <target>List/Create/Delete Beacon Icons Used In Mapping</target>
+            </trans-unit>
+            <trans-unit id="30005">
+                <source>list.create.delete.landmark.category</source>
+                <target>List/Create/Delete Landmark Category</target>
+            </trans-unit>
+                                                                        
+            <trans-unit id="40000">
+                <source>home.support.pod</source>
+                <target>Support Pod</target>
+            </trans-unit> 
+            <trans-unit id="40001">
+                <source>knowledge.base</source>
+                <target>Knowledge Base</target>
+            </trans-unit>
+            <trans-unit id="40002">
+                <source>login.to.partner.subscriber.portal</source>
+                <target>Login To Partner &amp; Subscriber Portals</target>
+            </trans-unit>
+            <trans-unit id="40003">
+                <source>change.system.message</source>
+                <target>Change System Messages</target>
+            </trans-unit>   
+                                             
+            <trans-unit id="50000">
+                <source>home.developer.pod</source>
+                <target>Developer Pod</target>
+            </trans-unit>
+            <trans-unit id="50001">
+                <source>beacon.troubleshooting.tool</source>
+                <target>Beacon Troubleshooting Tool</target>
+            </trans-unit> 
+            <trans-unit id="50002">
+                <source>bulk.reactivation.of.scenario</source>
+                <target>Bulk (Re)activation Of Scenarios</target>
+            </trans-unit> 
+            <trans-unit id="50003">
+                <source>generate.min.for.microburst.beacon</source>
+                <target>Generate MINs For Microburst Beacons</target>
+            </trans-unit> 
+            <trans-unit id="50004">
+                <source>route.creation</source>
+                <target>Route Creation</target>
+            </trans-unit> 
+            <trans-unit id="50005">
+                <source>test.beacon</source>
+                <target>Test Beacon</target>
+            </trans-unit> 
+            <trans-unit id="50006">
+                <source>miscellaneous.tool</source>
+                <target>Miscellaneous Tools</target>
+            </trans-unit> 
+            <trans-unit id="50007">
+                <source>qa.tool</source>
+                <target>QA Tools</target>
+            </trans-unit>                                                                                                                                  
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,25 @@
+TelusHpSdfAcctPrevState:
+  type: entity
+  table: telus_hp_sdf_acct_prev_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    telusSubscriberId:
+      type: decimal
+      nullable: false
+      column: telus_subscriber_id
+    prevState:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: prev_state
+    prevStateTs:
+      type: bigint
+      nullable: false
+      column: prev_state_ts
+  lifecycleCallbacks: {  }

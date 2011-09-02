@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SubscriberLojnAttribute" table="subscriber_lojn_attribute">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="beaconActivatedTs" type="bigint" column="beacon_activated_ts"/>
+    <field name="upgradePlanState" type="bigint" column="upgrade_plan_state"/>
+    <field name="upgradeMexicoRoamingState" type="bigint" column="upgrade_mexico_roaming_state"/>
+    <field name="createdTs" type="bigint" column="created_ts"/>
+    <field name="createdBy" type="bigint" column="created_by"/>
+    <field name="noshowMexicoRoamingTipTs" type="bigint" column="noshow_mexico_roaming_tip_ts"/>
+    <field name="noshowProximityPlusTipTs" type="bigint" column="noshow_proximity_plus_tip_ts"/>
+    <field name="noshowRenewTipTs" type="bigint" column="noshow_renew_tip_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

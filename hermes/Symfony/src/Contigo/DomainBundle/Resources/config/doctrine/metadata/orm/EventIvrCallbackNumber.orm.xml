@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventIvrCallbackNumber" table="event_ivr_callback_number">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="eventTimestamp" type="bigint" column="event_timestamp"/>
+    <field name="locateId" type="bigint" column="locate_id"/>
+    <field name="phoneNo" type="string" column="phone_no" length="50"/>
+    <field name="isEndShift" type="boolean" column="is_end_shift"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="adminNote" type="text" column="admin_note"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="UdpResources" table="udp_resources">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="udpResourceName" type="string" column="udp_resource_name" length="100"/>
+    <field name="virtualIp" type="string" column="virtual_ip" length="50"/>
+    <field name="timeoutMultiplier" type="bigint" column="timeout_multiplier"/>
+    <field name="listenPort" type="smallint" column="listen_port"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

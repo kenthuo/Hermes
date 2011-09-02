@@ -1,0 +1,60 @@
+Reports:
+  type: entity
+  table: reports
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    shortName:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: short_name
+    fileName:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: file_name
+    module:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    modulePriority:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: module_priority
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+    type:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    applnId:
+      type: bigint
+      nullable: true
+      column: appln_id
+    propertyKey:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: property_key
+  lifecycleCallbacks: {  }

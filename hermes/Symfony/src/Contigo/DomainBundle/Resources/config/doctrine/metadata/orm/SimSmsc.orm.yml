@@ -1,0 +1,30 @@
+SimSmsc:
+  type: entity
+  table: sim_smsc
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    smsc:
+      targetEntity: Smsc
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        smsc_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    sim:
+      targetEntity: KoreSim
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        sim_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

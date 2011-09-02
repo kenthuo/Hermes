@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IdenTcp" table="iden_tcp">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="phoneNumber" type="string" column="phone_number" length="16"/>
+    <field name="phoneModel" type="string" column="phone_model" length="20"/>
+    <field name="version" type="string" column="version" length="20"/>
+    <field name="pin" type="string" column="pin" length="4"/>
+    <field name="ip" type="string" column="ip" length="15"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

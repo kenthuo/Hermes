@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DrvPndDrvStatusHistory" table="drv_pnd_drv_status_history">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="guardianId" type="bigint" column="guardian_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="pndEsn" type="string" column="pnd_esn" length="50"/>
+    <field name="driverId" type="string" column="driver_id" length="49"/>
+    <field name="drvStatusId" type="smallint" column="drv_status_id"/>
+    <field name="drvStatus" type="string" column="drv_status" length="49"/>
+    <field name="drvStatusTs" type="bigint" column="drv_status_ts"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="direction" type="string" column="direction" length="100"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="altitude" type="float" column="altitude"/>
+    <field name="speed" type="float" column="speed"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="4"/>
+    <field name="isValidFix" type="boolean" column="is_valid_fix"/>
+    <field name="streetAddr" type="string" column="street_addr" length="255"/>
+    <field name="city" type="string" column="city" length="25"/>
+    <field name="county" type="string" column="county" length="50"/>
+    <field name="state" type="string" column="state" length="25"/>
+    <field name="country" type="string" column="country" length="25"/>
+    <field name="zipCode" type="string" column="zip_code" length="10"/>
+    <field name="itemName" type="string" column="item_name" length="150"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

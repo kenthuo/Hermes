@@ -1,0 +1,17 @@
+JmsRoles:
+  type: entity
+  table: jms_roles
+  fields:
+    userid:
+      id: true
+      type: string
+      length: 32
+      fixed: false
+      nullable: false
+    roleid:
+      id: true
+      type: string
+      length: 32
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

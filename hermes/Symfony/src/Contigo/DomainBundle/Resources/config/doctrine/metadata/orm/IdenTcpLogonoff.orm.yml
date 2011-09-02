@@ -1,0 +1,23 @@
+IdenTcpLogonoff:
+  type: entity
+  table: iden_tcp_logonoff
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    isLogon:
+      type: boolean
+      nullable: true
+      column: is_logon
+    phpTimestamp:
+      type: bigint
+      nullable: true
+      column: php_timestamp
+  lifecycleCallbacks: {  }

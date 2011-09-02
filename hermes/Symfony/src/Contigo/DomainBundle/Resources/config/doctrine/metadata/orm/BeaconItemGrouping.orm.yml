@@ -1,0 +1,30 @@
+BeaconItemGrouping:
+  type: entity
+  table: beacon_item_grouping
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    itemGrouping:
+      targetEntity: ItemGrouping
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        item_grouping_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

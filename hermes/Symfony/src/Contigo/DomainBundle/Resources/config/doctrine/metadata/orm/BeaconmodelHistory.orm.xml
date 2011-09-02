@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconmodelHistory" table="beaconmodel_history">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="notes" type="text" column="notes"/>
+    <field name="model" type="string" column="model" length="100"/>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="type" type="string" column="type" length="20"/>
+    <field name="description" type="string" column="description" length="255"/>
+    <field name="height" type="float" column="height"/>
+    <field name="width" type="float" column="width"/>
+    <field name="depth" type="float" column="depth"/>
+    <field name="weight" type="float" column="weight"/>
+    <field name="color" type="string" column="color" length="100"/>
+    <field name="deviceTableName" type="string" column="device_table_name" length="20"/>
+    <field name="version" type="string" column="version" length="15"/>
+    <field name="gmmsCost" type="float" column="gmms_cost"/>
+    <field name="gmmsCostCurrency" type="string" column="gmms_cost_currency" length="20"/>
+    <field name="p2pCost" type="float" column="p2p_cost"/>
+    <field name="p2pCostCurrency" type="string" column="p2p_cost_currency" length="20"/>
+    <field name="maxOverlappingSen" type="integer" column="max_overlapping_sen"/>
+    <field name="outputCount" type="integer" column="output_count"/>
+    <field name="inputCount" type="integer" column="input_count"/>
+    <field name="xid" type="bigint" column="xid"/>
+    <field name="isDeleted" type="boolean" column="is_deleted"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <field name="isLocateTrack" type="boolean" column="is_locate_track"/>
+    <field name="isVisibleMap" type="boolean" column="is_visible_map"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

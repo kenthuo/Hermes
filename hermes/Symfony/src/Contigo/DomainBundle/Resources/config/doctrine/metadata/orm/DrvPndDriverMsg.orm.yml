@@ -1,0 +1,134 @@
+DrvPndDriverMsg:
+  type: entity
+  table: drv_pnd_driver_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    drvPndDispatcherMsgId:
+      type: bigint
+      nullable: true
+      column: drv_pnd_dispatcher_msg_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    guardianId:
+      type: bigint
+      nullable: false
+      column: guardian_id
+    driverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: false
+      column: driver_id
+    eta:
+      type: bigint
+      nullable: true
+    responseType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: response_type
+    receivedTs:
+      type: bigint
+      nullable: false
+      column: received_ts
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: zip_code
+    lat:
+      type: decimal
+      nullable: true
+    lon:
+      type: decimal
+      nullable: true
+    altitude:
+      type: float
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    direction:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    pndLat:
+      type: decimal
+      nullable: true
+      column: pnd_lat
+    pndLon:
+      type: decimal
+      nullable: true
+      column: pnd_lon
+    pndMsgAuditId:
+      type: bigint
+      nullable: false
+      column: pnd_msg_audit_id
+    message:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

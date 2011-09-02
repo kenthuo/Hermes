@@ -1,0 +1,28 @@
+PndCannedResponseIdx:
+  type: entity
+  table: pnd_canned_response_idx
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    cannedResponseId:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: canned_response_id
+    lastUpdatedTs:
+      type: bigint
+      nullable: false
+      column: last_updated_ts
+    isAvailable:
+      type: boolean
+      nullable: false
+      column: is_available
+  lifecycleCallbacks: {  }

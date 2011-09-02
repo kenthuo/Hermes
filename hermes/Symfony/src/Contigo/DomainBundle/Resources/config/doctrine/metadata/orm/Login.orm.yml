@@ -1,0 +1,80 @@
+Login:
+  type: entity
+  table: login
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    firstname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lastname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    employeeNum:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: employee_num
+    username:
+      type: string
+      length: 200
+      fixed: false
+      nullable: false
+    password:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    email:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    isAllowed:
+      type: boolean
+      nullable: true
+      column: is_allowed
+    locale:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+  oneToOne:
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+SysMsgSolnPartner:
+  type: entity
+  table: sys_msg_soln_partner
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    sysMsg:
+      targetEntity: SystemMessage
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        sys_msg_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    solution:
+      targetEntity: Solution
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        solution_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    partner:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        partner_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

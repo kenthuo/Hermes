@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AerisMin" table="aeris_min">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="min" type="string" column="min">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="isGlobal" type="boolean" column="is_global"/>
+    <field name="isShared" type="boolean" column="is_shared"/>
+    <field name="airceptId" type="bigint" column="aircept_id"/>
+    <field name="slot" type="integer" column="slot"/>
+    <field name="isPrimary" type="boolean" column="is_primary"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

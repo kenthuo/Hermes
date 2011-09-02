@@ -1,0 +1,24 @@
+ActionObject:
+  type: entity
+  table: action_object
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    timestamp:
+      type: bigint
+      nullable: false
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    data:
+      type: text
+      nullable: true
+    handledtimestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

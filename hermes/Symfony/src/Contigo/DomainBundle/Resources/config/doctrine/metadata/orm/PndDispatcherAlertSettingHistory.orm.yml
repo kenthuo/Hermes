@@ -1,0 +1,77 @@
+PndDispatcherAlertSettingHistory:
+  type: entity
+  table: pnd_dispatcher_alert_setting_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    loginId:
+      type: bigint
+      nullable: false
+      column: login_id
+    jobStatusVisibleAlert:
+      type: boolean
+      nullable: false
+      column: job_status_visible_alert
+    jobStatusAudibleAlert:
+      type: boolean
+      nullable: false
+      column: job_status_audible_alert
+    jobDeliveredAlert:
+      type: boolean
+      nullable: false
+      column: job_delivered_alert
+    jobAckAlert:
+      type: boolean
+      nullable: false
+      column: job_ack_alert
+    jobVehEnrouteAlert:
+      type: boolean
+      nullable: false
+      column: job_veh_enroute_alert
+    jobMarkedDoneAlert:
+      type: boolean
+      nullable: false
+      column: job_marked_done_alert
+    jobDelByDriverAlert:
+      type: boolean
+      nullable: false
+      column: job_del_by_driver_alert
+    jobDeviceResyncIgnore:
+      type: boolean
+      nullable: false
+      column: job_device_resync_ignore
+    msgStatusVisibleAlert:
+      type: boolean
+      nullable: false
+      column: msg_status_visible_alert
+    msgStatusAudibleAlert:
+      type: boolean
+      nullable: false
+      column: msg_status_audible_alert
+    msgNewMsgRevdAlert:
+      type: boolean
+      nullable: false
+      column: msg_new_msg_revd_alert
+    msgDriverReplyAlert:
+      type: boolean
+      nullable: false
+      column: msg_driver_reply_alert
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: false
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

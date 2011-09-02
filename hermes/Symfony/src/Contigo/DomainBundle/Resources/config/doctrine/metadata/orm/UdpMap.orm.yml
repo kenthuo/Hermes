@@ -1,0 +1,29 @@
+UdpMap:
+  type: entity
+  table: udp_map
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    uniqueId:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: unique_id
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    ip:
+      type: string
+      length: null
+      fixed: false
+      nullable: true
+    port:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

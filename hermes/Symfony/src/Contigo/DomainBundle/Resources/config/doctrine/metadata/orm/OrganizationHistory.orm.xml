@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="OrganizationHistory" table="organization_history">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="primaryLoginId" type="bigint" column="primary_login_id"/>
+    <field name="defaultGuardianId" type="bigint" column="default_guardian_id"/>
+    <field name="customerId" type="bigint" column="customer_id"/>
+    <field name="status" type="string" column="status" length="20"/>
+    <field name="contactExtention" type="string" column="contact_extention" length="10"/>
+    <field name="contactAreacode" type="string" column="contact_areacode" length="4"/>
+    <field name="contactEmail" type="string" column="contact_email" length="100"/>
+    <field name="name" type="string" column="name" length="255"/>
+    <field name="type" type="string" column="type" length="255"/>
+    <field name="contactName" type="string" column="contact_name" length="255"/>
+    <field name="contactNumber" type="string" column="contact_number" length="15"/>
+    <field name="streetAddr" type="string" column="street_addr" length="255"/>
+    <field name="city" type="string" column="city" length="255"/>
+    <field name="state" type="string" column="state" length="255"/>
+    <field name="country" type="string" column="country" length="255"/>
+    <field name="zipCode" type="string" column="zip_code" length="50"/>
+    <field name="bldgNum" type="string" column="bldg_num" length="10"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="daylightSaving" type="boolean" column="daylight_saving"/>
+    <field name="csNumber" type="string" column="cs_number" length="20"/>
+    <field name="startupTutorial" type="boolean" column="startup_tutorial"/>
+    <field name="xid" type="bigint" column="xid"/>
+    <field name="isDeleted" type="boolean" column="is_deleted"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <field name="faxAreacode" type="string" column="fax_areacode" length="4"/>
+    <field name="faxNumber" type="string" column="fax_number" length="20"/>
+    <field name="faxExt" type="string" column="fax_ext" length="10"/>
+    <field name="isDeptEnabled" type="boolean" column="is_dept_enabled"/>
+    <field name="dexAllowed" type="boolean" column="dex_allowed"/>
+    <field name="dexHourQuota" type="bigint" column="dex_hour_quota"/>
+    <field name="disclaimerAckTs" type="bigint" column="disclaimer_ack_ts"/>
+    <field name="locale" type="string" column="locale" length="10"/>
+    <field name="dispatchHourQuota" type="bigint" column="dispatch_hour_quota"/>
+    <field name="restServerUrl" type="text" column="rest_server_url"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

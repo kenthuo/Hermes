@@ -1,0 +1,59 @@
+ActionEventIndexAlternate:
+  type: entity
+  table: action_event_index_alternate
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    isSelfMonitoring:
+      type: boolean
+      nullable: true
+      column: is_self_monitoring
+    propertyKey:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: property_key
+  oneToOne:
+    partner:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        partner_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    eventIndex:
+      targetEntity: EventIndex
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        event_index_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    actionIndex:
+      targetEntity: ActionIndex
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        action_index_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

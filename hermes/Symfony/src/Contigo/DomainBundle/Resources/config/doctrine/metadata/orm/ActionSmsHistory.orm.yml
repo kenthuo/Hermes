@@ -1,0 +1,56 @@
+ActionSmsHistory:
+  type: entity
+  table: action_sms_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    mobileNumber:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+      column: mobile_number
+    text:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    phoneId:
+      type: bigint
+      nullable: true
+      column: phone_id
+  lifecycleCallbacks: {  }

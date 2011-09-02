@@ -1,0 +1,19 @@
+EventDetailRptEvents:
+  type: entity
+  table: event_detail_rpt_events
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    eventDetailRptId:
+      type: bigint
+      nullable: true
+      column: event_detail_rpt_id
+    actionEventId:
+      type: bigint
+      nullable: true
+      column: action_event_id
+  lifecycleCallbacks: {  }

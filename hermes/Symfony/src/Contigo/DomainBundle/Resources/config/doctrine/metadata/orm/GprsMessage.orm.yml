@@ -1,0 +1,27 @@
+GprsMessage:
+  type: entity
+  table: gprs_message
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    message:
+      type: text
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+    ackExpected:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: ack_expected
+  lifecycleCallbacks: {  }

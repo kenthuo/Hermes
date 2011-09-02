@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="VapMaintenance" table="vap_maintenance">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="vapId" type="bigint" column="vap_id"/>
+    <field name="maintenanceId" type="bigint" column="maintenance_id"/>
+    <field name="status" type="string" column="status" length="10"/>
+    <field name="initialOdometer" type="integer" column="initial_odometer"/>
+    <field name="previousStatus" type="string" column="previous_status" length="10"/>
+    <field name="lastNotificationTimestamp" type="bigint" column="last_notification_timestamp"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

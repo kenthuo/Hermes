@@ -1,0 +1,31 @@
+UdpResources:
+  type: entity
+  table: udp_resources
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    udpResourceName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+      column: udp_resource_name
+    virtualIp:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: virtual_ip
+    timeoutMultiplier:
+      type: bigint
+      nullable: true
+      column: timeout_multiplier
+    listenPort:
+      type: smallint
+      nullable: true
+      column: listen_port
+  lifecycleCallbacks: {  }

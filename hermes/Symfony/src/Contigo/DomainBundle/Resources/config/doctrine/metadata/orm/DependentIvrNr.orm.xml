@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DependentIvrNr" table="dependent_ivr_nr">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="nameRecording" type="bytea" column="name_recording"/>
+    <field name="nameRecordedOn" type="bigint" column="name_recorded_on"/>
+    <field name="currentNameRecording" type="bytea" column="current_name_recording"/>
+    <field name="currentNameRecordedOn" type="bigint" column="current_name_recorded_on"/>
+    <many-to-one field="dependent" target-entity="Dependent" orphan-removal="">
+      <join-columns>
+        <join-column name="dependent_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

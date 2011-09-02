@@ -1,0 +1,12 @@
+CustomMthlyMaintSummaryRptSubscriber:
+  type: entity
+  table: custom_mthly_maint_summary_rpt_subscriber
+  fields:
+    organizationId:
+      id: true
+      type: bigint
+      nullable: false
+      column: organization_id
+      generator:
+        strategy: SEQUENCE
+  lifecycleCallbacks: {  }

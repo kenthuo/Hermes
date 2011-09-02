@@ -1,0 +1,97 @@
+ScheduledReportHistory:
+  type: entity
+  table: scheduled_report_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    status:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    scheduleOccurrences:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: schedule_occurrences
+    scheduleWeekends:
+      type: boolean
+      nullable: true
+      column: schedule_weekends
+    notificationGroupId:
+      type: bigint
+      nullable: true
+      column: notification_group_id
+    formatType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: format_type
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    reportType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: report_type
+    includeLatLon:
+      type: boolean
+      nullable: true
+      column: include_lat_lon
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    customReportPeriodId:
+      type: bigint
+      nullable: true
+      column: custom_report_period_id
+    cronStr:
+      type: text
+      nullable: true
+      column: cron_str
+    exclusionRule:
+      type: boolean
+      nullable: true
+      column: exclusion_rule
+    type:
+      type: string
+      length: 200
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

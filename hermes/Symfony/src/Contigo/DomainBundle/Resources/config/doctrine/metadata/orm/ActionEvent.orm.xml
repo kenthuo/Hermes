@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ActionEvent" table="action_event">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="actionIndexId" type="bigint" column="action_index_id"/>
+    <field name="eventIndexId" type="bigint" column="event_index_id"/>
+    <field name="description" type="text" column="description"/>
+    <field name="isVisibleEvent" type="boolean" column="is_visible_event"/>
+    <field name="propertyKey" type="string" column="property_key" length="255"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

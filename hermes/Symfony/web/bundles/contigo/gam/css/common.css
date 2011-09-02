@@ -1,0 +1,67 @@
+/* --------------------------------------------------------------
+
+   common.css
+   * Common styles for GAM
+
+-------------------------------------------------------------- */
+.cheader { background-image: url(/bundles/contigo/common/images/topback.gif); background-repeat: repeat-x; }
+.cfooter { padding: 2em 0; font-size: 0.80em; color: #a9a9a9; margin: 0 auto; text-align: center; }
+#generic-block-ui-message { display: none; }
+.cbanner1 {	font-size: 2.0em; font-weight: bold; }
+.cbanner2 { font-size: 1.5em; }
+img.clogo {	float: left; }
+.cbanner1, .cbanner2 { padding: 5px 0 10px 0; text-align: center; color: midnightBlue; margin: 0 auto; /* centering in parent container */}
+.cbanner1 span, .cbanner2 span { margin: 0 0 0 -197px; }
+.breadcrumbs { margin: 5px 0 10px 0; }	
+.breadcrumbs, .breadcrumbs li { list-style-type: none; padding: 0; }
+.breadcrumbs { border: 1px solid #dedede; height: 2.3em; }
+.breadcrumbs li { float: left; line-height: 2.3em; padding-left: .75em; color: #777; }
+.breadcrumbs li a { display: block; padding: 0 15px 0 0; background: url(/bundles/contigo/common/images/crumbs.gif) no-repeat right center; }
+.breadcrumbs li a:link, .breadcrumbs li a:visited { text-decoration: none; color: #777; }
+.breadcrumbs li a:hover, .breadcrumbs li a:focus { color: #dd2c0d; }
+.menu-section { padding: 1em 1em 0 1em; }
+.menu-section div { font-size: 1.5em; font-weight: bold; }
+.menu-section ul { padding: 1em 1em 0em 1em; }
+.menu-section ul li { margin: 1em; }
+
+.pagedisplay { float:left; width: 50px; border: 0px; margin: 5px 5px 5px 0px; text-align:center; vertical-align:middle; border: none; background: transparent; }
+.pagesize { float:left; margin: 0px 0px; width: 60px;}
+.filter-box  {float:left; width: 100px; margin: 3px 0px 3px 10px; }
+img.filter-clear { float:left; cursor: pointer; }
+.leading-checkbox-column { width: 15px;}
+
+.fg-button { outline: 0; margin:0 4px 0 0; padding: 1.0em 1.2em; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
+.fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
+a.fg-button { float:left; }
+/* remove extra button width in IE */
+button.fg-button { width:auto; overflow:visible; }
+.fg-button-icon-left { padding-left: 2.1em; }
+.fg-button-icon-right { padding-right: 2.1em; }
+.fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
+.fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
+.fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }     /* solo icon buttons must have block properties for the text-indent to work */ 
+.fg-buttonset { float:left; }
+.fg-buttonset .fg-button { float: left; }
+/* .fg-buttonset-single .fg-button, .fg-buttonset-multi .fg-button { margin-right: -1px;} */
+.fg-toolbar { padding: 0.5em; margin: 0;  }
+.fg-toolbar .fg-buttonset { margin-right:1.5em; padding-left: 1px; }
+.fg-toolbar .fg-button { font-size: 1em; }
+
+img.entity-image-thumbnail { width: 50px; height: 50px; }
+
+p.required-note { margin: 0px 0px 20px 0px; line-height: 140%; }
+p.required-note em.required {font-weight: bold; font-style: normal; color: #F00; }
+
+form.entity-form fieldset { clear: both; border-width: 1px 0 0 0; border-style: solid none none none; padding: 10px; margin: 0; }
+form.entity-form fieldset legend { line-height: 150%; font-size: 150%; padding: 0 5px; }
+form.entity-form label { display: block; float: left; width: 150px; padding: 0 12px 0 0; font-weight: bold; margin: 7px 0 0 0; text-align: right; }
+form.entity-form label.required { background-image:url(/bundles/contigo/common/images/required-field.png); background-repeat:no-repeat; background-position:right;  }
+form.entity-form input, form.entity-form textarea, form.entity-form select { width: 288px; margin:5px 0 5px 10px; }
+form.entity-form input[type="checkbox"] { width: 20px; }
+form.entity-form textarea { height: 80px; }
+form.entity-form textarea { overflow: auto; }
+form.entity-form br { clear:left; /* setting clear on inputs didn't work consistently, so brs added for degrade */ }
+form.entity-form div.field-error {width: 288px; padding-left: 172px; color: #FF0000;}
+form.entity-form div.field-error ul {margin: 0; list-style-type: none; list-style-image:url(/bundles/contigo/common/images/error_16x16.png); }
+form.entity-form div.field-error ul li {padding: 2px 0 2px 0;}
+form.entity-form select.currency { width: 70px; }

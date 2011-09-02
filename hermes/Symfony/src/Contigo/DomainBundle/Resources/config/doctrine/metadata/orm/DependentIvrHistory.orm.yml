@@ -1,0 +1,73 @@
+DependentIvrHistory:
+  type: entity
+  table: dependent_ivr_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    locale:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    primContactNo:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: prim_contact_no
+    pin:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    dialInNo:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: dial_in_no
+    eulaAcceptedOn:
+      type: bigint
+      nullable: true
+      column: eula_accepted_on
+    dialInterval:
+      type: smallint
+      nullable: true
+      column: dial_interval
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    minCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: min_checkin_interval
+    maxCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: max_checkin_interval
+    currentShiftIvrVoiceNoteId:
+      type: bigint
+      nullable: true
+      column: current_shift_ivr_voice_note_id
+  lifecycleCallbacks: {  }

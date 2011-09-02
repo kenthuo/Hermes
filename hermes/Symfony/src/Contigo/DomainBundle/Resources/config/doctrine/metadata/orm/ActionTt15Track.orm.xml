@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ActionTt15Track" table="action_tt15_track">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="description" type="text" column="description"/>
+    <field name="type" type="integer" column="type"/>
+    <field name="intervalTrackMotion" type="integer" column="interval_track_motion"/>
+    <field name="intervalTrackMotionUnit" type="string" column="interval_track_motion_unit" length="5"/>
+    <field name="intervalTrack" type="integer" column="interval_track"/>
+    <field name="intervalTrackUnit" type="string" column="interval_track_unit" length="5"/>
+    <field name="intervalStatusStationary" type="integer" column="interval_status_stationary"/>
+    <field name="intervalStatusStationaryUnit" type="string" column="interval_status_stationary_unit" length="5"/>
+    <field name="scheduledStatusType" type="integer" column="scheduled_status_type"/>
+    <field name="scheduledStatusTime" type="string" column="scheduled_status_time" length="4"/>
+    <field name="scheduledStatusDay" type="integer" column="scheduled_status_day"/>
+    <field name="scheduleId" type="bigint" column="schedule_id"/>
+    <field name="lockdown" type="boolean" column="lockdown"/>
+    <field name="notificationType" type="integer" column="notification_type"/>
+    <field name="shoConfigSettings" type="boolean" column="sho_config_settings"/>
+    <field name="scheduledHours" type="boolean" column="scheduled_hours"/>
+    <field name="dailyStartTime" type="integer" column="daily_start_time"/>
+    <field name="workDayLength" type="integer" column="work_day_length"/>
+    <field name="firstWorkDay" type="string" column="first_work_day"/>
+    <field name="consecutiveWorkDays" type="string" column="consecutive_work_days"/>
+    <field name="isStartStopMode" type="boolean" column="is_start_stop_mode"/>
+    <field name="shoControl" type="boolean" column="sho_control"/>
+    <field name="fastGpsFix" type="boolean" column="fast_gps_fix"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

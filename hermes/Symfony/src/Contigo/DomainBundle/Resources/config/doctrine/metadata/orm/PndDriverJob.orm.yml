@@ -1,0 +1,113 @@
+PndDriverJob:
+  type: entity
+  table: pnd_driver_job
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    pndDispatcherJobId:
+      type: bigint
+      nullable: false
+      column: pnd_dispatcher_job_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    eta:
+      type: bigint
+      nullable: true
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    receivedTs:
+      type: bigint
+      nullable: false
+      column: received_ts
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    streetAddr:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: street_addr
+    city:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    county:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+    state:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    country:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    zipCode:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: zip_code
+    altitude:
+      type: float
+      nullable: true
+    speed:
+      type: float
+      nullable: true
+    direction:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    pndLat:
+      type: decimal
+      nullable: true
+      column: pnd_lat
+    pndLon:
+      type: decimal
+      nullable: true
+      column: pnd_lon
+    pndFixStatus:
+      type: boolean
+      nullable: true
+      column: pnd_fix_status
+    pndJobAuditId:
+      type: bigint
+      nullable: false
+      column: pnd_job_audit_id
+  lifecycleCallbacks: {  }

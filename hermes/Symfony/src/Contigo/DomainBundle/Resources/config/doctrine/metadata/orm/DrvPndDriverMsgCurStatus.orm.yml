@@ -1,0 +1,34 @@
+DrvPndDriverMsgCurStatus:
+  type: entity
+  table: drv_pnd_driver_msg_cur_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    guardianId:
+      type: bigint
+      nullable: false
+      column: guardian_id
+    drvPndDispatcherMsgId:
+      type: bigint
+      nullable: true
+      column: drv_pnd_dispatcher_msg_id
+    responseType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: response_type
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    receivedTs:
+      type: bigint
+      nullable: true
+      column: received_ts
+  lifecycleCallbacks: {  }

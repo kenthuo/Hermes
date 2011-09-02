@@ -1,0 +1,36 @@
+BeaconDispatchInterface:
+  type: entity
+  table: beacon_dispatch_interface
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    type:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    activatedTs:
+      type: bigint
+      nullable: false
+      column: activated_ts
+    activatedBy:
+      type: bigint
+      nullable: false
+      column: activated_by
+    deactivatedTs:
+      type: bigint
+      nullable: false
+      column: deactivated_ts
+    deactivatedBy:
+      type: bigint
+      nullable: false
+      column: deactivated_by
+  lifecycleCallbacks: {  }

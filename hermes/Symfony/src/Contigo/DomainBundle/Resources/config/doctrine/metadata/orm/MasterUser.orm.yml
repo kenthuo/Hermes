@@ -1,0 +1,21 @@
+MasterUser:
+  type: entity
+  table: master_user
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    tableName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: table_name
+    tableId:
+      type: bigint
+      nullable: true
+      column: table_id
+  lifecycleCallbacks: {  }

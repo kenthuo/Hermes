@@ -1,0 +1,46 @@
+SrIdleRptHistory:
+  type: entity
+  table: sr_idle_rpt_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduledReportId:
+      type: bigint
+      nullable: true
+      column: scheduled_report_id
+    idleDuration:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: idle_duration
+    dataOrderByTime:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: data_order_by_time
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    idleDurationUnit:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: idle_duration_unit
+  lifecycleCallbacks: {  }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PartnerSimActivationExemption" table="partner_sim_activation_exemption">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="customerId" type="bigint" column="customer_id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="ownOwnSim" type="boolean" column="own_own_sim"/>
+    <field name="partialExempt" type="boolean" column="partial_exempt"/>
+    <field name="cpFeeExempt" type="boolean" column="cp_fee_exempt"/>
+    <field name="rpFeeExempt" type="boolean" column="rp_fee_exempt"/>
+    <many-to-one field="customer" target-entity="Customer" orphan-removal="">
+      <join-columns>
+        <join-column name="customer_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

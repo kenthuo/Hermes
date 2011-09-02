@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DrvOrgPndDrvStatus" table="drv_org_pnd_drv_status">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="drvStatusType" type="string" column="drv_status_type" length="20"/>
+    <field name="drvStatusId" type="smallint" column="drv_status_id"/>
+    <field name="drvStatus" type="string" column="drv_status" length="49"/>
+    <field name="createdTs" type="bigint" column="created_ts"/>
+    <field name="retiredTs" type="bigint" column="retired_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

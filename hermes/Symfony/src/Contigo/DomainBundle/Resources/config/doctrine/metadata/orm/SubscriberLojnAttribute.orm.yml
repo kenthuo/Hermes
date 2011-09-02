@@ -1,0 +1,51 @@
+SubscriberLojnAttribute:
+  type: entity
+  table: subscriber_lojn_attribute
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: false
+      column: subscriber_id
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    beaconActivatedTs:
+      type: bigint
+      nullable: true
+      column: beacon_activated_ts
+    upgradePlanState:
+      type: bigint
+      nullable: true
+      column: upgrade_plan_state
+    upgradeMexicoRoamingState:
+      type: bigint
+      nullable: true
+      column: upgrade_mexico_roaming_state
+    createdTs:
+      type: bigint
+      nullable: true
+      column: created_ts
+    createdBy:
+      type: bigint
+      nullable: true
+      column: created_by
+    noshowMexicoRoamingTipTs:
+      type: bigint
+      nullable: true
+      column: noshow_mexico_roaming_tip_ts
+    noshowProximityPlusTipTs:
+      type: bigint
+      nullable: true
+      column: noshow_proximity_plus_tip_ts
+    noshowRenewTipTs:
+      type: bigint
+      nullable: true
+      column: noshow_renew_tip_ts
+  lifecycleCallbacks: {  }

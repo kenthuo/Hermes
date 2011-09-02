@@ -1,0 +1,30 @@
+DrvPndDispatcherMsgCannedResp:
+  type: entity
+  table: drv_pnd_dispatcher_msg_canned_resp
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    guardianId:
+      type: bigint
+      nullable: false
+      column: guardian_id
+    drvPndDispatcherMsgId:
+      type: bigint
+      nullable: false
+      column: drv_pnd_dispatcher_msg_id
+    cannedResponseId:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: canned_response_id
+    cannedResponseText:
+      type: string
+      length: 200
+      fixed: false
+      nullable: false
+      column: canned_response_text
+  lifecycleCallbacks: {  }

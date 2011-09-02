@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ZoneMonitoring" table="zone_monitoring">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="type" type="string" column="type" length="20"/>
+    <field name="rlat1" type="decimal" column="rlat1"/>
+    <field name="rlat2" type="decimal" column="rlat2"/>
+    <field name="rlon1" type="decimal" column="rlon1"/>
+    <field name="rlon2" type="decimal" column="rlon2"/>
+    <field name="clat" type="decimal" column="clat"/>
+    <field name="clon" type="decimal" column="clon"/>
+    <field name="cradius" type="integer" column="cradius"/>
+    <field name="boundary" type="string" column="boundary" length="20"/>
+    <field name="gmttimestamp" type="bigint" column="gmttimestamp"/>
+    <field name="isActive" type="boolean" column="is_active"/>
+    <field name="name" type="string" column="name" length="255"/>
+    <field name="beginTrapId" type="integer" column="begin_trap_id"/>
+    <field name="actionId" type="bigint" column="action_id"/>
+    <many-to-one field="beacon" target-entity="Beacon" orphan-removal="">
+      <join-columns>
+        <join-column name="beacon_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

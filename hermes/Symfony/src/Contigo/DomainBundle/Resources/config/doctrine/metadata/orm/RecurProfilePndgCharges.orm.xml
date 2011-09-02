@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="RecurProfilePndgCharges" table="recur_profile_pndg_charges">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="ppalProfileid" type="string" column="ppal_profileid" length="25"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="planId" type="bigint" column="plan_id"/>
+    <field name="planName" type="string" column="plan_name" length="150"/>
+    <field name="planCost" type="float" column="plan_cost"/>
+    <field name="mexicoRoaming" type="boolean" column="mexico_roaming"/>
+    <field name="mexicoRoamingCost" type="float" column="mexico_roaming_cost"/>
+    <field name="rqtUpgradeTs" type="bigint" column="rqt_upgrade_ts"/>
+    <field name="rqtProcessedTs" type="bigint" column="rqt_processed_ts"/>
+    <field name="rqtDeletedTs" type="bigint" column="rqt_deleted_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,37 @@
+DependentIvrNr:
+  type: entity
+  table: dependent_ivr_nr
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    nameRecording:
+      type: bytea
+      nullable: true
+      column: name_recording
+    nameRecordedOn:
+      type: bigint
+      nullable: true
+      column: name_recorded_on
+    currentNameRecording:
+      type: bytea
+      nullable: true
+      column: current_name_recording
+    currentNameRecordedOn:
+      type: bigint
+      nullable: true
+      column: current_name_recorded_on
+  oneToOne:
+    dependent:
+      targetEntity: Dependent
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        dependent_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

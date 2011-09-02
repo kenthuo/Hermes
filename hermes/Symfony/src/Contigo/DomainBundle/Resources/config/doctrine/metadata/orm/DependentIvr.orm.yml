@@ -1,0 +1,65 @@
+DependentIvr:
+  type: entity
+  table: dependent_ivr
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    locale:
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+    primContactNo:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: prim_contact_no
+    pin:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    dialInNo:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: dial_in_no
+    eulaAcceptedOn:
+      type: bigint
+      nullable: true
+      column: eula_accepted_on
+    dialInterval:
+      type: smallint
+      nullable: true
+      column: dial_interval
+    minCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: min_checkin_interval
+    maxCheckinInterval:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: max_checkin_interval
+    currentShiftIvrVoiceNoteId:
+      type: bigint
+      nullable: true
+      column: current_shift_ivr_voice_note_id
+  oneToOne:
+    dependent:
+      targetEntity: Dependent
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        dependent_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

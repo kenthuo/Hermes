@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Plan" table="plan">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="description" type="string" column="description" length="255"/>
+    <field name="monthlyFee" type="float" column="monthly_fee"/>
+    <field name="currency" type="string" column="currency" length="20"/>
+    <field name="usageAmount" type="integer" column="usage_amount"/>
+    <field name="overagePlan" type="string" column="overage_plan" length="10"/>
+    <field name="pricePerOverageUnit" type="float" column="price_per_overage_unit"/>
+    <field name="pricePerOverageBucket" type="float" column="price_per_overage_bucket"/>
+    <field name="usageAmountPerOverageBucket" type="integer" column="usage_amount_per_overage_bucket"/>
+    <field name="comments" type="string" column="comments" length="255"/>
+    <field name="maxSen" type="integer" column="max_sen"/>
+    <field name="type" type="string" column="type" length="10"/>
+    <field name="usageUnit" type="string" column="usage_unit" length="10"/>
+    <field name="dataPolicy" type="integer" column="data_policy"/>
+    <field name="visibility" type="boolean" column="visibility"/>
+    <field name="showNotifyStation" type="boolean" column="show_notify_station"/>
+    <field name="showMessaging" type="boolean" column="show_messaging"/>
+    <field name="availableCp" type="boolean" column="available_cp"/>
+    <field name="availableRp" type="boolean" column="available_rp"/>
+    <field name="annualFee" type="float" column="annual_fee"/>
+    <field name="showMexicoRoaming" type="boolean" column="show_mexico_roaming"/>
+    <field name="annualCostMexicoRoaming" type="float" column="annual_cost_mexico_roaming"/>
+    <field name="monthlyCostMexicoRoaming" type="float" column="monthly_cost_mexico_roaming"/>
+    <field name="showPndDispatch" type="boolean" column="show_pnd_dispatch"/>
+    <field name="monthlyCostPndDispatch" type="float" column="monthly_cost_pnd_dispatch"/>
+    <field name="showIvr" type="boolean" column="show_ivr"/>
+    <field name="isPayPerUse" type="boolean" column="is_pay_per_use"/>
+    <field name="banType" type="string" column="ban_type" length="255"/>
+    <field name="isBulkIvrUse" type="boolean" column="is_bulk_ivr_use"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Alert And Assist Administration{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body id="cam">
+        <div class="cheader">
+            <img class="clogo" src="{{ asset('bundles/contigo/common/images/ana_logo.gif') }}" alt="Logo" />
+            <div class="cbanner1">
+                <span>A.A.A.A.</span>
+            </div>
+            <div class="cbanner2">
+                <span>Alert And Assist Administration</span>
+            </div>            
+        </div>    
+        <div id="main">
+            {% block body %}{% endblock %}
+        </div>
+        <div class="cfooter">
+            Copyright 2002 - {{ "now"|date("Y") }} Contigo Systems Inc.
+        </div>                
+        {% block javascripts %}{% endblock %}        
+    </body>
+</html>

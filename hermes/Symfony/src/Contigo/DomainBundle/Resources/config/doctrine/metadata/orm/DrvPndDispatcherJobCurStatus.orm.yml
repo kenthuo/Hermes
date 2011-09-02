@@ -1,0 +1,50 @@
+DrvPndDispatcherJobCurStatus:
+  type: entity
+  table: drv_pnd_dispatcher_job_cur_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    drvPndDispatcherJobId:
+      type: bigint
+      nullable: false
+      column: drv_pnd_dispatcher_job_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    guardianId:
+      type: bigint
+      nullable: false
+      column: guardian_id
+    driverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: false
+      column: driver_id
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    statusTs:
+      type: bigint
+      nullable: true
+      column: status_ts
+    sentTs:
+      type: bigint
+      nullable: true
+      column: sent_ts
+  lifecycleCallbacks: {  }

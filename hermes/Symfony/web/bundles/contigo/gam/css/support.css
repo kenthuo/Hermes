@@ -1,0 +1,9 @@
+/* --------------------------------------------------------------
+
+   support.css
+   * Stylesheet of support pod
+
+-------------------------------------------------------------- */
+div#manage-account-panel { margin: 0 auto; width: 600px; }
+div#submit { margin: 20px; }
+div#submit button { float: right; }

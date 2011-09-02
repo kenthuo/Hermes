@@ -1,0 +1,31 @@
+HaGpsDest:
+  type: entity
+  table: ha_gps_dest
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    ip:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    port:
+      type: string
+      length: 6
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

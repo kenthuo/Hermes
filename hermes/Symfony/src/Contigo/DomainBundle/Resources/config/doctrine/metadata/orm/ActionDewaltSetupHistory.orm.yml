@@ -1,0 +1,98 @@
+ActionDewaltSetupHistory:
+  type: entity
+  table: action_dewalt_setup_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    tamperDetector:
+      type: boolean
+      nullable: true
+      column: tamper_detector
+    tamperDetectorAccessory:
+      type: boolean
+      nullable: true
+      column: tamper_detector_accessory
+    doorContact:
+      type: boolean
+      nullable: true
+      column: door_contact
+    motionDetector:
+      type: boolean
+      nullable: true
+      column: motion_detector
+    lowTemperature:
+      type: boolean
+      nullable: true
+      column: low_temperature
+    lowTemperatureValue:
+      type: smallint
+      nullable: true
+      column: low_temperature_value
+    highTemperature:
+      type: boolean
+      nullable: true
+      column: high_temperature
+    highTemperatureValue:
+      type: smallint
+      nullable: true
+      column: high_temperature_value
+    vibrationSensor:
+      type: boolean
+      nullable: true
+      column: vibration_sensor
+    vibrationSensorValue:
+      type: smallint
+      nullable: true
+      column: vibration_sensor_value
+    falseAlarmFilter:
+      type: smallint
+      nullable: true
+      column: false_alarm_filter
+    speakerAllChanges:
+      type: boolean
+      nullable: true
+      column: speaker_all_changes
+    speakerAlarmSiren:
+      type: boolean
+      nullable: true
+      column: speaker_alarm_siren
+    speakerPowerConnect:
+      type: boolean
+      nullable: true
+      column: speaker_power_connect
+    speakerArmDisarm:
+      type: boolean
+      nullable: true
+      column: speaker_arm_disarm
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

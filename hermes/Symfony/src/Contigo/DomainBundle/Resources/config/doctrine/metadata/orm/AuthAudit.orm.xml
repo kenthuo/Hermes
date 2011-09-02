@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AuthAudit" table="auth_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="dependentId" type="bigint" column="dependent_id"/>
+    <field name="opUserId" type="bigint" column="op_user_id"/>
+    <field name="event" type="string" column="event" length="20"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="type" type="string" column="type" length="20"/>
+    <field name="keyword" type="string" column="keyword" length="30"/>
+    <field name="guardian" type="string" column="guardian" length="255"/>
+    <field name="opComments" type="text" column="op_comments"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

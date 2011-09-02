@@ -1,0 +1,25 @@
+DependentIvrChange:
+  type: entity
+  table: dependent_ivr_change
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    changeType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: change_type
+    changeTs:
+      type: bigint
+      nullable: false
+      column: change_ts
+  lifecycleCallbacks: {  }

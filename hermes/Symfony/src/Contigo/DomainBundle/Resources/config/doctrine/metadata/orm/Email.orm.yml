@@ -1,0 +1,37 @@
+Email:
+  type: entity
+  table: email
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    guardianId:
+      type: bigint
+      nullable: true
+      column: guardian_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    email:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+  lifecycleCallbacks: {  }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Guardian" table="guardian">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="keyword" type="string" column="keyword" length="30"/>
+    <field name="type" type="string" column="type" length="20"/>
+    <field name="name" type="string" column="name" length="255"/>
+    <field name="relationship" type="string" column="relationship" length="255"/>
+    <field name="notes" type="text" column="notes"/>
+    <field name="priority" type="integer" column="priority"/>
+    <field name="loginId" type="bigint" column="login_id"/>
+    <field name="isAvailable" type="boolean" column="is_available"/>
+    <field name="isDispatchedDriver" type="boolean" column="is_dispatched_driver"/>
+    <field name="terminalCode" type="string" column="terminal_code" length="4"/>
+    <field name="terminalPin" type="string" column="terminal_pin" length="100"/>
+    <field name="isDispatchPndDriver" type="boolean" column="is_dispatch_pnd_driver"/>
+    <field name="pndDriverId" type="string" column="pnd_driver_id" length="49"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,42 @@
+OrganizationModule:
+  type: entity
+  table: organization_module
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    isVisible:
+      type: boolean
+      nullable: false
+      column: is_visible
+    isConfigurable:
+      type: boolean
+      nullable: false
+      column: is_configurable
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  oneToOne:
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    module:
+      targetEntity: Module
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        module_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

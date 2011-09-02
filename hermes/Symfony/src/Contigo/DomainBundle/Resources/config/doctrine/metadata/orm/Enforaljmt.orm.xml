@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Enforaljmt" table="enforaljmt">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="ip" type="string" column="ip" length="30"/>
+    <field name="lastTrackingStopped" type="bigint" column="last_tracking_stopped"/>
+    <field name="lastLoginTimestamp" type="bigint" column="last_login_timestamp"/>
+    <field name="version" type="string" column="version" length="10"/>
+    <field name="rebootOnNoresp" type="boolean" column="reboot_on_noresp"/>
+    <field name="useResetWatchdog" type="boolean" column="use_reset_watchdog"/>
+    <field name="sendResetWatchdogNotif" type="boolean" column="send_reset_watchdog_notif"/>
+    <field name="watchdogResetTimeout" type="integer" column="watchdog_reset_timeout"/>
+    <field name="useGpsqual" type="boolean" column="use_gpsqual"/>
+    <field name="hdop" type="integer" column="hdop"/>
+    <field name="vibintvl" type="integer" column="vibintvl"/>
+    <field name="lastStartstopIsStart" type="boolean" column="last_startstop_is_start"/>
+    <field name="lastStartstopTs" type="bigint" column="last_startstop_ts"/>
+    <field name="lastAwpIsSetup" type="boolean" column="last_awp_is_setup"/>
+    <field name="lastAwpTs" type="bigint" column="last_awp_ts"/>
+    <field name="debugMode" type="boolean" column="debug_mode"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

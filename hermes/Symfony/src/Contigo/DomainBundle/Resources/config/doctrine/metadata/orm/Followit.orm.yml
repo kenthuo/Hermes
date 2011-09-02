@@ -1,0 +1,47 @@
+Followit:
+  type: entity
+  table: followit
+  fields:
+    unitId:
+      id: true
+      type: bigint
+      nullable: false
+      column: unit_id
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    basePhoneNumber:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+      column: base_phone_number
+    currentState:
+      type: smallint
+      nullable: true
+      column: current_state
+    previousState:
+      type: smallint
+      nullable: true
+      column: previous_state
+    alarmCount:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: alarm_count
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    sentSpeedNotification:
+      type: boolean
+      nullable: true
+      column: sent_speed_notification
+    sentZoneNotification:
+      type: boolean
+      nullable: true
+      column: sent_zone_notification
+  lifecycleCallbacks: {  }

@@ -1,0 +1,55 @@
+RecurProfilePndgCharges:
+  type: entity
+  table: recur_profile_pndg_charges
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    ppalProfileid:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: ppal_profileid
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    planName:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: plan_name
+    planCost:
+      type: float
+      nullable: true
+      column: plan_cost
+    mexicoRoaming:
+      type: boolean
+      nullable: true
+      column: mexico_roaming
+    mexicoRoamingCost:
+      type: float
+      nullable: true
+      column: mexico_roaming_cost
+    rqtUpgradeTs:
+      type: bigint
+      nullable: false
+      column: rqt_upgrade_ts
+    rqtProcessedTs:
+      type: bigint
+      nullable: false
+      column: rqt_processed_ts
+    rqtDeletedTs:
+      type: bigint
+      nullable: false
+      column: rqt_deleted_ts
+  lifecycleCallbacks: {  }

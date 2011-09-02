@@ -1,0 +1,47 @@
+ScenarioContact:
+  type: entity
+  table: scenario_contact
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    scenario:
+      targetEntity: Scenario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        scenario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    phone:
+      targetEntity: Phone
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        phone_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    email:
+      targetEntity: Email
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        email_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

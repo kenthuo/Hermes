@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PndDispatcherAlertSettingHistory" table="pnd_dispatcher_alert_setting_history">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="loginId" type="bigint" column="login_id"/>
+    <field name="jobStatusVisibleAlert" type="boolean" column="job_status_visible_alert"/>
+    <field name="jobStatusAudibleAlert" type="boolean" column="job_status_audible_alert"/>
+    <field name="jobDeliveredAlert" type="boolean" column="job_delivered_alert"/>
+    <field name="jobAckAlert" type="boolean" column="job_ack_alert"/>
+    <field name="jobVehEnrouteAlert" type="boolean" column="job_veh_enroute_alert"/>
+    <field name="jobMarkedDoneAlert" type="boolean" column="job_marked_done_alert"/>
+    <field name="jobDelByDriverAlert" type="boolean" column="job_del_by_driver_alert"/>
+    <field name="jobDeviceResyncIgnore" type="boolean" column="job_device_resync_ignore"/>
+    <field name="msgStatusVisibleAlert" type="boolean" column="msg_status_visible_alert"/>
+    <field name="msgStatusAudibleAlert" type="boolean" column="msg_status_audible_alert"/>
+    <field name="msgNewMsgRevdAlert" type="boolean" column="msg_new_msg_revd_alert"/>
+    <field name="msgDriverReplyAlert" type="boolean" column="msg_driver_reply_alert"/>
+    <field name="xid" type="bigint" column="xid"/>
+    <field name="isDeleted" type="boolean" column="is_deleted"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

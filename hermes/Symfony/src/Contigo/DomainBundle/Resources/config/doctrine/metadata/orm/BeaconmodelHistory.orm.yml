@@ -1,0 +1,119 @@
+BeaconmodelHistory:
+  type: entity
+  table: beaconmodel_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    notes:
+      type: text
+      nullable: true
+    model:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    height:
+      type: float
+      nullable: true
+    width:
+      type: float
+      nullable: true
+    depth:
+      type: float
+      nullable: true
+    weight:
+      type: float
+      nullable: true
+    color:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    deviceTableName:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: device_table_name
+    version:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    gmmsCost:
+      type: float
+      nullable: true
+      column: gmms_cost
+    gmmsCostCurrency:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: gmms_cost_currency
+    p2pCost:
+      type: float
+      nullable: true
+      column: p2p_cost
+    p2pCostCurrency:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: p2p_cost_currency
+    maxOverlappingSen:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: max_overlapping_sen
+    outputCount:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: output_count
+    inputCount:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: input_count
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    isLocateTrack:
+      type: boolean
+      nullable: true
+      column: is_locate_track
+    isVisibleMap:
+      type: boolean
+      nullable: true
+      column: is_visible_map
+  lifecycleCallbacks: {  }

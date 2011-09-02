@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PndMsgAudit" table="pnd_msg_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="pndEsn" type="string" column="pnd_esn" length="50"/>
+    <field name="msgType" type="string" column="msg_type" length="50"/>
+    <field name="msgFlow" type="string" column="msg_flow" length="5"/>
+    <field name="message" type="text" column="message"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="5"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <field name="guardianId" type="bigint" column="guardian_id"/>
+    <field name="pndDriverId" type="string" column="pnd_driver_id" length="49"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,59 @@
+ActionZoneCircleHistory:
+  type: entity
+  table: action_zone_circle_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    centerLat:
+      type: decimal
+      nullable: true
+      column: center_lat
+    centerLon:
+      type: decimal
+      nullable: true
+      column: center_lon
+    radiusMeters:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: radius_meters
+    boundary:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+PeripheralStateAction:
+  type: entity
+  table: peripheral_state_action
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    peripheralStateId:
+      type: bigint
+      nullable: false
+      column: peripheral_state_id
+    allowedPsId:
+      type: bigint
+      nullable: false
+      column: allowed_ps_id
+    allowedPsName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: allowed_ps_name
+    isAllowedProvisioning:
+      type: boolean
+      nullable: true
+      column: is_allowed_provisioning
+  lifecycleCallbacks: {  }

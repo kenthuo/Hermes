@@ -1,0 +1,34 @@
+CustomerSoln:
+  type: entity
+  table: customer_soln
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  oneToOne:
+    solution:
+      targetEntity: Solution
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        solution_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

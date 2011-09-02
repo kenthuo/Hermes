@@ -1,0 +1,35 @@
+PndCannedMsg:
+  type: entity
+  table: pnd_canned_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    cannedMsgIdInPnd:
+      type: smallint
+      nullable: false
+      column: canned_msg_id_in_pnd
+    cannedMsg:
+      type: text
+      nullable: false
+      column: canned_msg
+  lifecycleCallbacks: {  }

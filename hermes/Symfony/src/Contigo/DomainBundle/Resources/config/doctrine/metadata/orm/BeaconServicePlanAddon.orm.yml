@@ -1,0 +1,36 @@
+BeaconServicePlanAddon:
+  type: entity
+  table: beacon_service_plan_addon
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconServicePlanId:
+      type: bigint
+      nullable: false
+      column: beacon_service_plan_id
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: false
+    activatedTs:
+      type: bigint
+      nullable: false
+      column: activated_ts
+    deactivatedTs:
+      type: bigint
+      nullable: false
+      column: deactivated_ts
+    activatedBy:
+      type: bigint
+      nullable: true
+      column: activated_by
+    deactivatedBy:
+      type: bigint
+      nullable: true
+      column: deactivated_by
+  lifecycleCallbacks: {  }

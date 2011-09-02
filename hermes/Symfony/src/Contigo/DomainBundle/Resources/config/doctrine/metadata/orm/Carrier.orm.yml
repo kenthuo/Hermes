@@ -1,0 +1,31 @@
+Carrier:
+  type: entity
+  table: carrier
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    email:
+      type: string
+      length: 35
+      fixed: false
+      nullable: true
+    prefix:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

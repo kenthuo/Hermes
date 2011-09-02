@@ -1,0 +1,19 @@
+ScheduledReportItems:
+  type: entity
+  table: scheduled_report_items
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduledReportId:
+      type: bigint
+      nullable: true
+      column: scheduled_report_id
+    vapId:
+      type: bigint
+      nullable: true
+      column: vap_id
+  lifecycleCallbacks: {  }

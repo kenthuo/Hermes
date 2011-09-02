@@ -1,0 +1,94 @@
+ScheduledReport:
+  type: entity
+  table: scheduled_report
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    status:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    scheduleOccurrences:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: schedule_occurrences
+    scheduleWeekends:
+      type: boolean
+      nullable: true
+      column: schedule_weekends
+    notificationGroupId:
+      type: bigint
+      nullable: true
+      column: notification_group_id
+    formatType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: format_type
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    reportType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: report_type
+    includeLatLon:
+      type: boolean
+      nullable: true
+      column: include_lat_lon
+    cronStr:
+      type: text
+      nullable: true
+      column: cron_str
+    exclusionRule:
+      type: boolean
+      nullable: true
+      column: exclusion_rule
+    type:
+      type: string
+      length: 200
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+  oneToOne:
+    department:
+      targetEntity: Department
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        department_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    customReportPeriod:
+      targetEntity: CustomReportPeriod
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        custom_report_period_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

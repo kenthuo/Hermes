@@ -1,0 +1,37 @@
+LojnChannel:
+  type: entity
+  table: lojn_channel
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: text
+      nullable: false
+    description:
+      type: text
+      nullable: true
+    isDefault:
+      type: boolean
+      nullable: false
+      column: is_default
+    createdTs:
+      type: bigint
+      nullable: false
+      column: created_ts
+    createdBy:
+      type: bigint
+      nullable: false
+      column: created_by
+    updatedTs:
+      type: bigint
+      nullable: true
+      column: updated_ts
+    updatedBy:
+      type: bigint
+      nullable: true
+      column: updated_by
+  lifecycleCallbacks: {  }

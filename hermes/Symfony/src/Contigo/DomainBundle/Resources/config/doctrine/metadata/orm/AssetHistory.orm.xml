@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AssetHistory" table="asset_history">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="other" type="text" column="other"/>
+    <field name="vZoneradius" type="bigint" column="v_zoneradius"/>
+    <field name="vZoning" type="string" column="v_zoning" length="20"/>
+    <field name="vMotiondetector" type="string" column="v_motiondetector" length="20"/>
+    <field name="serialnum" type="string" column="serialnum" length="100"/>
+    <field name="vVin" type="string" column="v_vin" length="50"/>
+    <field name="vLicensenum" type="string" column="v_licensenum" length="20"/>
+    <field name="vYear" type="string" column="v_year" length="4"/>
+    <field name="vColor" type="string" column="v_color" length="30"/>
+    <field name="vModel" type="string" column="v_model" length="50"/>
+    <field name="vMake" type="string" column="v_make" length="50"/>
+    <field name="type" type="string" column="type" length="20"/>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="description" type="string" column="description" length="255"/>
+    <field name="vState" type="string" column="v_state" length="255"/>
+    <field name="vCountry" type="string" column="v_country" length="255"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="daylightSaving" type="boolean" column="daylight_saving"/>
+    <field name="xid" type="bigint" column="xid"/>
+    <field name="isDeleted" type="boolean" column="is_deleted"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <field name="iconId" type="bigint" column="icon_id"/>
+    <field name="syncedMileage" type="integer" column="synced_mileage"/>
+    <field name="syncedTimestamp" type="bigint" column="synced_timestamp"/>
+    <field name="syncedEngineHours" type="bigint" column="synced_engine_hours"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

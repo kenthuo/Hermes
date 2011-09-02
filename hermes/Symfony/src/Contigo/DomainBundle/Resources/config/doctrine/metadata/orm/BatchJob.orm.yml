@@ -1,0 +1,33 @@
+BatchJob:
+  type: entity
+  table: batch_job
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    createdTimestamp:
+      type: bigint
+      nullable: true
+      column: created_timestamp
+    modifiedTimestamp:
+      type: bigint
+      nullable: true
+      column: modified_timestamp
+    state:
+      type: integer
+      unsigned: false
+      nullable: true
+    job:
+      type: bytea
+      nullable: true
+    type:
+      type: integer
+      unsigned: false
+      nullable: true
+    referenceid:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

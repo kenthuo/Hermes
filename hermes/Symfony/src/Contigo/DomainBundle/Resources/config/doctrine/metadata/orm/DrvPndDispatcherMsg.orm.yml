@@ -1,0 +1,90 @@
+DrvPndDispatcherMsg:
+  type: entity
+  table: drv_pnd_dispatcher_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    guardianId:
+      type: bigint
+      nullable: true
+      column: guardian_id
+    driverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: false
+      column: driver_id
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+    message:
+      type: text
+      nullable: false
+    responseType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: response_type
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    sentTs:
+      type: bigint
+      nullable: false
+      column: sent_ts
+    sentBy:
+      type: bigint
+      nullable: false
+      column: sent_by
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    pndMsgAuditId:
+      type: bigint
+      nullable: true
+      column: pnd_msg_audit_id
+    orgDrvPndDispatcherMsgId:
+      type: bigint
+      nullable: true
+      column: org_drv_pnd_dispatcher_msg_id
+    drvPndDispatcherGroupMsgId:
+      type: bigint
+      nullable: true
+      column: drv_pnd_dispatcher_group_msg_id
+    ackByDriver:
+      type: boolean
+      nullable: false
+      column: ack_by_driver
+  lifecycleCallbacks: {  }

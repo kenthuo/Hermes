@@ -1,0 +1,74 @@
+ZoneMonitoring:
+  type: entity
+  table: zone_monitoring
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    rlat1:
+      type: decimal
+      nullable: true
+    rlat2:
+      type: decimal
+      nullable: true
+    rlon1:
+      type: decimal
+      nullable: true
+    rlon2:
+      type: decimal
+      nullable: true
+    clat:
+      type: decimal
+      nullable: true
+    clon:
+      type: decimal
+      nullable: true
+    cradius:
+      type: integer
+      unsigned: false
+      nullable: true
+    boundary:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    gmttimestamp:
+      type: bigint
+      nullable: true
+    isActive:
+      type: boolean
+      nullable: true
+      column: is_active
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    beginTrapId:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: begin_trap_id
+    actionId:
+      type: bigint
+      nullable: true
+      column: action_id
+  oneToOne:
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

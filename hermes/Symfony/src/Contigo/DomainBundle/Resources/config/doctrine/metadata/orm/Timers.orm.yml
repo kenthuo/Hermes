@@ -1,0 +1,29 @@
+Timers:
+  type: entity
+  table: timers
+  fields:
+    timerid:
+      id: true
+      type: string
+      length: 80
+      fixed: false
+      nullable: false
+    targetid:
+      id: true
+      type: string
+      length: 80
+      fixed: false
+      nullable: false
+    initialdate:
+      type: datetime
+      nullable: false
+    timerinterval:
+      type: bigint
+      nullable: true
+    instancepk:
+      type: bytea
+      nullable: true
+    info:
+      type: bytea
+      nullable: true
+  lifecycleCallbacks: {  }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SrTripRpt" table="sr_trip_rpt">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="scheduledReportId" type="bigint" column="scheduled_report_id"/>
+    <field name="tripDuration" type="integer" column="trip_duration"/>
+    <field name="dataOrderByTime" type="string" column="data_order_by_time" length="5"/>
+    <field name="tripDurationUnit" type="string" column="trip_duration_unit" length="10"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

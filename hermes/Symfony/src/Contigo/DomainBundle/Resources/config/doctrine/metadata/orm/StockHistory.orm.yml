@@ -1,0 +1,78 @@
+StockHistory:
+  type: entity
+  table: stock_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    makeId:
+      type: bigint
+      nullable: true
+      column: make_id
+    koreSimId:
+      type: bigint
+      nullable: true
+      column: kore_sim_id
+    locationId:
+      type: bigint
+      nullable: true
+      column: location_id
+    esn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    serialNumber:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: serial_number
+    receivedDate:
+      type: date
+      nullable: true
+      column: received_date
+    gmmsCost:
+      type: float
+      nullable: true
+      column: gmms_cost
+    gmmsCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: gmms_cost_currency
+    p2pCost:
+      type: float
+      nullable: true
+      column: p2p_cost
+    p2pCostCurrency:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: p2p_cost_currency
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    enforaActivationCode:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: enfora_activation_code
+  lifecycleCallbacks: {  }

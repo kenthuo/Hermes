@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PndDriverMsg" table="pnd_driver_msg">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="pndDispatcherMsgId" type="bigint" column="pnd_dispatcher_msg_id"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="pndEsn" type="string" column="pnd_esn" length="50"/>
+    <field name="eta" type="bigint" column="eta"/>
+    <field name="responseType" type="string" column="response_type" length="50"/>
+    <field name="receivedTs" type="bigint" column="received_ts"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="5"/>
+    <field name="streetAddr" type="string" column="street_addr" length="255"/>
+    <field name="city" type="string" column="city" length="150"/>
+    <field name="county" type="string" column="county" length="150"/>
+    <field name="state" type="string" column="state" length="25"/>
+    <field name="country" type="string" column="country" length="25"/>
+    <field name="zipCode" type="string" column="zip_code" length="25"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="altitude" type="float" column="altitude"/>
+    <field name="speed" type="float" column="speed"/>
+    <field name="direction" type="string" column="direction" length="10"/>
+    <field name="status" type="string" column="status" length="50"/>
+    <field name="pndLat" type="decimal" column="pnd_lat"/>
+    <field name="pndLon" type="decimal" column="pnd_lon"/>
+    <field name="pndMsgAuditId" type="bigint" column="pnd_msg_audit_id"/>
+    <field name="message" type="text" column="message"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

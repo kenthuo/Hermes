@@ -1,0 +1,31 @@
+PeripheralStockState:
+  type: entity
+  table: peripheral_stock_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    peripheralStockId:
+      type: bigint
+      nullable: false
+      column: peripheral_stock_id
+    peripheralStateName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: peripheral_state_name
+  oneToOne:
+    peripheralState:
+      targetEntity: PeripheralState
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        peripheral_state_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

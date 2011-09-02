@@ -1,0 +1,43 @@
+IncidentLoginAudit:
+  type: entity
+  table: incident_login_audit
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    incidentId:
+      type: bigint
+      nullable: true
+      column: incident_id
+    loginName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: login_name
+    passcode:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    ip:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    status:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    valid:
+      type: boolean
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+  lifecycleCallbacks: {  }

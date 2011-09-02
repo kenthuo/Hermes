@@ -1,0 +1,79 @@
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: ContigoGamDeveloperBundle:Default:index }
+
+developer:
+    pattern:  /developer/
+    defaults: { _controller: ContigoGamDeveloperBundle:Default:index } 
+
+make_list:
+    pattern:  /developer/makes/
+    defaults: { _controller: ContigoGamDeveloperBundle:Make:index }
+    
+make_add:
+    pattern:  /developer/make/add/
+    defaults: { _controller: ContigoGamDeveloperBundle:Make:add }
+    
+make_update:
+    pattern:  /developer/make/update/{id}
+    defaults: { _controller: ContigoGamDeveloperBundle:Make:update }   
+    
+make_delete:
+    pattern:  /developer/make/delete/
+    defaults: { _controller: ContigoGamDeveloperBundle:Make:delete }
+        
+manufacturer_list:
+    pattern:  /developer/manufacturers/
+    defaults: { _controller: ContigoGamDeveloperBundle:Manufacturer:index }
+    
+manufacturer_add:
+    pattern:  /developer/manufacturer/add/
+    defaults: { _controller: ContigoGamDeveloperBundle:Manufacturer:add }
+    
+manufacturer_update:
+    pattern:  /developer/manufacturer/update/{id}
+    defaults: { _controller: ContigoGamDeveloperBundle:Manufacturer:update }  
+    requirements:
+        id: \d+     
+    
+manufacturer_delete:
+    pattern:  /developer/manufacturer/delete/
+    defaults: { _controller: ContigoGamDeveloperBundle:Manufacturer:delete }
+
+beaconmodel_list:
+    pattern:  /developer/beaconmodels/
+    defaults: { _controller: ContigoGamDeveloperBundle:Beaconmodel:index }
+    
+beaconmodel_add:
+    pattern:  /developer/beaconmodel/add/
+    defaults: { _controller: ContigoGamDeveloperBundle:Beaconmodel:add }
+    
+beaconmodel_update:
+    pattern:  /developer/beaconmodel/update/{id}
+    defaults: { _controller: ContigoGamDeveloperBundle:Beaconmodel:update }   
+    requirements:
+        id: \d+     
+            
+beaconmodel_delete:
+    pattern:  /developer/beaconmodel/delete/
+    defaults: { _controller: ContigoGamDeveloperBundle:Beaconmodel:delete }
+
+phpinfo:
+    pattern:  /developer/phpinfo/
+    defaults: { _controller: ContigoGamDeveloperBundle:Phpinfo:index }  
+    
+timestamp:
+    pattern:  /developer/timestamp/
+    defaults: { _controller: ContigoGamDeveloperBundle:Timestamp:index }
+    
+epoch_to_datetime:
+    pattern:  /developer/epoch_to_datetime/
+    defaults: { _controller: ContigoGamDeveloperBundle:Timestamp:epochToDateTime }
+    
+datetime_to_epoch:
+    pattern:  /developer/datetime_to_epoch/
+    defaults: { _controller: ContigoGamDeveloperBundle:Timestamp:dateTimeToEpoch }  
+
+locate_generator:
+    pattern:  /developer/locate_generator/
+    defaults: { _controller: ContigoGamDeveloperBundle:LocateGenerator:index }    

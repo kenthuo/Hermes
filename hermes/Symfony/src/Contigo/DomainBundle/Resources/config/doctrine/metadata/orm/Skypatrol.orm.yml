@@ -1,0 +1,41 @@
+Skypatrol:
+  type: entity
+  table: skypatrol
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    cac:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    expiry:
+      type: bigint
+      nullable: true
+    ip:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    version:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    lastLoginTimestamp:
+      type: bigint
+      nullable: true
+      column: last_login_timestamp
+  lifecycleCallbacks: {  }

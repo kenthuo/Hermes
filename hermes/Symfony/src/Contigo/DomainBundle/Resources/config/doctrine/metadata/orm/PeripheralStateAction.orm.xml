@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PeripheralStateAction" table="peripheral_state_action">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="peripheralStateId" type="bigint" column="peripheral_state_id"/>
+    <field name="allowedPsId" type="bigint" column="allowed_ps_id"/>
+    <field name="allowedPsName" type="string" column="allowed_ps_name" length="50"/>
+    <field name="isAllowedProvisioning" type="boolean" column="is_allowed_provisioning"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

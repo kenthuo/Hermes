@@ -1,0 +1,35 @@
+SystemMessageNonEnglish:
+  type: entity
+  table: system_message_non_english
+  fields:
+    systemMessageId:
+      id: true
+      type: bigint
+      nullable: false
+      column: system_message_id
+    locale:
+      id: true
+      type: string
+      length: 10
+      fixed: false
+      nullable: false
+    notice:
+      type: text
+      nullable: true
+    status:
+      type: text
+      nullable: true
+    maintenance:
+      type: text
+      nullable: true
+  oneToOne:
+    systemMessage:
+      targetEntity: SystemMessage
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        system_message_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

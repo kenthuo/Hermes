@@ -1,0 +1,42 @@
+ScheduleAlltimeHistory:
+  type: entity
+  table: schedule_alltime_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

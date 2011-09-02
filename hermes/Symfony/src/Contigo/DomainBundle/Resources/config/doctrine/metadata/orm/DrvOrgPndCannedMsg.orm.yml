@@ -1,0 +1,31 @@
+DrvOrgPndCannedMsg:
+  type: entity
+  table: drv_org_pnd_canned_msg
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    cannedMsgIdInPnd:
+      type: smallint
+      nullable: false
+      column: canned_msg_id_in_pnd
+    cannedMsg:
+      type: text
+      nullable: false
+      column: canned_msg
+    createdTs:
+      type: bigint
+      nullable: false
+      column: created_ts
+    retiredTs:
+      type: bigint
+      nullable: false
+      column: retired_ts
+  lifecycleCallbacks: {  }

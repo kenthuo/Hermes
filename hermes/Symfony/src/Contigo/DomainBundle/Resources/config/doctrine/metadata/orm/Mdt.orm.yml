@@ -1,0 +1,61 @@
+Mdt:
+  type: entity
+  table: mdt
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    customerId:
+      type: bigint
+      nullable: false
+      column: customer_id
+    esn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    rootPassword:
+      type: text
+      nullable: true
+      column: root_password
+  oneToOne:
+    peripheralStock:
+      targetEntity: PeripheralStock
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        peripheral_stock_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    mdtModel:
+      targetEntity: MdtModel
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        mdt_model_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    asset:
+      targetEntity: Asset
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        asset_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

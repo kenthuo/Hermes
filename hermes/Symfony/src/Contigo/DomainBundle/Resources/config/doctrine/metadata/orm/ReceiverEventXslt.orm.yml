@@ -1,0 +1,33 @@
+ReceiverEventXslt:
+  type: entity
+  table: receiver_event_xslt
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    xslt:
+      type: text
+      nullable: false
+  oneToOne:
+    receiver:
+      targetEntity: Receiver
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        receiver_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    eventIndex:
+      targetEntity: EventIndex
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        event_index_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

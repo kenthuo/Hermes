@@ -1,0 +1,59 @@
+MdtModel:
+  type: entity
+  table: mdt_model
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    model:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    description:
+      type: text
+      nullable: true
+    color:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    height:
+      type: float
+      nullable: true
+    width:
+      type: float
+      nullable: true
+    depth:
+      type: float
+      nullable: true
+    weight:
+      type: float
+      nullable: true
+    imageData:
+      type: bytea
+      nullable: true
+      column: image_data
+    imageFiletype:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: image_filetype
+    createdTs:
+      type: bigint
+      nullable: false
+      column: created_ts
+    deletedTs:
+      type: bigint
+      nullable: true
+      column: deleted_ts
+  lifecycleCallbacks: {  }

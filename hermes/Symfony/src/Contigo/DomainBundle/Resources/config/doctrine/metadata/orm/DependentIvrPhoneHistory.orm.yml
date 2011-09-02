@@ -1,0 +1,41 @@
+DependentIvrPhoneHistory:
+  type: entity
+  table: dependent_ivr_phone_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    dependentId:
+      type: bigint
+      nullable: false
+      column: dependent_id
+    phoneId:
+      type: bigint
+      nullable: false
+      column: phone_id
+    callSequence:
+      type: smallint
+      nullable: false
+      column: call_sequence
+    createTs:
+      type: bigint
+      nullable: false
+      column: create_ts
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

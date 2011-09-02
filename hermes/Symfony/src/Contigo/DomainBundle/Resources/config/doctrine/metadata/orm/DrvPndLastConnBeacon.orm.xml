@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DrvPndLastConnBeacon" table="drv_pnd_last_conn_beacon">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="pndEsn" type="string" column="pnd_esn">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="pndDriverId" type="string" column="pnd_driver_id" length="49"/>
+    <field name="guardianId" type="bigint" column="guardian_id"/>
+    <field name="isBeaconConnected" type="boolean" column="is_beacon_connected"/>
+    <field name="isResetInProgress" type="boolean" column="is_reset_in_progress"/>
+    <field name="sentWarningMsg" type="boolean" column="sent_warning_msg"/>
+    <field name="lastConnectedTs" type="bigint" column="last_connected_ts"/>
+    <field name="lastInboundMsgType" type="string" column="last_inbound_msg_type" length="25"/>
+    <field name="prevConnBeaconId" type="bigint" column="prev_conn_beacon_id"/>
+    <field name="prevConnGuardianId" type="bigint" column="prev_conn_guardian_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

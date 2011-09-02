@@ -1,0 +1,27 @@
+MdtRegistration:
+  type: entity
+  table: mdt_registration
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    mdtId:
+      type: bigint
+      nullable: false
+      column: mdt_id
+    organizationId:
+      type: bigint
+      nullable: false
+      column: organization_id
+    registrationTs:
+      type: bigint
+      nullable: false
+      column: registration_ts
+    unregistrationTs:
+      type: bigint
+      nullable: false
+      column: unregistration_ts
+  lifecycleCallbacks: {  }

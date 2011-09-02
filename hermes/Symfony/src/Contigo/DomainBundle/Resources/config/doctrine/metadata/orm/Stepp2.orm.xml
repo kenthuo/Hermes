@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Stepp2" table="stepp2">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="ip" type="string" column="ip" length="30"/>
+    <field name="lastTrackingStopped" type="bigint" column="last_tracking_stopped"/>
+    <field name="lastLoginTimestamp" type="bigint" column="last_login_timestamp"/>
+    <field name="version" type="string" column="version" length="30"/>
+    <field name="useHistory" type="boolean" column="use_history"/>
+    <field name="toBeReplaced" type="boolean" column="to_be_replaced"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

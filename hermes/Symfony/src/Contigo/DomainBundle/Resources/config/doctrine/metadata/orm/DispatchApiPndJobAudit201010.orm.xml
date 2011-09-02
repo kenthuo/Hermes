@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DispatchApiPndJobAudit201010" table="dispatch_api_pnd_job_audit_201010">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="assetId" type="bigint" column="asset_id"/>
+    <field name="departmentId" type="bigint" column="department_id"/>
+    <field name="beaconEsn" type="string" column="beacon_esn" length="50"/>
+    <field name="pndEsn" type="string" column="pnd_esn" length="50"/>
+    <field name="jobDriverId" type="string" column="job_driver_id" length="50"/>
+    <field name="jobId" type="bigint" column="job_id"/>
+    <field name="jobStatus" type="string" column="job_status" length="50"/>
+    <field name="jobEtaTime" type="bigint" column="job_eta_time"/>
+    <field name="jobPriority" type="integer" column="job_priority"/>
+    <field name="street" type="string" column="street" length="255"/>
+    <field name="city" type="string" column="city" length="150"/>
+    <field name="county" type="string" column="county" length="150"/>
+    <field name="state" type="string" column="state" length="25"/>
+    <field name="country" type="string" column="country" length="25"/>
+    <field name="zipCode" type="string" column="zip_code" length="10"/>
+    <field name="gpsTs" type="bigint" column="gps_ts"/>
+    <field name="networkTs" type="bigint" column="network_ts"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="speed" type="float" column="speed"/>
+    <field name="altitude" type="float" column="altitude"/>
+    <field name="direction" type="string" column="direction" length="10"/>
+    <field name="isValidFix" type="boolean" column="is_valid_fix"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

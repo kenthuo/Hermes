@@ -1,0 +1,42 @@
+ScenarioLevelNotification:
+  type: entity
+  table: scenario_level_notification
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    actionId:
+      type: bigint
+      nullable: false
+      column: action_id
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+    retireTs:
+      type: bigint
+      nullable: false
+      column: retire_ts
+  oneToOne:
+    scenario:
+      targetEntity: Scenario
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        scenario_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    actionIndex:
+      targetEntity: ActionIndex
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        action_index_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

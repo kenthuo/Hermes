@@ -1,0 +1,49 @@
+QuartzJobState:
+  type: entity
+  table: quartz_job_state
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    scenarioId:
+      type: bigint
+      nullable: true
+      column: scenario_id
+    scenarioActionId:
+      type: bigint
+      nullable: true
+      column: scenario_action_id
+    sentriggerId:
+      type: bigint
+      nullable: true
+      column: sentrigger_id
+    command:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    actionIndexId:
+      type: bigint
+      nullable: true
+      column: action_index_id
+    actionId:
+      type: bigint
+      nullable: true
+      column: action_id
+    timestamp:
+      type: bigint
+      nullable: true
+    timeString:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: time_string
+  lifecycleCallbacks: {  }

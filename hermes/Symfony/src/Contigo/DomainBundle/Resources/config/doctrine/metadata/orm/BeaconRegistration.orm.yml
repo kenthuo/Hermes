@@ -1,0 +1,35 @@
+BeaconRegistration:
+  type: entity
+  table: beacon_registration
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    regDate:
+      type: bigint
+      nullable: true
+      column: reg_date
+    unregDate:
+      type: bigint
+      nullable: true
+      column: unreg_date
+    billingDate:
+      type: bigint
+      nullable: true
+      column: billing_date
+  lifecycleCallbacks: {  }

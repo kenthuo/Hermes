@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ConflictFeature" table="conflict_feature">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="maxTimeConflict" type="integer" column="max_time_conflict"/>
+    <many-to-one field="feature2" target-entity="Feature" orphan-removal="">
+      <join-columns>
+        <join-column name="feature_id_2" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="feature1" target-entity="Feature" orphan-removal="">
+      <join-columns>
+        <join-column name="feature_id_1" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

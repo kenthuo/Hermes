@@ -1,0 +1,79 @@
+ActionAuxOutput:
+  type: entity
+  table: action_aux_output
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    pulseDuration:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: pulse_duration
+    toggleOn:
+      type: boolean
+      nullable: true
+      column: toggle_on
+    outputNumber:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: output_number
+    isTriggerConfig:
+      type: boolean
+      nullable: true
+      column: is_trigger_config
+    validityDuration:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: validity_duration
+    validityUnits:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: validity_units
+    pulseLabel:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: pulse_label
+    toggleOnLabel:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: toggle_on_label
+    toggleOffLabel:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: toggle_off_label
+  lifecycleCallbacks: {  }

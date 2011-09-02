@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="IvrAuthFailure" table="ivr_auth_failure">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="eventTimestamp" type="bigint" column="event_timestamp"/>
+    <field name="phoneNoAttempted" type="string" column="phone_no_attempted" length="50"/>
+    <field name="pinAttempted" type="string" column="pin_attempted" length="10"/>
+    <field name="callerClid" type="string" column="caller_clid" length="20"/>
+    <field name="ivrDialInNo" type="string" column="ivr_dial_in_no" length="20"/>
+    <field name="customerId" type="bigint" column="customer_id"/>
+    <field name="status" type="text" column="status"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

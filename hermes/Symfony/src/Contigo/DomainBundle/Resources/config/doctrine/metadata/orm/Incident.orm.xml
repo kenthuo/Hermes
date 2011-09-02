@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Incident" table="incident">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="resolutionType" type="string" column="resolution_type" length="20"/>
+    <field name="authorityNotified" type="string" column="authority_notified" length="20"/>
+    <field name="resolution" type="text" column="resolution"/>
+    <field name="notes" type="text" column="notes"/>
+    <field name="initTimestamp" type="bigint" column="init_timestamp"/>
+    <field name="initType" type="string" column="init_type" length="20"/>
+    <field name="initAuthentication" type="string" column="init_authentication" length="20"/>
+    <field name="status" type="string" column="status" length="20"/>
+    <field name="endTimestamp" type="bigint" column="end_timestamp"/>
+    <field name="starttimezone" type="float" column="starttimezone"/>
+    <field name="startTzAbbrev" type="string" column="start_tz_abbrev" length="4"/>
+    <field name="endtimezone" type="float" column="endtimezone"/>
+    <field name="endTzAbbrev" type="string" column="end_tz_abbrev" length="4"/>
+    <field name="passcode" type="string" column="passcode" length="10"/>
+    <many-to-one field="tracking" target-entity="Tracking" orphan-removal="">
+      <join-columns>
+        <join-column name="tracking_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

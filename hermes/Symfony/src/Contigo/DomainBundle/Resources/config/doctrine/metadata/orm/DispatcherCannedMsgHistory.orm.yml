@@ -1,0 +1,39 @@
+DispatcherCannedMsgHistory:
+  type: entity
+  table: dispatcher_canned_msg_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    departmentId:
+      type: bigint
+      nullable: true
+      column: department_id
+    subject:
+      type: text
+      nullable: false
+    body:
+      type: text
+      nullable: true
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

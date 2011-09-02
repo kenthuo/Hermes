@@ -1,0 +1,52 @@
+ScheduleMonthly:
+  type: entity
+  table: schedule_monthly
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    startTimestamp:
+      type: bigint
+      nullable: true
+      column: start_timestamp
+    endTimestamp:
+      type: bigint
+      nullable: true
+      column: end_timestamp
+    dayOfMonth:
+      type: smallint
+      nullable: true
+      column: day_of_month
+    weekOfMonth:
+      type: smallint
+      nullable: true
+      column: week_of_month
+    dayOfWeek:
+      type: smallint
+      nullable: true
+      column: day_of_week
+    everyXMonths:
+      type: smallint
+      nullable: true
+      column: every_x_months
+    xOccurrences:
+      type: smallint
+      nullable: true
+      column: x_occurrences
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+  lifecycleCallbacks: {  }

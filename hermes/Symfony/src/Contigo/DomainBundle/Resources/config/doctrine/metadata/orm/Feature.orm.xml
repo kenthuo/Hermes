@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Feature" table="feature">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="maxAllowed" type="smallint" column="max_allowed"/>
+    <field name="ioType" type="string" column="io_type" length="20"/>
+    <field name="ioPortNum" type="integer" column="io_port_num"/>
+    <field name="priority" type="integer" column="priority"/>
+    <field name="isVisibleCp" type="boolean" column="is_visible_cp"/>
+    <field name="isVisibleRp" type="boolean" column="is_visible_rp"/>
+    <field name="minTrkInterval" type="smallint" column="min_trk_interval"/>
+    <many-to-one field="actionIndex" target-entity="ActionIndex" orphan-removal="">
+      <join-columns>
+        <join-column name="action_index_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="beaconmodel" target-entity="Beaconmodel" orphan-removal="">
+      <join-columns>
+        <join-column name="beaconmodel_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

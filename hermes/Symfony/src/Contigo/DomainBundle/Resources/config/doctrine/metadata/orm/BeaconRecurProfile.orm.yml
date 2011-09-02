@@ -1,0 +1,190 @@
+BeaconRecurProfile:
+  type: entity
+  table: beacon_recur_profile
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    beaconEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: beacon_esn
+    monthlyCostMexicoRoaming:
+      type: float
+      nullable: true
+      column: monthly_cost_mexico_roaming
+    ppalProfileid:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: ppal_profileid
+    profilename:
+      type: string
+      length: 200
+      fixed: false
+      nullable: true
+    start:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    payperiod:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+    term:
+      type: smallint
+      nullable: true
+    status:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    comment:
+      type: text
+      nullable: true
+    amount:
+      type: float
+      nullable: true
+    currency:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+    origid:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+    billingStreetAddr:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: billing_street_addr
+    billingCity:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: billing_city
+    billingState:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: billing_state
+    billingCountry:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: billing_country
+    billingZipCode:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: billing_zip_code
+    billingPhone:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: billing_phone
+    billingEmail:
+      type: string
+      length: 150
+      fixed: false
+      nullable: true
+      column: billing_email
+    ccName:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: cc_name
+    ccNumber:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: cc_number
+    ccType:
+      type: string
+      length: 25
+      fixed: false
+      nullable: true
+      column: cc_type
+    ccExpiryDate:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: cc_expiry_date
+    nextTxTimestamp:
+      type: bigint
+      nullable: true
+      column: next_tx_timestamp
+    firstname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    lastname:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    prevTxTimestamp:
+      type: bigint
+      nullable: true
+      column: prev_tx_timestamp
+    monthlyBasicPlanCost:
+      type: float
+      nullable: true
+      column: monthly_basic_plan_cost
+    basicPlanId:
+      type: bigint
+      nullable: true
+      column: basic_plan_id
+  oneToOne:
+    subscriber:
+      targetEntity: Subscriber
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        subscriber_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    organization:
+      targetEntity: Organization
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        organization_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

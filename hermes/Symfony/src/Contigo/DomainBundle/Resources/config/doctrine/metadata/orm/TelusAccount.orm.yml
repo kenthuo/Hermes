@@ -1,0 +1,37 @@
+TelusAccount:
+  type: entity
+  table: telus_account
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    accountNumber:
+      type: string
+      length: null
+      fixed: false
+      nullable: true
+      column: account_number
+    socCode:
+      type: string
+      length: null
+      fixed: false
+      nullable: true
+      column: soc_code
+    min:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+    esn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    lastUpdatedTs:
+      type: bigint
+      nullable: true
+      column: last_updated_ts
+  lifecycleCallbacks: {  }

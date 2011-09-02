@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="ActionDewaltSetupHistory" table="action_dewalt_setup_history">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="name" type="string" column="name" length="100"/>
+    <field name="tamperDetector" type="boolean" column="tamper_detector"/>
+    <field name="tamperDetectorAccessory" type="boolean" column="tamper_detector_accessory"/>
+    <field name="doorContact" type="boolean" column="door_contact"/>
+    <field name="motionDetector" type="boolean" column="motion_detector"/>
+    <field name="lowTemperature" type="boolean" column="low_temperature"/>
+    <field name="lowTemperatureValue" type="smallint" column="low_temperature_value"/>
+    <field name="highTemperature" type="boolean" column="high_temperature"/>
+    <field name="highTemperatureValue" type="smallint" column="high_temperature_value"/>
+    <field name="vibrationSensor" type="boolean" column="vibration_sensor"/>
+    <field name="vibrationSensorValue" type="smallint" column="vibration_sensor_value"/>
+    <field name="falseAlarmFilter" type="smallint" column="false_alarm_filter"/>
+    <field name="speakerAllChanges" type="boolean" column="speaker_all_changes"/>
+    <field name="speakerAlarmSiren" type="boolean" column="speaker_alarm_siren"/>
+    <field name="speakerPowerConnect" type="boolean" column="speaker_power_connect"/>
+    <field name="speakerArmDisarm" type="boolean" column="speaker_arm_disarm"/>
+    <field name="xid" type="bigint" column="xid"/>
+    <field name="isDeleted" type="boolean" column="is_deleted"/>
+    <field name="timestamp" type="bigint" column="timestamp"/>
+    <field name="accessListId" type="bigint" column="access_list_id"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

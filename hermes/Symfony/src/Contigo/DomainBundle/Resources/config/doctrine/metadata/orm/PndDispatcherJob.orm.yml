@@ -1,0 +1,110 @@
+PndDispatcherJob:
+  type: entity
+  table: pnd_dispatcher_job
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    pndEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: pnd_esn
+    etaTime:
+      type: bigint
+      nullable: true
+      column: eta_time
+    etaDistance:
+      type: bigint
+      nullable: true
+      column: eta_distance
+    jobType:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+      column: job_type
+    jobDestination:
+      type: text
+      nullable: false
+      column: job_destination
+    jobLat:
+      type: decimal
+      nullable: true
+      column: job_lat
+    jobLon:
+      type: decimal
+      nullable: true
+      column: job_lon
+    description:
+      type: text
+      nullable: true
+    sentTs:
+      type: bigint
+      nullable: false
+      column: sent_ts
+    sentBy:
+      type: bigint
+      nullable: false
+      column: sent_by
+    timezone:
+      type: float
+      nullable: true
+    tzAbbrev:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: tz_abbrev
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    pndJobAuditId:
+      type: bigint
+      nullable: false
+      column: pnd_job_audit_id
+    statusTs:
+      type: bigint
+      nullable: true
+      column: status_ts
+    orgPndDispatcherJobId:
+      type: bigint
+      nullable: true
+      column: org_pnd_dispatcher_job_id
+    prevStatus:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: prev_status
+    prevStatusTs:
+      type: bigint
+      nullable: true
+      column: prev_status_ts
+    ackTime:
+      type: bigint
+      nullable: true
+      column: ack_time
+    doneTime:
+      type: bigint
+      nullable: true
+      column: done_time
+  lifecycleCallbacks: {  }

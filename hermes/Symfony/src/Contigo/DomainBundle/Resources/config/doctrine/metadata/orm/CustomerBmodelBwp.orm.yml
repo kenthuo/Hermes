@@ -1,0 +1,39 @@
+CustomerBmodelBwp:
+  type: entity
+  table: customer_bmodel_bwp
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+  oneToOne:
+    bwpPlan:
+      targetEntity: BwpPlan
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        bwp_plan_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    beaconmodel:
+      targetEntity: Beaconmodel
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beaconmodel_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    customer:
+      targetEntity: Customer
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        customer_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

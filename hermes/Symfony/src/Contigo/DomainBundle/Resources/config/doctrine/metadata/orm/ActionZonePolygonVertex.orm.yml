@@ -1,0 +1,25 @@
+ActionZonePolygonVertex:
+  type: entity
+  table: action_zone_polygon_vertex
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    actionZonePolygonId:
+      type: bigint
+      nullable: false
+      column: action_zone_polygon_id
+    vertexId:
+      type: smallint
+      nullable: true
+      column: vertex_id
+    lon:
+      type: decimal
+      nullable: true
+    lat:
+      type: decimal
+      nullable: true
+  lifecycleCallbacks: {  }

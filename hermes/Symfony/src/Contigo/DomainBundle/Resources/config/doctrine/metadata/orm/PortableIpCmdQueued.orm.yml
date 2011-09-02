@@ -1,0 +1,20 @@
+PortableIpCmdQueued:
+  type: entity
+  table: portable_ip_cmd_queued
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    uniqueId:
+      type: string
+      length: 100
+      fixed: false
+      nullable: false
+      column: unique_id
+    date:
+      type: bigint
+      nullable: false
+  lifecycleCallbacks: {  }

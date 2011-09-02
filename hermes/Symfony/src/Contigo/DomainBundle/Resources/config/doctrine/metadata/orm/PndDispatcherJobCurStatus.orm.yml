@@ -1,0 +1,40 @@
+PndDispatcherJobCurStatus:
+  type: entity
+  table: pnd_dispatcher_job_cur_status
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    departmentId:
+      type: bigint
+      nullable: false
+      column: department_id
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    assetId:
+      type: bigint
+      nullable: false
+      column: asset_id
+    status:
+      type: string
+      length: 50
+      fixed: false
+      nullable: false
+    statusTs:
+      type: bigint
+      nullable: true
+      column: status_ts
+    sentTs:
+      type: bigint
+      nullable: true
+      column: sent_ts
+    pndDispatcherJobId:
+      type: bigint
+      nullable: false
+      column: pnd_dispatcher_job_id
+  lifecycleCallbacks: {  }

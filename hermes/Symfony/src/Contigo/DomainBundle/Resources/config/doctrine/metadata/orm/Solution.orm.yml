@@ -1,0 +1,39 @@
+Solution:
+  type: entity
+  table: solution
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 40
+      fixed: false
+      nullable: false
+    introTs:
+      type: bigint
+      nullable: false
+      column: intro_ts
+  oneToOne:
+    homePageTemplate:
+      targetEntity: HomePageTemplate
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        home_page_template_id:
+          referencedColumnName: id
+      orphanRemoval: false
+    appln:
+      targetEntity: Appln
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        appln_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

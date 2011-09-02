@@ -1,0 +1,43 @@
+ActionAuxalarm:
+  type: entity
+  table: action_auxalarm
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    notifyOn:
+      type: boolean
+      nullable: true
+      column: notify_on
+    notifyOff:
+      type: boolean
+      nullable: true
+      column: notify_off
+    toggle:
+      type: boolean
+      nullable: true
+    ioPortNum:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: io_port_num
+  lifecycleCallbacks: {  }

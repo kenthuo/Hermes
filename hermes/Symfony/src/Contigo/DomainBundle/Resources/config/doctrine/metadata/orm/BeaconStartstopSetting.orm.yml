@@ -1,0 +1,42 @@
+BeaconStartstopSetting:
+  type: entity
+  table: beacon_startstop_setting
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    stopDuration:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: stop_duration
+    startDuration:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: start_duration
+    speed:
+      type: decimal
+      nullable: true
+    speedUnit:
+      type: string
+      length: 10
+      fixed: false
+      nullable: true
+      column: speed_unit
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    actionId:
+      type: bigint
+      nullable: false
+      column: action_id
+    lastReadTs:
+      type: bigint
+      nullable: false
+      column: last_read_ts
+  lifecycleCallbacks: {  }

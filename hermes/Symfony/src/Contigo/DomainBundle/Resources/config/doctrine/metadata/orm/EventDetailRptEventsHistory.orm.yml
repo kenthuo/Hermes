@@ -1,0 +1,33 @@
+EventDetailRptEventsHistory:
+  type: entity
+  table: event_detail_rpt_events_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    eventDetailRptId:
+      type: bigint
+      nullable: true
+      column: event_detail_rpt_id
+    actionEventId:
+      type: bigint
+      nullable: true
+      column: action_event_id
+    xid:
+      type: bigint
+      nullable: true
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Aircept" table="aircept">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="currentState" type="smallint" column="current_state"/>
+    <field name="previousState" type="smallint" column="previous_state"/>
+    <field name="lastTrackingStopped" type="bigint" column="last_tracking_stopped"/>
+    <field name="aerisState" type="string" column="aeris_state" length="20"/>
+    <field name="aerisServiceLevel" type="integer" column="aeris_service_level"/>
+    <field name="aerisOptionApproved" type="boolean" column="aeris_option_approved"/>
+    <field name="aerisMinProvisioned" type="boolean" column="aeris_min_provisioned"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

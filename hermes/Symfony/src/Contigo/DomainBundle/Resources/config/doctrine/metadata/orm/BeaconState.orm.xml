@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BeaconState" table="beacon_state">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="name" type="string" column="name" length="50"/>
+    <field name="isConfigured" type="boolean" column="is_configured"/>
+    <field name="isTested" type="boolean" column="is_tested"/>
+    <field name="isOperable" type="boolean" column="is_operable"/>
+    <field name="isBillable" type="boolean" column="is_billable"/>
+    <field name="isAssigned" type="boolean" column="is_assigned"/>
+    <field name="isRegistered" type="boolean" column="is_registered"/>
+    <field name="isProvisioned" type="boolean" column="is_provisioned"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

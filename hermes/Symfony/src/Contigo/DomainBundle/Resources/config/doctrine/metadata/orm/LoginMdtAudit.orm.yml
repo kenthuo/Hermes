@@ -1,0 +1,49 @@
+LoginMdtAudit:
+  type: entity
+  table: login_mdt_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    mdtEsn:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: mdt_esn
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    driverId:
+      type: bigint
+      nullable: true
+      column: driver_id
+    loginTimestamp:
+      type: bigint
+      nullable: true
+      column: login_timestamp
+    logoutTimestamp:
+      type: bigint
+      nullable: true
+      column: logout_timestamp
+    isLoginFailure:
+      type: boolean
+      nullable: true
+      column: is_login_failure
+    autoLogout:
+      type: boolean
+      nullable: true
+      column: auto_logout
+    driverMessageId:
+      type: bigint
+      nullable: true
+      column: driver_message_id
+    driverMessageTs:
+      type: bigint
+      nullable: true
+      column: driver_message_ts
+  lifecycleCallbacks: {  }

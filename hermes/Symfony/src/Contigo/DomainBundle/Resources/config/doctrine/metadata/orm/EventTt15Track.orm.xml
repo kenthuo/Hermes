@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="EventTt15Track" table="event_tt15_track">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="locateId" type="bigint" column="locate_id"/>
+    <field name="networkTimestamp" type="bigint" column="network_timestamp"/>
+    <field name="lon" type="decimal" column="lon"/>
+    <field name="lat" type="decimal" column="lat"/>
+    <field name="triggerType" type="integer" column="trigger_type"/>
+    <field name="batteryLevel" type="integer" column="battery_level"/>
+    <field name="isBatteryChanged" type="boolean" column="is_battery_changed"/>
+    <field name="gpsStatus" type="integer" column="gps_status"/>
+    <field name="gsmStatus" type="integer" column="gsm_status"/>
+    <field name="hpaStatus" type="integer" column="hpa_status"/>
+    <field name="mpaStatus" type="integer" column="mpa_status"/>
+    <field name="lpaStatus" type="integer" column="lpa_status"/>
+    <field name="powerStatus" type="integer" column="power_status"/>
+    <field name="positionAge" type="integer" column="position_age"/>
+    <field name="zoneStatus" type="string" column="zone_status"/>
+    <field name="extendedGpsStatus" type="string" column="extended_gps_status"/>
+    <field name="speedStatus" type="string" column="speed_status"/>
+    <field name="scheduledHoursFlag" type="string" column="scheduled_hours_flag"/>
+    <field name="senId" type="bigint" column="sen_id"/>
+    <field name="scenarioName" type="string" column="scenario_name" length="100"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

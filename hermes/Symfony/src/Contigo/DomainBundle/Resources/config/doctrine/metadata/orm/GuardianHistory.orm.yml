@@ -1,0 +1,94 @@
+GuardianHistory:
+  type: entity
+  table: guardian_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    keyword:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    relationship:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    notes:
+      type: text
+      nullable: true
+    priority:
+      type: integer
+      unsigned: false
+      nullable: true
+    loginId:
+      type: bigint
+      nullable: true
+      column: login_id
+    isAvailable:
+      type: boolean
+      nullable: true
+      column: is_available
+    isDispatchedDriver:
+      type: boolean
+      nullable: true
+      column: is_dispatched_driver
+    terminalCode:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+      column: terminal_code
+    terminalPin:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+      column: terminal_pin
+    isDispatchPndDriver:
+      type: boolean
+      nullable: true
+      column: is_dispatch_pnd_driver
+    pndDriverId:
+      type: string
+      length: 49
+      fixed: false
+      nullable: true
+      column: pnd_driver_id
+  lifecycleCallbacks: {  }

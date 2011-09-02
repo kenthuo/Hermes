@@ -1,0 +1,141 @@
+DependentHistory:
+  type: entity
+  table: dependent_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    gender:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    weightKg:
+      type: float
+      nullable: true
+      column: weight_kg
+    title:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    firstName:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: first_name
+    nickname:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    lastName:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: last_name
+    middleInitial:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: middle_initial
+    suffix:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    birthdate:
+      type: datetime
+      nullable: true
+    heightInches:
+      type: float
+      nullable: true
+      column: height_inches
+    heightCm:
+      type: float
+      nullable: true
+      column: height_cm
+    weightLb:
+      type: float
+      nullable: true
+      column: weight_lb
+    eyeColor:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+      column: eye_color
+    hairColor:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+      column: hair_color
+    uniqueMark:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: unique_mark
+    miscInfo:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: misc_info
+    relationship:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    status:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    timezone:
+      type: float
+      nullable: true
+    daylightSaving:
+      type: boolean
+      nullable: true
+      column: daylight_saving
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+    iconId:
+      type: bigint
+      nullable: true
+      column: icon_id
+    medCondition:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: med_condition
+  lifecycleCallbacks: {  }

@@ -1,0 +1,42 @@
+IdenTcp:
+  type: entity
+  table: iden_tcp
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    phoneNumber:
+      type: string
+      length: 16
+      fixed: false
+      nullable: true
+      column: phone_number
+    phoneModel:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: phone_model
+    version:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    pin:
+      type: string
+      length: 4
+      fixed: false
+      nullable: true
+    ip:
+      type: string
+      length: 15
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

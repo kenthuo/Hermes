@@ -1,0 +1,53 @@
+ActionIndex:
+  type: entity
+  table: action_index
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    actionName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: action_name
+    className:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: class_name
+    tableName:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+      column: table_name
+    description:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    canNotifyStation:
+      type: boolean
+      nullable: true
+      column: can_notify_station
+    isScheduledEvent:
+      type: boolean
+      nullable: true
+      column: is_scheduled_event
+    propertyKey:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: property_key
+  lifecycleCallbacks: {  }

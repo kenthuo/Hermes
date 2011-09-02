@@ -1,0 +1,71 @@
+Iden:
+  type: entity
+  table: iden
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    phoneNumber:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+      column: phone_number
+    pin:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    trackIntervalSeconds:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: track_interval_seconds
+    ip:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    lastTrackingStopped:
+      type: bigint
+      nullable: true
+      column: last_tracking_stopped
+    network:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    lastProcessedSequence:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: last_processed_sequence
+    lastSentSequence:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: last_sent_sequence
+    listenPort:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: listen_port
+    sentPort:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: sent_port
+  oneToOne:
+    beacon:
+      targetEntity: Beacon
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        beacon_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

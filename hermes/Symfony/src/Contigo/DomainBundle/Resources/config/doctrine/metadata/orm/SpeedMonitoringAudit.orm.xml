@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SpeedMonitoringAudit" table="speed_monitoring_audit">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="subscriberId" type="bigint" column="subscriber_id"/>
+    <field name="organizationId" type="bigint" column="organization_id"/>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="speed" type="integer" column="speed"/>
+    <field name="boundary" type="string" column="boundary" length="20"/>
+    <field name="speedUnitdisplay" type="string" column="speed_unitdisplay" length="20"/>
+    <field name="emailNotification" type="text" column="email_notification"/>
+    <field name="smsNotification" type="text" column="sms_notification"/>
+    <field name="createDate" type="bigint" column="create_date"/>
+    <field name="deleteDate" type="bigint" column="delete_date"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

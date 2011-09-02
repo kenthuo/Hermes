@@ -1,0 +1,21 @@
+Sentrigger:
+  type: entity
+  table: sentrigger
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    sentriggerString:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+      column: sentrigger_string
+  lifecycleCallbacks: {  }

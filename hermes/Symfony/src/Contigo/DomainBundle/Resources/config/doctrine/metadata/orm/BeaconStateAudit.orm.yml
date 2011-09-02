@@ -1,0 +1,51 @@
+BeaconStateAudit:
+  type: entity
+  table: beacon_state_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: true
+      column: beacon_id
+    subId:
+      type: bigint
+      nullable: true
+      column: sub_id
+    orgId:
+      type: bigint
+      nullable: true
+      column: org_id
+    planId:
+      type: bigint
+      nullable: true
+      column: plan_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    opUserId:
+      type: bigint
+      nullable: true
+      column: op_user_id
+    customerId:
+      type: bigint
+      nullable: true
+      column: customer_id
+    timestamp:
+      type: bigint
+      nullable: false
+    action:
+      type: string
+      length: 255
+      fixed: false
+      nullable: false
+  lifecycleCallbacks: {  }

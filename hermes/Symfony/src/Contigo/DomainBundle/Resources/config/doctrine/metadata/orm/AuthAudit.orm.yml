@@ -1,0 +1,58 @@
+AuthAudit:
+  type: entity
+  table: auth_audit
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    assetId:
+      type: bigint
+      nullable: true
+      column: asset_id
+    dependentId:
+      type: bigint
+      nullable: true
+      column: dependent_id
+    opUserId:
+      type: bigint
+      nullable: true
+      column: op_user_id
+    event:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    timestamp:
+      type: bigint
+      nullable: true
+    type:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    keyword:
+      type: string
+      length: 30
+      fixed: false
+      nullable: true
+    guardian:
+      type: string
+      length: 255
+      fixed: false
+      nullable: true
+    opComments:
+      type: text
+      nullable: true
+      column: op_comments
+  lifecycleCallbacks: {  }

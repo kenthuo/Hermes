@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="TinyUrl" table="tiny_url">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="eventType" type="string" column="event_type" length="20"/>
+    <field name="hash" type="string" column="hash" length="20"/>
+    <field name="fullUrl" type="text" column="full_url"/>
+    <field name="createdTs" type="bigint" column="created_ts"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

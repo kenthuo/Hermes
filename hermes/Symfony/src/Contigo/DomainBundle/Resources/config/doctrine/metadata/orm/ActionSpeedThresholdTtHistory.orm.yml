@@ -1,0 +1,61 @@
+ActionSpeedThresholdTtHistory:
+  type: entity
+  table: action_speed_threshold_tt_history
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    speedKph:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: speed_kph
+    boundary:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    speedUnit:
+      type: string
+      length: 5
+      fixed: false
+      nullable: true
+      column: speed_unit
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    scheduleId:
+      type: bigint
+      nullable: true
+      column: schedule_id
+    xid:
+      type: bigint
+      nullable: false
+    isDeleted:
+      type: boolean
+      nullable: true
+      column: is_deleted
+    timestamp:
+      type: bigint
+      nullable: true
+    accessListId:
+      type: bigint
+      nullable: true
+      column: access_list_id
+  lifecycleCallbacks: {  }

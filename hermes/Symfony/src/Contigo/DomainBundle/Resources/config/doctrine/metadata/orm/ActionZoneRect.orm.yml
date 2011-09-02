@@ -1,0 +1,44 @@
+ActionZoneRect:
+  type: entity
+  table: action_zone_rect
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    subscriberId:
+      type: bigint
+      nullable: true
+      column: subscriber_id
+    organizationId:
+      type: bigint
+      nullable: true
+      column: organization_id
+    lat1:
+      type: decimal
+      nullable: true
+    lon1:
+      type: decimal
+      nullable: true
+    lat2:
+      type: decimal
+      nullable: true
+    lon2:
+      type: decimal
+      nullable: true
+    boundary:
+      type: string
+      length: 20
+      fixed: false
+      nullable: true
+    name:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+    description:
+      type: text
+      nullable: true
+  lifecycleCallbacks: {  }

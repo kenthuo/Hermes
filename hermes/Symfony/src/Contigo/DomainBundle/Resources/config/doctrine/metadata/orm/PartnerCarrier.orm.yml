@@ -1,0 +1,22 @@
+PartnerCarrier:
+  type: entity
+  table: partner_carrier
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    partnerId:
+      type: bigint
+      nullable: false
+      column: partner_id
+    carrierId:
+      type: bigint
+      nullable: false
+      column: carrier_id
+    priority:
+      type: smallint
+      nullable: false
+  lifecycleCallbacks: {  }

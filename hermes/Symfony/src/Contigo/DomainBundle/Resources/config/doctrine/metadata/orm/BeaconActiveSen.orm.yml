@@ -1,0 +1,22 @@
+BeaconActiveSen:
+  type: entity
+  table: beacon_active_sen
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    beaconId:
+      type: bigint
+      nullable: false
+      column: beacon_id
+    senId:
+      type: bigint
+      nullable: false
+      column: sen_id
+    timestamp:
+      type: bigint
+      nullable: false
+  lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PndBeaconAssignment" table="pnd_beacon_assignment">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="beaconId" type="bigint" column="beacon_id"/>
+    <field name="pndConnected" type="boolean" column="pnd_connected"/>
+    <field name="currPndEsn" type="string" column="curr_pnd_esn" length="50"/>
+    <field name="currPndFmi" type="string" column="curr_pnd_fmi" length="50"/>
+    <field name="currGarminProdId" type="string" column="curr_garmin_prod_id" length="50"/>
+    <field name="currDeviceFmi" type="string" column="curr_device_fmi" length="50"/>
+    <field name="rcvdTs" type="bigint" column="rcvd_ts"/>
+    <field name="lastPndEsn" type="string" column="last_pnd_esn" length="50"/>
+    <field name="lastPndFmi" type="string" column="last_pnd_fmi" length="50"/>
+    <field name="lastGarminProdId" type="string" column="last_garmin_prod_id" length="50"/>
+    <field name="lastDeviceFmi" type="string" column="last_device_fmi" length="50"/>
+    <field name="lastRcvdTs" type="bigint" column="last_rcvd_ts"/>
+    <field name="timezone" type="float" column="timezone"/>
+    <field name="tzAbbrev" type="string" column="tz_abbrev" length="5"/>
+    <field name="guardianId" type="bigint" column="guardian_id"/>
+    <field name="pndDriverId" type="string" column="pnd_driver_id" length="49"/>
+    <field name="lastGuardianId" type="bigint" column="last_guardian_id"/>
+    <field name="lastPndDriverId" type="string" column="last_pnd_driver_id" length="49"/>
+    <field name="isLoginValid" type="boolean" column="is_login_valid"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,21 @@
+Location:
+  type: entity
+  table: location
+  fields:
+    id:
+      id: true
+      type: bigint
+      nullable: false
+      generator:
+        strategy: SEQUENCE
+    name:
+      type: string
+      length: 50
+      fixed: false
+      nullable: true
+    address:
+      type: string
+      length: 100
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

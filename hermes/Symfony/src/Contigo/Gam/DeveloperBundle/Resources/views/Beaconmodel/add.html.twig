@@ -1,0 +1,176 @@
+{# 
+    View variables:
+        sizeOfBeaconmodels: 
+            Description: the number of beaconmodels in the list
+            Type: integer
+        beaconmodels: 
+            Description: a list of beaconmodels
+            Type: associative array
+            Elements of array:
+                The first element of the array: beaconmodel object
+                    id:
+                        Description: identity of a beaconmodel
+                        Type: integer
+                    name:
+                        Description: name of a beaconmodel
+                        Type: string
+                    model:
+                        Description: model of a beaconmodel
+                        Type: string                        
+                    version:
+                        Description: version of a beaconmodel
+                        Type: string                     
+                usedCount:
+                    Description: the number of beacons have been associated with the beaconmodel
+                    Type: integer
+                picture:
+                    Description: the identity of the picture of the beaconmodel 
+                    Type: integer                    
+    Example:
+        'beaconmodels' => array(array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '0'), array(object(Beaconmodel), 'usedCount' => '3'), array(object(Beaconmodel), 'usedCount' => '29'), array(object(Beaconmodel), 'usedCount' => '3315') ...                    
+#}
+
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<ul class="breadcrumbs">
+    <li><a href="{{ path('home') }}">Home</a></li>
+    <li><a href="{{ path('developer') }}">Developer Pod</a></li>
+    <li><a href="{{ path('beaconmodel_list') }}">List Beacon Models</a></li>
+    <li>Add New Beacon Model</li>
+</ul>
+<div id="beaconmodel-entity-panel">
+	<form action="{{ path('beaconmodel_add') }}" method="post" {{ form_enctype(form) }} id="entity-add-form" class="entity-form">
+        {% include 'ContigoGamPartialBundle:Form:required-note.html.twig' %}	
+	    <fieldset>
+	        <legend>Basic Information</legend>	    	        
+	        {{ form_label(form.name, 'Model Name:', { 'attr': {'class': 'required'}}) }}
+	        {{ form_widget(form.name, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+	        {% if form_errors(form.name) is not empty %}
+	        <div class="field-error">{{ form_errors(form.name) }}</div>
+	        {% endif %} 
+	        {{ form_label(form.model, 'Model Number:', { 'attr': {'class': 'required'}}) }}
+	        {{ form_widget(form.model, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+	        {% if form_errors(form.model) is not empty %}
+	        <div class="field-error">{{ form_errors(form.model) }}</div>
+	        {% endif %}
+            {{ form_label(form.type, 'Type:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.type) }}<br />
+            {% if form_errors(form.type) is not empty %}
+            <div class="field-error">{{ form_errors(form.type) }}</div>
+            {% endif %}	 
+            {{ form_label(form.description, 'Description:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.description, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.description) is not empty %}
+            <div class="field-error">{{ form_errors(form.description) }}</div>
+            {% endif %}    
+            {{ form_label(form.color, 'Color:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.color, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.color) is not empty %}
+            <div class="field-error">{{ form_errors(form.color) }}</div>
+            {% endif %} 
+
+            {{ form_label(form.picture, 'Picture:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.picture) }}<br />
+            {% if form_errors(form.picture) is not empty %}
+            <div class="field-error">{{ form_errors(form.picture) }}</div>
+            {% endif %}       
+            
+            {{ form_label(form.notes, 'Misc Notes:') }}
+            {{ form_widget(form.notes, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.notes) is not empty %}
+            <div class="field-error">{{ form_errors(form.notes) }}</div>
+            {% endif %}                                     
+	    </fieldset>
+	    <fieldset>          
+            <legend>Metric Information</legend>
+            {{ form_label(form.height, 'Height(cm):', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.height, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.height) is not empty %}
+            <div class="field-error">{{ form_errors(form.height) }}</div>
+            {% endif %} 
+            
+            {{ form_label(form.width, 'Width(cm):', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.width, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.width) is not empty %}
+            <div class="field-error">{{ form_errors(form.width) }}</div>
+            {% endif %}
+            
+            {{ form_label(form.depth, 'Depth(cm):', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.depth, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.depth) is not empty %}
+            <div class="field-error">{{ form_errors(form.depth) }}</div>
+            {% endif %} 
+            
+            {{ form_label(form.weight, 'Weight(g):', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.weight, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.weight) is not empty %}
+            <div class="field-error">{{ form_errors(form.weight) }}</div>
+            {% endif %}             
+        </fieldset>
+        <fieldset>
+            <legend>Cost Information</legend>
+            {{ form_label(form.gmms_cost, 'Default GMMS Cost:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.gmms_cost, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}{{ form_widget(form.gmms_cost_currency, { 'attr': {'class': 'ui-widget-content ui-corner-all currency'} }) }}<br />
+            {% if form_errors(form.gmms_cost) is not empty %}
+            <div class="field-error">{{ form_errors(form.gmms_cost) }}</div>
+            {% endif %} 
+            
+            {{ form_label(form.p2p_cost, 'Price to Partner Cost:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.p2p_cost, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}{{ form_widget(form.p2p_cost_currency, { 'attr': {'class': 'ui-widget-content ui-corner-all currency'} }) }}<br />
+            {% if form_errors(form.p2p_cost) is not empty %}
+            <div class="field-error">{{ form_errors(form.p2p_cost) }}</div>
+            {% endif %}              
+        </fieldset>
+        <fieldset> 
+            <legend>Peripheral Feature</legend> 
+            {{ form_label(form.input_count, '# of Inputs:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.input_count, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.input_count) is not empty %}
+            <div class="field-error">{{ form_errors(form.input_count) }}</div>
+            {% endif %}  
+            
+            {{ form_label(form.output_count, '# of Outputs:', { 'attr': {'class': 'required'}}) }}
+            {{ form_widget(form.output_count, { 'attr': {'class': 'ui-widget-content ui-corner-all'} }) }}<br />
+            {% if form_errors(form.output_count) is not empty %}
+            <div class="field-error">{{ form_errors(form.output_count) }}</div>
+            {% endif %}            
+        </fieldset>        
+        <fieldset>   
+            <legend>System Information</legend> 
+	        {{ form_label(form.makes, 'Make:', { 'attr': {'class': 'required'}}) }}
+	        {{ form_widget(form.makes) }}<br />
+	        {% if form_errors(form.makes) is not empty %}
+	        <div class="field-error">{{ form_errors(form.makes) }}</div>
+	        {% endif %}
+
+	        {{ form_label(form.device_table_name, 'Beacon Manager:', { 'attr': {'class': 'required'}}) }}
+	        {{ form_widget(form.device_table_name) }}<br />
+	        {% if form_errors(form.device_table_name) is not empty %}
+	        <div class="field-error">{{ form_errors(form.device_table_name) }}</div>
+	        {% endif %}	                                                                                                     
+	    </fieldset>
+	    <div id="submit">
+	       <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="submit"><span class="ui-button-text">Save</span></button><br/>
+	    </div>
+	    {{ form_rest(form) }}
+	</form>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/reset.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/typography.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/common/css/jquery-ui/redmond/jquery-ui.css') }}" />  
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/gam/css/common.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('bundles/contigo/gam/css/developer.css') }}" />
+{% endblock %} 
+ 
+{% block javascripts %}
+    <script src="{{ asset('bundles/contigo/common/js/jquery/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/contigo/common/js/jquery/jquery-ui.min.js') }}" type="text/javascript"></script>    
+    <script src="{{ asset('bundles/contigo/common/js/jquery/plugin/jquery.form.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/contigo/gam/js/common.js') }}" type="text/javascript"></script> 
+    <script src="{{ asset('bundles/contigo/gam/js/developer/beaconmodel/add.js') }}" type="text/javascript"></script>
+{% endblock %}
